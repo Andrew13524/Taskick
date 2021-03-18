@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Add Task"
+             x:Class="Flyout_Test.Views.AddTaskPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,0,0">
+            <Label Text="Title"
+                   TextColor="#2196F3" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+
+            <Entry x:Name="taskName"
+                   Text="Input text"/>
+
+            <Label Text="Date"
+                   TextColor="#2196F3" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+
+            <DatePicker x:Name="birthDatePicker" />
+
+            <Label Text="Difficulty"
+                   TextColor="#2196F3" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+
+            <Picker Title="Select difficulty">
+                <Picker.Items>
+                    <x:String>Easy</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Hard</x:String>
+                    <x:String>Extreme</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Button x:Name="AddTask" Text="Add Task" Padding="0,0,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

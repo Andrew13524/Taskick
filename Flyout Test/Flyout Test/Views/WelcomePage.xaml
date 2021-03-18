@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flyout_Test.Views.WelcomePage">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="Welcome to Taskick!"
+                   TextColor="#2196F3"
+                   FontAttributes="Bold"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Large"/>
+
+            <Label Text="First Name" 
+                   Padding="5"
+                   TextColor="#2196F3" 
+                   FontAttributes="Bold" 
+                   VerticalOptions="Start" 
+                   FontSize="Medium" />
+
+            <Entry x:Name="firstName"
+                   Text="Enter your first name"
+                   VerticalOptions="Start"/>
+
+            <Label Text="Last Name" 
+                   Padding="5"
+                   TextColor="#2196F3"
+                   FontAttributes="Bold" 
+                   VerticalOptions="Start" 
+                   FontSize="Medium" />
+            
+            <Entry x:Name="lastName"
+                   Text="Enter your last name"
+                   VerticalOptions="Start"/>
+
+            <Button x:Name="Done" Text="Done" Clicked="DoneButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
