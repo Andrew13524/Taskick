@@ -2,6 +2,45 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
+      "Syncfusion.Licensing/18.4.0.48": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid90/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid90/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/18.4.0.48": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "18.4.0.48",
+          "Xamarin.Forms": "4.5.0.617"
+        },
+        "compile": {
+          "lib/MonoAndroid90/Syncfusion.Core.XForms.Android.dll": {},
+          "lib/MonoAndroid90/Syncfusion.Core.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid90/Syncfusion.Core.XForms.Android.dll": {},
+          "lib/MonoAndroid90/Syncfusion.Core.XForms.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfProgressBar/18.4.0.48": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.4.0.48",
+          "Xamarin.Forms": "4.5.0.617"
+        },
+        "compile": {
+          "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.Android.dll": {},
+          "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.Android.dll": {},
+          "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.dll": {}
+        }
+      },
       "Xamarin.Android.Arch.Core.Common/1.1.1.3": {
         "type": "package",
         "dependencies": {
@@ -801,6 +840,100 @@
     }
   },
   "libraries": {
+    "Syncfusion.Licensing/18.4.0.48": {
+      "sha512": "oXAdH7utKg/e8/oOeymi88yeXyFf7PzY9ONir+hWgjAUWwKFRaco8SQXI/hCfyCq1fDPHyHQUSJE8S2oVBfutQ==",
+      "type": "package",
+      "path": "syncfusion.licensing/18.4.0.48",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netcoreapp5.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.18.4.0.48.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.Core/18.4.0.48": {
+      "sha512": "YqaGlayse0xoAf0Ni0mTENIYx/day7dPFYdqZcb6uDhz1To0VzR0vt6u7aJ7VaQA5ceaHIXdLVgw7KY3rhTbCA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.core/18.4.0.48",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10.0/Syncfusion.Core.XForms.Android.dll",
+        "lib/MonoAndroid10.0/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid10.0/Syncfusion.Core.XForms.xml",
+        "lib/MonoAndroid90/Syncfusion.Core.XForms.Android.dll",
+        "lib/MonoAndroid90/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid90/Syncfusion.Core.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.Core.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.Core.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/Syncfusion.Core.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ClearButtonViewVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/DropDownIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleCollapsedIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.xml",
+        "syncfusion.xamarin.core.18.4.0.48.nupkg.sha512",
+        "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfProgressBar/18.4.0.48": {
+      "sha512": "kt3eWjoc+kxV9vDvsO+VLF4ReCs4nDrUbjsMJ0PbASBfPy9yJ7uETWAfJw2aL6IKbj6sA4ic75xL2IRtTURrog==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfprogressbar/18.4.0.48",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10.0/Syncfusion.SfProgressBar.XForms.Android.dll",
+        "lib/MonoAndroid10.0/Syncfusion.SfProgressBar.XForms.dll",
+        "lib/MonoAndroid10.0/Syncfusion.SfProgressBar.XForms.xml",
+        "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.Android.dll",
+        "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.dll",
+        "lib/MonoAndroid90/Syncfusion.SfProgressBar.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfProgressBar.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfProgressBar.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfProgressBar.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.SfProgressBar.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfProgressBar.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfProgressBar.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfProgressBar.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfProgressBar.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfProgressBar.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfProgressBar.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfProgressBar.XForms.UWP/Font Stepprogress icon.ttf",
+        "lib/uap10.0/Syncfusion.SfProgressBar.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfProgressBar.XForms.xml",
+        "syncfusion.xamarin.sfprogressbar.18.4.0.48.nupkg.sha512",
+        "syncfusion.xamarin.sfprogressbar.nuspec"
+      ]
+    },
     "Xamarin.Android.Arch.Core.Common/1.1.1.3": {
       "sha512": "ss+hnEoFeyxLgHk3TrCBqTMkK6ZJqhq382AONzdVGg7cyVibvBMWPX2Xp5byB8tvRJOMRIWZnqyqgpYQIagkZA==",
       "type": "package",
@@ -1927,6 +2060,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
+      "Syncfusion.Xamarin.SfProgressBar >= 18.4.0.48",
       "Taskick >= 1.0.0",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.8.0.1451"
@@ -1939,11 +2073,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
       "projectName": "Taskick.Android",
-      "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
+      "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
       "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\obj\\",
+      "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1964,8 +2098,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
-              "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj"
+            "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
+              "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj"
             }
           }
         }
@@ -1974,6 +2108,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Syncfusion.Xamarin.SfProgressBar": {
+            "target": "Package",
+            "version": "[18.4.0.48, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.2, )"

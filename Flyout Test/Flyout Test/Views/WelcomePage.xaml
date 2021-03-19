@@ -1,39 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Padding="10"
+             BackgroundColor="#121212"             
              x:Class="Flyout_Test.Views.WelcomePage">
+    
+    <NavigationPage.TitleView>
+        
+        <Label Text="Taskick" 
+               TextColor="White" 
+               FontAttributes="Bold" 
+               FontSize="Large"
+               HorizontalTextAlignment="Center"/>
+        
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
-        <StackLayout Spacing="10">
+        <StackLayout Padding="10,0,10,0">
             <Label Text="Welcome to Taskick!"
-                   TextColor="#2196F3"
-                   FontAttributes="Bold"
-                VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand"
-                FontSize="Large"/>
-
-            <Label Text="First Name" 
                    Padding="5"
-                   TextColor="#2196F3" 
+                   TextColor="White"                     
+                   FontAttributes="Bold"
+                   VerticalOptions="Start"
+                   HorizontalTextAlignment="Center"                  
+                   FontSize="35"/>
+            
+            <Label Text="Hey, seems like your new around here. Please enter your first and last name to get started. Positive attitudes and efficiency awaits!"
+                   Padding="17"
+                   TextColor="#2196F3"   
+                   BackgroundColor="#282828"                  
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"                  
+                   FontSize="17"/>
+            
+            <Label Text="First Name"                   
+                   Padding="1,1"
+                   TextColor="#b3b3b3" 
                    FontAttributes="Bold" 
-                   VerticalOptions="Start" 
-                   FontSize="Medium" />
+                   VerticalOptions="Center" 
+                   FontSize="24" />
 
             <Entry x:Name="firstName"
                    Text="Enter your first name"
+                   TextColor="#b3b3b3"
+                   FontSize="Medium"
                    VerticalOptions="Start"/>
 
             <Label Text="Last Name" 
-                   Padding="5"
-                   TextColor="#2196F3"
+                   Padding="1,1"
+                   TextColor="#b3b3b3"
                    FontAttributes="Bold" 
-                   VerticalOptions="Start" 
-                   FontSize="Medium" />
+                   VerticalOptions="Center" 
+                   FontSize="24" />
             
             <Entry x:Name="lastName"
                    Text="Enter your last name"
+                   TextColor="#b3b3b3"
+                   FontSize="Medium"
                    VerticalOptions="Start"/>
 
-            <Button x:Name="Done" Text="Done" Clicked="DoneButton_Clicked" />
+            <Button x:Name="Done" Text="Next" VerticalOptions="EndAndExpand" Clicked="DoneButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -2,30 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Add Task"
+             BackgroundColor="#121212"
              x:Class="Flyout_Test.Views.AddTaskPage">
-    <ContentPage.Content>
-        <StackLayout Padding="20,20,0,0">
-            <Label Text="Title"
-                   TextColor="#2196F3" 
-                   FontAttributes="Bold"
-                   FontSize="Large"/>
 
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,0">
+            <Label Text="Title"
+                   TextColor="#b3b3b3" 
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   Padding="0,0,0,-15"/>
+            
             <Entry x:Name="taskName"
-                   Text="Input text"/>
+                TextColor="#b3b3b3"
+                Text="Input text"/>
 
             <Label Text="Date"
-                   TextColor="#2196F3" 
+                   TextColor="#b3b3b3" 
                    FontAttributes="Bold"
-                   FontSize="Large"/>
+                   FontSize="24"
+                   Padding="0,0,0,-15"/>
 
-            <DatePicker x:Name="birthDatePicker" />
+            <DatePicker x:Name="dueDatePicker" TextColor="#b3b3b3" DateSelected="OnDateSelected"/>
 
             <Label Text="Difficulty"
-                   TextColor="#2196F3" 
+                   TextColor="#b3b3b3" 
                    FontAttributes="Bold"
-                   FontSize="Large"/>
+                   FontSize="24"
+                   Padding="0,0,0,-15"/>
 
-            <Picker Title="Select difficulty">
+            <Picker x:Name="difficultySelector" Title="Select difficulty" TitleColor="#b3b3b3" TextColor="#b3b3b3">
                 <Picker.Items>
                     <x:String>Easy</x:String>
                     <x:String>Medium</x:String>
@@ -34,7 +40,7 @@
                 </Picker.Items>
             </Picker>
             
-            <Button x:Name="AddTask" Text="Add Task" Padding="0,0,0,0" />
+            <Button x:Name="AddTask" Text="Add Task" Padding="0,0,0,0" Clicked="AddTaskButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Flyout_Test.Views.WalkingPage.xaml", "Views/WalkingPage.xaml", typeof(global::Flyout_Test.Views.WalkingPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.Views.WalkingPage.xaml", "Views/WalkingPage.xaml", typeof(global::Flyout_Test.Views.WalkingPage))]
 
 namespace Flyout_Test.Views {
     

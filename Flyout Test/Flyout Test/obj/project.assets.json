@@ -637,11 +637,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+      "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
       "projectName": "Taskick",
-      "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+      "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
       "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\obj\\",
+      "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

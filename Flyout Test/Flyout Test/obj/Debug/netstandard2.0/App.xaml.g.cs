@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Flyout_Test.App.xaml", "App.xaml", typeof(global::Flyout_Test.App))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.App.xaml", "App.xaml", typeof(global::Flyout_Test.App))]
 
 namespace Flyout_Test {
     

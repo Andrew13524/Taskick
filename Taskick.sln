@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskick.Android", "Flyout Test\Flyout Test.Android\Taskick.Android.csproj", "{66105E0C-C0FF-4007-B9AE-50B243AC90C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyout Test.iOS", "Flyout Test\Flyout Test.iOS\Flyout Test.iOS.csproj", "{25D6F8AA-B82E-427F-99D5-C365F98DEBFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskick.iOS", "Flyout Test\Flyout Test.iOS\Taskick.iOS.csproj", "{25D6F8AA-B82E-427F-99D5-C365F98DEBFE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taskick", "Flyout Test\Flyout Test\Taskick.csproj", "{04C09401-F6BB-41B2-8922-EA997D8D73A8}"
 EndProject

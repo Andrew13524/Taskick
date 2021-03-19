@@ -15,7 +15,7 @@ namespace Flyout_Test.Views
         {
             InitializeComponent();
         }
-        public void DoneButton_Clicked(object sender, EventArgs e)
+        private void DoneButton_Clicked(object sender, EventArgs e)
         {           
                 // If user enters first and last name, open AppShell
             if (firstName.Text.Length > 0 && lastName.Text.Length > 0)

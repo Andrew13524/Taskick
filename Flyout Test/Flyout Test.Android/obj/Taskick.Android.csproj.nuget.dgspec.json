@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj": {}
+    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj": {
+    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
         "projectName": "Taskick.Android",
-        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
+        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
         "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\obj\\",
+        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
-                "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj"
+              "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
+                "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj"
               }
             }
           }
@@ -42,6 +42,10 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
+            "Syncfusion.Xamarin.SfProgressBar": {
+              "target": "Package",
+              "version": "[18.4.0.48, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.3.2, )"
@@ -54,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
+    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
         "projectName": "Taskick",
-        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
         "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\obj\\",
+        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

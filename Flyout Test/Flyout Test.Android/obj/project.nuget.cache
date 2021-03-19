@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3E4RJTZmj3lVmN3GwIAOA0Gjl8k9pyTN1w1WAT0jNHTufrOmeU24/3+ptASRvttIxdCB/GD172jfhO4lsPVguA==",
+  "dgSpecHash": "3DpyePcF5i17+0WvQZgk7di3hj/qbvQJr9y8H5XmIuhQ3yf4KhpE9Fz/QyW8jmuRfj3utFyA5SB57Pfn2Rddww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
+  "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Andre\\.nuget\\packages\\syncfusion.licensing\\18.4.0.48\\syncfusion.licensing.18.4.0.48.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\syncfusion.xamarin.core\\18.4.0.48\\syncfusion.xamarin.core.18.4.0.48.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\syncfusion.xamarin.sfprogressbar\\18.4.0.48\\syncfusion.xamarin.sfprogressbar.18.4.0.48.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.common\\1.1.1.3\\xamarin.android.arch.lifecycle.common.1.1.1.3.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9x3D874w/N5k8tcDsGOOBIH9KszDPV+A7uLBXPXXtk4Ge2s0MfRqSLyFvS1ydMTrcEMd0w+yaQPfjbNQgtmOOg==",
+  "dgSpecHash": "tFlsQTEa1n3q0WeI5bEfg3pRKyBUJo2nB3WG6DsjXKuGJT2KBo9RuzP15W/LEQ5kb0Yho6gU3ryWLRWTiFiHAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+  "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andre\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Andre\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

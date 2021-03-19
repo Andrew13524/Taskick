@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj": {}
+    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj": {
+    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj",
         "projectName": "Flyout Test.iOS",
-        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj",
+        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\Flyout Test.iOS.csproj",
         "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test.iOS\\obj\\",
+        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
-                "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj"
+              "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
+                "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
+    "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+        "projectUniqueName": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
         "projectName": "Taskick",
-        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
+        "projectPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\Taskick.csproj",
         "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Flyout Test\\Flyout Test\\obj\\",
+        "outputPath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

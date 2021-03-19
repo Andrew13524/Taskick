@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Flyout_Test.Views.AddTaskPage.xaml", "Views/AddTaskPage.xaml", typeof(global::Flyout_Test.Views.AddTaskPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.Views.AddTaskPage.xaml", "Views/AddTaskPage.xaml", typeof(global::Flyout_Test.Views.AddTaskPage))]
 
 namespace Flyout_Test.Views {
     
@@ -20,7 +20,10 @@ namespace Flyout_Test.Views {
         private global::Xamarin.Forms.Entry taskName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.DatePicker birthDatePicker;
+        private global::Xamarin.Forms.DatePicker dueDatePicker;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Picker difficultySelector;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button AddTask;
@@ -29,7 +32,8 @@ namespace Flyout_Test.Views {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddTaskPage));
             taskName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "taskName");
-            birthDatePicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "birthDatePicker");
+            dueDatePicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dueDatePicker");
+            difficultySelector = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "difficultySelector");
             AddTask = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AddTask");
         }
     }
