@@ -1026,3 +1026,7 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64eeb36180fe6023e2\SfEffectsViewRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64f606ab658bf2774f\SfShimmerRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64f606ab658bf2774f\ShimmerViewRenderer.java
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\Prism.dll
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\Prism.Forms.dll
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\Prism.Forms.pdb
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\Prism.pdb

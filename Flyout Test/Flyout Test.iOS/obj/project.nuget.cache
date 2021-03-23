@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5t76SdIUf9gdUZCpfSz3/iDugbx7jEmTvkaT/zJsdAtiWQd/HS84yviW3Qjgq26NmpjE6crPraCBgWlXlI5CBg==",
+  "dgSpecHash": "QAos7jS/hIWjC1DVLBtwoGLtMZPesnR6/uFQEIn0zV8ZxmrVKII1mFxSeHtQvMlFRd+7Uyl52rpP9ZjWkUTcow==",
   "success": true,
   "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\Taskick.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Andre\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\prism.forms\\8.0.0.1909\\prism.forms.8.0.0.1909.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
   ],

@@ -13,8 +13,6 @@ namespace Flyout_Test
 
         public int RequiredExperience = 250;       
 
-        //private const string _textFilePath = @"C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Flyout Test\Flyout Test\Flyout Test\";
-
         public User (string name)
         {
             Name = name;
@@ -38,12 +36,6 @@ namespace Flyout_Test
         public double LevelPercentage()
         {
             return this.Experience / this.RequiredExperience;
-        }
-        public void SaveUsername() // trying to write username to file...
-        {
-            //StreamWriter sw = new StreamWriter(@"C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Flyout Test\Flyout Test\Flyout Test\Username.txt", append:true);
-            //sw.WriteLine(this.Name);
-            //sw.Close();
         }
     }
 }

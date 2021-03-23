@@ -4,6 +4,8 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Flyout Test.Android.dll" comes first in this list. */
 		"Flyout Test.Android.dll",
 		"FormsViewGroup.dll",
+		"Prism.dll",
+		"Prism.Forms.dll",
 		"Syncfusion.Core.XForms.Android.dll",
 		"Syncfusion.Core.XForms.dll",
 		"Syncfusion.Licensing.dll",

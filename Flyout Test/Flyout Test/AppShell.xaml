@@ -115,14 +115,38 @@
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
-    
-    
+
+
     <FlyoutItem Title="To-Do">
         <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Walking">
         <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
     </FlyoutItem>
+    
+    <!--                      Trying to get custom flyout items working
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="1" Grid.Column="1"
+                   Text="{Binding Title}"
+                   
+                   VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    -->
+    
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3DpyePcF5i17+0WvQZgk7di3hj/qbvQJr9y8H5XmIuhQ3yf4KhpE9Fz/QyW8jmuRfj3utFyA5SB57Pfn2Rddww==",
+  "dgSpecHash": "6aQQHS5VIpB+azuaBCgsRRL/63myQOv3MjP8NvdK1vQwmp4JMFMf1ylEml0U7tq+ONqiT4ElMKb3u94pmUbGtQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.Android\\Taskick.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Andre\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\prism.forms\\8.0.0.1909\\prism.forms.8.0.0.1909.nupkg.sha512",
     "C:\\Users\\Andre\\.nuget\\packages\\syncfusion.licensing\\18.4.0.48\\syncfusion.licensing.18.4.0.48.nupkg.sha512",
     "C:\\Users\\Andre\\.nuget\\packages\\syncfusion.xamarin.core\\18.4.0.48\\syncfusion.xamarin.core.18.4.0.48.nupkg.sha512",
     "C:\\Users\\Andre\\.nuget\\packages\\syncfusion.xamarin.sfprogressbar\\18.4.0.48\\syncfusion.xamarin.sfprogressbar.18.4.0.48.nupkg.sha512",

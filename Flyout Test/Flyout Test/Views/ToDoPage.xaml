@@ -6,8 +6,8 @@
              x:Class="Flyout_Test.Views.ToDoPage">
 
     <ContentPage.Content>
-        <StackLayout x:Name="CoolLabelStack">
-            <Label Text="List of all Tasks"
+        <StackLayout>
+            <Label Text="{Binding Goal}"
                    TextColor="#b3b3b3"
                    FontSize="20"
                 VerticalOptions="CenterAndExpand" 

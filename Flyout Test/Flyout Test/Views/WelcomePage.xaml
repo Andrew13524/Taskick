@@ -7,7 +7,7 @@
     
     <NavigationPage.TitleView>
         
-        <Label Text="Taskick" 
+        <Label Text="" 
                TextColor="White" 
                FontAttributes="Bold" 
                FontSize="Large"
@@ -17,6 +17,7 @@
     
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0">
+            
             <Label Text="Welcome to Taskick!"
                    Padding="5"
                    TextColor="White"                     
@@ -25,10 +26,18 @@
                    HorizontalTextAlignment="Center"                  
                    FontSize="35"/>
             
+            <Label Text="Taskick is desinged to keep you productive, and to keep your life on track!"
+                   Padding="5"
+                   TextColor="#b3b3b3"                     
+                   FontAttributes="Bold"
+                   VerticalOptions="Start"
+                   HorizontalTextAlignment="Center"                  
+                   FontSize="17"/>
+            
             <Label Text="Hey, seems like your new around here. Please enter your first and last name to get started. Positive attitudes and efficiency awaits!"
                    Padding="17"
                    TextColor="#2196F3"   
-                   BackgroundColor="#282828"                  
+                   BackgroundColor="#1e1e1e"                  
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"                  
                    FontSize="17"/>
