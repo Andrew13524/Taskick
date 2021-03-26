@@ -33,41 +33,52 @@
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"                  
                    FontSize="17"/>
-            
-            <Label Text="Hey, seems like your new around here. Please enter your first and last name to get started. Positive attitudes and efficiency awaits!"
-                   Padding="17"
+
+            <StackLayout Padding="30,30,30,30" BackgroundColor="#1e1e1e">
+                <Label Text="Hey, seems like your new around here. Please enter your first and last name to get started."
+                   Padding="1,1,0,10"
                    TextColor="#2196F3"   
-                   BackgroundColor="#1e1e1e"                  
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"                  
                    FontSize="17"/>
-            
-            <Label Text="First Name"                   
+
+                <Label Text="Positive attitudes and efficiency awaits!"
+                   Padding="1,1,0,10"
+                   TextColor="White"   
+                       FontAttributes="Italic"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"                  
+                   FontSize="17"/>
+                
+                <Label Text="First Name"                   
                    Padding="1,1"
                    TextColor="#b3b3b3" 
                    FontAttributes="Bold" 
                    VerticalOptions="Center" 
                    FontSize="24" />
 
-            <Entry x:Name="firstName"
+                <Entry x:Name="firstName"
                    Text="Enter your first name"
                    TextColor="#b3b3b3"
                    FontSize="Medium"
                    VerticalOptions="Start"/>
 
-            <Label Text="Last Name" 
+                <Label Text="Last Name" 
                    Padding="1,1"
                    TextColor="#b3b3b3"
                    FontAttributes="Bold" 
                    VerticalOptions="Center" 
                    FontSize="24" />
-            
-            <Entry x:Name="lastName"
+
+                <Entry x:Name="lastName"
                    Text="Enter your last name"
                    TextColor="#b3b3b3"
                    FontSize="Medium"
                    VerticalOptions="Start"/>
 
+            </StackLayout>
+
+            
             <Button x:Name="Done" Text="Next" VerticalOptions="EndAndExpand" Clicked="DoneButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>

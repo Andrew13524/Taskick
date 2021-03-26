@@ -96,16 +96,16 @@
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
                 
-                <Label Text="{Binding UsernameProperty}" 
+                <Label Text="{Binding Name}" 
                        Grid.Row="1" FontAttributes="Bold" FontSize="25" Padding="-5,0,0,0" Margin="5" TextColor="White"/>
                 
-                <Label Text="{Binding LevelProperty}" 
+                <Label Text="{Binding Level}" 
                        Grid.Row="2" FontAttributes="Bold" Padding="-5,5" Margin="5" FontSize="16" TextColor="#2196f3"/>
                 
                 <Label Text="Experience Points" 
                        Grid.Row="3" FontAttributes="Bold" Padding="-5,1" Margin="5" FontSize="16" TextColor="#b3b3b3"/>
                 
-                <Label Text="{Binding ExperienceProperty}"
+                <Label Text="{Binding Experience}"
                        Grid.Row="4" Padding="-5,-4" Margin="5" FontSize="14" TextColor="#b3b3b3"/>
 
 

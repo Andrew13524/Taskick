@@ -20,10 +20,10 @@ namespace Flyout_Test // BindingContext = new AppShellViewModel();
             InitializeComponent();
             BindingContext = new AppShellViewModel(username);            
         }       
-        public AppShell(string goalTitle, DateTime dueDate, string difficulty) // Used for when user enters task
+        public AppShell(List<Goal> goals) // Used for when user enters task
         {
             InitializeComponent();
-            BindingContext = new AppShellViewModel(goalTitle, dueDate, difficulty);
+            BindingContext = new AppShellViewModel(goals);            
         }
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {

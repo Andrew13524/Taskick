@@ -2,26 +2,13 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
-      "Prism.Core/8.0.0.1909": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Prism.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Prism.dll": {}
-        }
-      },
-      "Prism.Forms/8.0.0.1909": {
-        "type": "package",
-        "dependencies": {
-          "Prism.Core": "8.0.0.1909",
-          "Xamarin.Forms": "4.8.0.1364"
-        },
-        "compile": {
-          "lib/netstandard2.0/Prism.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Prism.Forms.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "Syncfusion.Licensing/18.4.0.48": {
@@ -849,8 +836,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Prism.Forms": "8.0.0.1909",
-          "Xamarin.Essentials": "1.5.3.2",
+          "Newtonsoft.Json": "13.0.1",
+          "Xamarin.Essentials": "1.5.0",
           "Xamarin.Forms": "4.8.0.1451"
         },
         "compile": {
@@ -863,42 +850,31 @@
     }
   },
   "libraries": {
-    "Prism.Core/8.0.0.1909": {
-      "sha512": "Ri+iSFvJiSKYdui7qtxi3uH9NImSZ8Jl/nOosxScSJseFwAc8Lz63JLXoqSAQglcX13DzZcAMzpKNuA9rCFiJg==",
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
-      "path": "prism.core/8.0.0.1909",
+      "path": "newtonsoft.json/13.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE",
-        "lib/net45/Prism.dll",
-        "lib/net45/Prism.pdb",
-        "lib/net45/Prism.xml",
-        "lib/net47/Prism.dll",
-        "lib/net47/Prism.pdb",
-        "lib/net47/Prism.xml",
-        "lib/netstandard2.0/Prism.dll",
-        "lib/netstandard2.0/Prism.pdb",
-        "lib/netstandard2.0/Prism.xml",
-        "prism-logo.png",
-        "prism.core.8.0.0.1909.nupkg.sha512",
-        "prism.core.nuspec"
-      ]
-    },
-    "Prism.Forms/8.0.0.1909": {
-      "sha512": "2uIqQjggiURO4CKJzH+gYHkbuKDtVQiSyoUIdvVRx+hFYyU0cwDG7uzB9EBQwTZMk3R8/ulF0pXbQg2aoMnGdA==",
-      "type": "package",
-      "path": "prism.forms/8.0.0.1909",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "lib/netstandard2.0/Prism.Forms.dll",
-        "lib/netstandard2.0/Prism.Forms.pdb",
-        "lib/netstandard2.0/Prism.Forms.xml",
-        "prism-logo.png",
-        "prism.forms.8.0.0.1909.nupkg.sha512",
-        "prism.forms.nuspec"
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Syncfusion.Licensing/18.4.0.48": {
@@ -2129,7 +2105,8 @@
   },
   "packageFolders": {
     "C:\\Users\\Andre\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2142,10 +2119,12 @@
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

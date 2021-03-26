@@ -1,8 +1,8 @@
-﻿using Flyout_Test.Services;
-using Flyout_Test.Views;
+﻿using Flyout_Test.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace Flyout_Test
 {
@@ -12,10 +12,9 @@ namespace Flyout_Test
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            
-                // On Startup, go to Welcome Page
+            // For testing purposes, clearing preferences on each startup            
+            Preferences.Clear();
+            // On Startup, go to Welcome Page
             MainPage = new NavigationPage(new WelcomePage());          
         }
         

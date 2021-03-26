@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Add Task"
+             BackgroundColor="#121212"
+             x:Class="Flyout_Test.Views.AddGoalPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,0">
+            <Label Text="Title"
+                   TextColor="#b3b3b3" 
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   Padding="0,0,0,-15"/>
+
+            <Entry x:Name="goalName"
+                TextColor="#b3b3b3"
+                Text="Input text"/>
+
+            <Label Text="Date"
+                   TextColor="#b3b3b3" 
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   Padding="0,0,0,-15"/>
+
+            <DatePicker x:Name="dueDatePicker" TextColor="#b3b3b3" DateSelected="OnDateSelected"/>
+
+            <Label Text="Difficulty"
+                   TextColor="#b3b3b3" 
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   Padding="0,0,0,-15"/>
+
+            <Picker x:Name="difficultySelector" Title="Select difficulty" TitleColor="#b3b3b3" TextColor="#b3b3b3">
+                <Picker.Items>
+                    <x:String>Easy</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Hard</x:String>
+                    <x:String>Extreme</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button x:Name="AddTask" Text="Add Task" Padding="0,0,0,0" Clicked="AddGoalButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

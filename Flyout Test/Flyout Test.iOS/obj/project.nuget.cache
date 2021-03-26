@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QAos7jS/hIWjC1DVLBtwoGLtMZPesnR6/uFQEIn0zV8ZxmrVKII1mFxSeHtQvMlFRd+7Uyl52rpP9ZjWkUTcow==",
+  "dgSpecHash": "TjJl2mcqiTE0AZVzT+qoQhAPW9nsJ2muWNoYL5bhqnrGmFgb/sLLCXx/wqrUta6DgfFhqK8udyoeqrg/0oPlqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Andre\\Documents\\Xamarin.Forms\\Excersises\\Taskick\\Taskick\\Flyout Test\\Flyout Test.iOS\\Taskick.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Andre\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512",
-    "C:\\Users\\Andre\\.nuget\\packages\\prism.forms\\8.0.0.1909\\prism.forms.8.0.0.1909.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+    "C:\\Users\\Andre\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
   ],
   "logs": []
 }

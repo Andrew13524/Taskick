@@ -9,21 +9,28 @@ using Xamarin.Forms.Xaml;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
 using Taskick.ViewModels;
+using Xamarin.Essentials;
+using System.Windows.Input;
 
 namespace Flyout_Test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ToDoPage : INotifyPropertyChanged
+    public partial class ToDoPage
     {
-
+        public ICommand ButtonCommand { get; private set; }
         public ToDoPage()
         {
             InitializeComponent();
         }
         
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void AddTaskButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddTaskPage());
+            await Navigation.PushAsync(new AddGoalPage());
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
