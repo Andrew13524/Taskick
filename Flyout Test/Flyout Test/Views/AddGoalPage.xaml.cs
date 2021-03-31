@@ -1,47 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Taskick.Scripts;
+using Taskick.Services;
+using Taskick.Models;
 using Taskick.ViewModels;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Flyout_Test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddGoalPage
+    public partial class AddGoalPage 
     {
-        DateTime DueDate;
-        string GoalTitle;
-        string Difficulty;
-
-        public static List<Goal> Goals = new List<Goal>();
-        public AddGoalPage()
+        public AddGoalPage(string mode)
         {
             InitializeComponent();
+            BindingContext = new AddGoalPageViewModel(mode);
         }
-        void OnDateSelected(object sender, DateChangedEventArgs args)
+        private async void AddGoalButton_Clicked(object sender, EventArgs e)
         {
-            DueDate = dueDatePicker.Date;
-        }
-        private void AddGoalButton_Clicked(object sender, EventArgs e)
-        {
+            if (!string.IsNullOrWhiteSpace(goalName.Text) && dueDatePicker.Date != null && difficultySelector.SelectedItem != null)
+            {                
+                if (AddGoalPageViewModel.state == Mode.Add) // If adding a goal, execute save command with new instance of a goal object
+                {
+                    ((AddGoalPageViewModel)BindingContext).SaveCommand.Execute(new Goal()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = goalName.Text,
+                        DueDate = dueDatePicker.Date,
+                        Difficulty = difficultySelector.SelectedItem.ToString()
+                    });
 
-            if (!string.IsNullOrWhiteSpace(goalName.Text) && DueDate != null && difficultySelector.SelectedItem != null)
-            {
-                GoalTitle = goalName.Text;
-                Difficulty = difficultySelector.SelectedItem.ToString();
-
-                Goals.Add(new Goal(GoalTitle, DueDate, Difficulty));
-
-                Application.Current.MainPage = new AppShell(Goals);
+                    await Navigation.PopAsync();
+                }                   
+                else if (AddGoalPageViewModel.state == Mode.Edit) // If editing a goal, execute save command with the currently selected goal object
+                {
+                    ((AddGoalPageViewModel)BindingContext).SaveCommand.Execute(new Goal()
+                    {
+                        Id = DataStore.SelectedGoal.Id,
+                        Name = goalName.Text,
+                        DueDate = dueDatePicker.Date,
+                        Difficulty = difficultySelector.SelectedItem.ToString()
+                    });
+                    
+                    await Navigation.PopModalAsync();
+                }                                  
             }
             else
-
-                return;
-
+                await DisplayAlert("Empty field", "Please fill in the fields.", "Ok");
+        }
+        async void OnDeleteButton_CLicked(object sender, EventArgs e)
+        {
+            ((AddGoalPageViewModel)BindingContext).DeleteCommand.Execute(DataStore.SelectedGoal.Id);
+            await Navigation.PopModalAsync();
         }
     }
 }

@@ -6,7 +6,7 @@
     <!-- If you want to override anything you can do that here. -->
     <!-- Underneath are a couple of entries to get you started. -->
     <item name="colorAccent">#2196f3</item>
-    <item name="colorControlNormal">#b3b3b3</item>"
+    <item name="colorControlNormal">#b3b3b3</item>
     <item name="colorPrimary">#1e1e1e</item>
     <!-- Set theme colors from https://aka.ms/material-colors -->
     <!-- colorPrimary is used for the default action bar background -->

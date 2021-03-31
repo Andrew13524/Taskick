@@ -1,22 +1,13 @@
-﻿using Flyout_Test;
-using Flyout_Test.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Xamarin.Essentials;
-using Taskick.Scripts;
-using Newtonsoft.Json;
+using Taskick.Models;
 using System.Collections.ObjectModel;
 
 namespace Taskick.ViewModels
 {
     class AppShellViewModel : BaseViewModel
     {
-        private ObservableCollection<DateTime> goalDates = new ObservableCollection<DateTime>();
-        private ObservableCollection<Goal> goalTabs = new ObservableCollection<Goal>();
-        public ObservableCollection<DateTime> GoalDates { get { return goalDates; } }
-        public ObservableCollection<Goal> GoalTabs { get { return goalTabs; } }
-        
         public string Name                              // Username, level exp and so on set as preferences
         {                                               // so that this information is stored and saved after even if the 
             get => Preferences.Get(nameof(Name), null); // user closes the application
@@ -61,14 +52,6 @@ namespace Taskick.ViewModels
             Level = "Level " + user.Level.ToString();
             Experience = user.Experience.ToString() + @"/" + user.RequiredExperience.ToString();
             LevelPercentage = user.LevelPercentage.ToString();
-        }
-        public AppShellViewModel(List<Goal> goals)
-        {            
-            foreach (var goal in goals) // Adding user added goals to observable goal list
-            {
-                goalTabs.Add(new Goal() { Name = goal.Name, DueDate = goal.DueDate, Difficulty = goal.Difficulty });
-                goalDates.Add(goal.DueDate);
-            }
         }    
     }
 }

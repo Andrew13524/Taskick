@@ -1,27 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Taskick.ViewModels"
              Title="To-Do"
-             BackgroundColor="#121212"
-             
-             x:Name="MyPage"
-             
+             BackgroundColor="#121212"             
+             x:Name="MyPage"             
              x:Class="Flyout_Test.Views.ToDoPage">
-
+    <ContentPage.BindingContext>
+        <local:ToDoPageViewModel/>
+    </ContentPage.BindingContext>
 
     <StackLayout>
-        <CollectionView ItemsSource="{Binding GoalTabs}">
+        <CollectionView ItemsSource="{Binding GoalList}" SelectionChanged="OnCollectionViewSelectionChanged" SelectionMode="Multiple">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid VerticalOptions="Center" RowSpacing="0" HorizontalOptions="Center" Background="#121212">
-                        
+
                         <Grid.RowDefinitions>
                             <RowDefinition Height="10"/>
                             <RowDefinition Height="15"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="15"/>
                         </Grid.RowDefinitions>
-                        
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25"/>
                             <ColumnDefinition Width="50"/>
@@ -30,14 +31,15 @@
                             <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Frame CornerRadius="5"   
-                           Padding="0"           
-                           Background="#282828"
+                               Padding="0"           
+                               Background="#282828"
                                Grid.Row="1"
                                Grid.Column="1"
                                Grid.RowSpan="3"
                                Grid.ColumnSpan="3">
+
                             <Grid>
                                 
                                 <Grid.ColumnDefinitions>
@@ -50,6 +52,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label Grid.Column="3" BackgroundColor="#b3b3b3" ScaleX="1.7"/>
+                                
                             </Grid>
                         </Frame>
 
@@ -63,7 +66,7 @@
                                Grid.RowSpan="1"
                                VerticalOptions="CenterAndExpand"/>
 
-                        <Label Text="{Binding Difficulty}"
+                        <Label Text="{Binding ExpValue, StringFormat='{0} EXP'}"
                                Grid.Column="3"
                                Grid.Row="2"
                                Grid.RowSpan="1"
@@ -73,19 +76,21 @@
                                VerticalOptions="Center"
                                TextColor="#282828"/>
 
-                        <CheckBox x:Name="checkBox" 
-                                  Grid.Column="1" 
+                        <CheckBox x:Name="{Binding Id}" 
+                                  CheckedChanged="OnCheckBoxCheckedChanged"
+                                  Grid.Column="1"
                                   Grid.Row="2" 
                                   Grid.ColumnSpan="1"
                                   VerticalOptions="Center" 
                                   HorizontalOptions="Center"
                                   ScaleY="1.5" 
                                   ScaleX="1.5"/>
-                       
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
         <Button Text="Add Task" Clicked="AddTaskButton_Clicked" ></Button>
+        
     </StackLayout>
 </ContentPage>

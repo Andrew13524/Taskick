@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
-namespace Flyout_Test.ViewModels
+namespace Taskick.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

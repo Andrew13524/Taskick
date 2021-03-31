@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Xamarin.Essentials;
-using Flyout_Test.ViewModels;
 
-namespace Flyout_Test
+namespace Taskick.Models
 {
-    public class User : BaseViewModel
+    public class User
     {              
         public int RequiredExperience = 250;
         public string Name { get; set; }

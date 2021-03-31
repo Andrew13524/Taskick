@@ -1,36 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Taskick.Scripts;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Runtime.CompilerServices;
-using System.ComponentModel;
 using Taskick.ViewModels;
-using Xamarin.Essentials;
-using System.Windows.Input;
+using Taskick.Services;
+using Xamarin.Forms;
+using Taskick.Models;
+using System.Linq;
 
 namespace Flyout_Test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ToDoPage
     {
-        public ICommand ButtonCommand { get; private set; }
         public ToDoPage()
         {
             InitializeComponent();
+            BindingContext = new ToDoPageViewModel();
         }
-        
+        async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BindingContext = new ToDoPageViewModel();
+            Goal selectedGoal = new Goal();
+
+            foreach(Goal currentGoal in e.CurrentSelection)
+            {
+                foreach (Goal goal in DataStore.GoalList)
+                {
+                    if (currentGoal.Id == goal.Id)
+                    {
+                        selectedGoal.Name = goal.Name;
+                        selectedGoal.DueDate = goal.DueDate;
+                        selectedGoal.Difficulty = goal.Difficulty;
+                        selectedGoal.Id = goal.Id;
+                    }
+                }
+            }
+                             
+
+            new DataStore(selectedGoal, false);
+
+            await Navigation.PushModalAsync(new AddGoalPage("Edit"));
+        }
         private async void AddTaskButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddGoalPage());
+            await Navigation.PushAsync(new AddGoalPage("Add"));
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
+        void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-
+            
         }
     }
 }
