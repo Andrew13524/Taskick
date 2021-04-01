@@ -18,7 +18,7 @@ namespace Flyout_Test.Views
         {
             if (!string.IsNullOrWhiteSpace(goalName.Text) && dueDatePicker.Date != null && difficultySelector.SelectedItem != null)
             {                
-                if (AddGoalPageViewModel.state == Mode.Add) // If adding a goal, execute save command with new instance of a goal object
+                if (AddGoalPageViewModel.State == Mode.Add) // If adding a goal, execute save command with new instance of a goal object
                 {
                     ((AddGoalPageViewModel)BindingContext).SaveCommand.Execute(new Goal()
                     {
@@ -30,11 +30,11 @@ namespace Flyout_Test.Views
 
                     await Navigation.PopAsync();
                 }                   
-                else if (AddGoalPageViewModel.state == Mode.Edit) // If editing a goal, execute save command with the currently selected goal object
+                else if (AddGoalPageViewModel.State == Mode.Edit) // If editing a goal, execute save command with the currently selected goal object ID
                 {
                     ((AddGoalPageViewModel)BindingContext).SaveCommand.Execute(new Goal()
                     {
-                        Id = DataStore.SelectedGoal.Id,
+                        Id = DataStore.SelectedGoalID,
                         Name = goalName.Text,
                         DueDate = dueDatePicker.Date,
                         Difficulty = difficultySelector.SelectedItem.ToString()
@@ -48,7 +48,7 @@ namespace Flyout_Test.Views
         }
         async void OnDeleteButton_CLicked(object sender, EventArgs e)
         {
-            ((AddGoalPageViewModel)BindingContext).DeleteCommand.Execute(DataStore.SelectedGoal.Id);
+            ((AddGoalPageViewModel)BindingContext).DeleteCommand.Execute(DataStore.SelectedGoalID);
             await Navigation.PopModalAsync();
         }
     }

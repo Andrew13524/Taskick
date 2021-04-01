@@ -12,15 +12,13 @@ namespace Taskick.ViewModels
         Goal selectedGoal = new Goal();
         public Goal SelectedGoal { get { return selectedGoal; } }
 
-
         string addGoalButtonText;
         public string AddGoalButtonText { get { return addGoalButtonText; } }
-
 
         bool isDeleteButtonVisible;
         public bool IsDeleteButtonVisible { get { return isDeleteButtonVisible; } }
 
-        public static Mode state;
+        public static Mode State;
 
         public AddGoalPageViewModel()
         {
@@ -30,7 +28,7 @@ namespace Taskick.ViewModels
         {
             if (mode == "Add")
             {
-                state = Mode.Add;
+                State = Mode.Add;
 
                 addGoalButtonText = "Add Task";
                 selectedGoal.Name = "Enter text here";
@@ -40,7 +38,7 @@ namespace Taskick.ViewModels
             }
             else if (mode == "Edit")
             {
-                state = Mode.Edit;
+                State = Mode.Edit;
 
                 addGoalButtonText = "Save";
                 var index = DataStore.SelectedGoalIndex;
@@ -57,11 +55,9 @@ namespace Taskick.ViewModels
         public Command<Goal> SaveCommand { get; }
         public void SaveGoal(Goal selectedGoal)
         {
-            if(state == Mode.Add)
-            {
-                new DataStore(selectedGoal, true);
-            }
-            else if(state == Mode.Edit)
+            if(State == Mode.Add) new DataStore(selectedGoal);
+            
+            else if(State == Mode.Edit)
             {
                 DataStore ds = new DataStore();
                 ds.ChangeGoal(selectedGoal);                   

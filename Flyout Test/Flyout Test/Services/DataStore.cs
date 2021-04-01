@@ -9,8 +9,8 @@ namespace Taskick.Services
         private static ObservableCollection<Goal> goalList = new ObservableCollection<Goal>();
         public static ObservableCollection<Goal> GoalList { get { return goalList; } }
 
-        static Goal selectedGoal;
-        public static Goal SelectedGoal { get { return selectedGoal; } }
+        static string selectedGoalID;
+        public static string SelectedGoalID { get { return selectedGoalID; } }
 
         private static int selectedGoalIndex => GetSelectedGoalIndex();
         public static int SelectedGoalIndex { get { return selectedGoalIndex; } }
@@ -19,10 +19,13 @@ namespace Taskick.Services
         {
             
         }
-        public DataStore(Goal newGoal, bool inList) // Whever you want to add new goal to static observable list, or as selected goal
+        public DataStore(Goal newGoal)
         {
-            if (inList) goalList.Add(newGoal);
-            else selectedGoal = newGoal;
+           goalList.Add(newGoal);
+        }
+        public DataStore (string selectedGoalId)
+        {
+            selectedGoalID = selectedGoalId;
         }
         public void ChangeGoal(Goal changedGoal)
         {
@@ -39,7 +42,7 @@ namespace Taskick.Services
         {
             foreach (Goal goal in goalList)
             {
-                if (selectedGoal.Id == goal.Id)
+                if (selectedGoalID == goal.Id)
                 {
                     return goalList.IndexOf(goal); ;
                 }

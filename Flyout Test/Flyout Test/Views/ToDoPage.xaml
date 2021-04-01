@@ -11,7 +11,12 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <CollectionView ItemsSource="{Binding GoalList}" SelectionChanged="OnCollectionViewSelectionChanged" SelectionMode="Multiple">
+        <CollectionView x:Name="GoalCollectionView" ItemsSource="{Binding GoalList}" SelectionMode="Single" SelectionChanged="OnCollectionViewSelectionChanged">
+            <CollectionView.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"
+                    NumberOfTapsRequired="1" />
+            </CollectionView.GestureRecognizers>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid VerticalOptions="Center" RowSpacing="0" HorizontalOptions="Center" Background="#121212">
@@ -39,7 +44,6 @@
                                Grid.Column="1"
                                Grid.RowSpan="3"
                                Grid.ColumnSpan="3">
-
                             <Grid>
                                 
                                 <Grid.ColumnDefinitions>
@@ -64,7 +68,15 @@
                                TextColor="#b3b3b3"
                                Grid.Row="2"
                                Grid.RowSpan="1"
-                               VerticalOptions="CenterAndExpand"/>
+                               VerticalOptions="CenterAndExpand">
+                            <!--<Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                            -->
+                            
+                        </Label>
 
                         <Label Text="{Binding ExpValue, StringFormat='{0} EXP'}"
                                Grid.Column="3"

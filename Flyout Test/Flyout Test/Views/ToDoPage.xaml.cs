@@ -14,31 +14,23 @@ namespace Flyout_Test.Views
         public ToDoPage()
         {
             InitializeComponent();
-            BindingContext = new ToDoPageViewModel();
+        }
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var test = GoalCollectionView.SelectedItem;
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            BindingContext = new ToDoPageViewModel();
-            Goal selectedGoal = new Goal();
+            if (e.CurrentSelection.Count == 0)
+                return;
 
-            foreach(Goal currentGoal in e.CurrentSelection)
-            {
-                foreach (Goal goal in DataStore.GoalList)
-                {
-                    if (currentGoal.Id == goal.Id)
-                    {
-                        selectedGoal.Name = goal.Name;
-                        selectedGoal.DueDate = goal.DueDate;
-                        selectedGoal.Difficulty = goal.Difficulty;
-                        selectedGoal.Id = goal.Id;
-                    }
-                }
-            }
-                             
+            var selectedGoalId = (e.CurrentSelection[0] as Goal).Id;
 
-            new DataStore(selectedGoal, false);
+            new DataStore(selectedGoalId);
 
             await Navigation.PushModalAsync(new AddGoalPage("Edit"));
+
+            ((CollectionView)sender).SelectedItem = null; // Deselecting goal
         }
         private async void AddTaskButton_Clicked(object sender, EventArgs e)
         {
@@ -46,7 +38,8 @@ namespace Flyout_Test.Views
         }
         void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            
+            GoalCollectionView.SelectedItem = this;
+            DisplayAlert((GoalCollectionView.SelectedItem as Goal).Name, "Test", "OK");
         }
     }
 }
