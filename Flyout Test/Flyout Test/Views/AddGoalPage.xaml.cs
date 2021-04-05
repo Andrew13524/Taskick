@@ -20,15 +20,7 @@ namespace Flyout_Test.Views
             {                
                 if (AddGoalPageViewModel.State == Mode.Add) // If adding a goal, execute save command with new instance of a goal object
                 {
-                    ((AddGoalPageViewModel)BindingContext).SaveCommand.Execute(new Goal()
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        Name = goalName.Text,
-                        DueDate = dueDatePicker.Date,
-                        Difficulty = difficultySelector.SelectedItem.ToString()
-                    });
-
-                    await Navigation.PopAsync();
+                    ((AddGoalPageViewModel)BindingContext).SaveCommand.Execute(new Goal(goalName.Text, dueDatePicker.Date, difficultySelector.SelectedItem.ToString()));
                 }                   
                 else if (AddGoalPageViewModel.State == Mode.Edit) // If editing a goal, execute save command with the currently selected goal object ID
                 {
@@ -39,17 +31,10 @@ namespace Flyout_Test.Views
                         DueDate = dueDatePicker.Date,
                         Difficulty = difficultySelector.SelectedItem.ToString()
                     });
-                    
-                    await Navigation.PopModalAsync();
                 }                                  
             }
             else
                 await DisplayAlert("Empty field", "Please fill in the fields.", "Ok");
-        }
-        async void OnDeleteButton_CLicked(object sender, EventArgs e)
-        {
-            ((AddGoalPageViewModel)BindingContext).DeleteCommand.Execute(DataStore.SelectedGoalID);
-            await Navigation.PopModalAsync();
         }
     }
 }

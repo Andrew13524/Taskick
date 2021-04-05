@@ -2,10 +2,14 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:Flyout_Test.Views"
+       xmlns:vm="clr-namespace:Taskick.ViewModels"
        Title="Flyout_Test"
        FlyoutBackgroundColor="#282828"
        x:Class="Flyout_Test.AppShell">
 
+    <Shell.BindingContext>
+        <vm:AppShellViewModel/>
+    </Shell.BindingContext>
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
@@ -96,20 +100,20 @@
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
                 
-                <Label Text="{Binding Name}" 
+                <Label Text="{Binding Name, Mode=TwoWay}" 
                        Grid.Row="1" FontAttributes="Bold" FontSize="25" Padding="-5,0,0,0" Margin="5" TextColor="White"/>
                 
-                <Label Text="{Binding Level}" 
+                <Label Text="{Binding Level, Mode=TwoWay}" 
                        Grid.Row="2" FontAttributes="Bold" Padding="-5,5" Margin="5" FontSize="16" TextColor="#2196f3"/>
                 
                 <Label Text="Experience Points" 
                        Grid.Row="3" FontAttributes="Bold" Padding="-5,1" Margin="5" FontSize="16" TextColor="#b3b3b3"/>
                 
-                <Label Text="{Binding Experience}"
+                <Label Text="{Binding Experience, Mode=TwoWay}"
                        Grid.Row="4" Padding="-5,-4" Margin="5" FontSize="14" TextColor="#b3b3b3"/>
 
 
-                <ProgressBar x:Name="experienceProgressBar" Grid.Row="5" Progress=".5" ScaleY="3" BackgroundColor="#90caf9" ProgressColor="#2196f3" />
+                <ProgressBar x:Name="experienceProgressBar" Grid.Row="5" Progress="{Binding LevelPercentage, Mode=TwoWay}" ScaleY="3" BackgroundColor="#90caf9" ProgressColor="#2196f3" />
 
 
             </Grid>

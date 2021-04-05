@@ -19,12 +19,12 @@
         <StackLayout Padding="10,0,10,0">
             
             <Label Text="Taskick"
-                   Padding="5"
+                   Padding="0"
                    TextColor="White"                     
                    FontAttributes="Bold"
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"                  
-                   FontSize="35"/>
+                   FontSize="40"/>
 
             <Label Text="Taskick is desinged to keep you productive, and to keep your life on track!"
                    Padding="5"
@@ -43,7 +43,7 @@
                    HorizontalTextAlignment="Center"                  
                    FontSize="30"/>
                 
-                <Label Text="Seems like your new around here."
+                <Label Text="Seems like you're new around here."
                    Padding="-10,0,0,0"
                    TextColor="#b3b3b3"   
                    FontAttributes="Bold"
@@ -63,12 +63,12 @@
                    TextColor="#b3b3b3" 
                    FontAttributes="Bold" 
                    VerticalOptions="Center" 
-                   FontSize="24" />
+                   FontSize="20" />
 
                 <Entry x:Name="firstName"
                    Text="Enter your first name"
                    TextColor="#b3b3b3"
-                   FontSize="Medium"
+                   FontSize="20"
                    VerticalOptions="Start"/>
 
                 <Label Text="Last Name" 
@@ -76,12 +76,12 @@
                    TextColor="#b3b3b3"
                    FontAttributes="Bold" 
                    VerticalOptions="Center" 
-                   FontSize="24" />
+                   FontSize="20" />
 
                 <Entry x:Name="lastName"
                    Text="Enter your last name"
+                   FontSize="20"
                    TextColor="#b3b3b3"
-                   FontSize="Medium"
                    VerticalOptions="Start"/>
 
                 <Label Text="Positive attitudes and efficiency awaits!"

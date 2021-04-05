@@ -3,24 +3,19 @@ using Taskick.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Taskick.ViewModels;
+using Flyout_Test.Views;
 
-namespace Flyout_Test // BindingContext = new AppShellViewModel();
+namespace Flyout_Test 
 {
     public partial class AppShell : Xamarin.Forms.Shell
     {
         public AppShell()
         {
             InitializeComponent();
-        }
-        public AppShell(string username) // Used for when user first enters their name on Welcome Page
-        {
-            InitializeComponent();
-            BindingContext = new AppShellViewModel(username);            
-        }       
-        private async void OnMenuItemClicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync("//LoginPage");
 
+            Routing.RegisterRoute(nameof(AddGoalPage), typeof(AddGoalPage));
+
+            BindingContext = new AppShellViewModel();
         }
     }
 }

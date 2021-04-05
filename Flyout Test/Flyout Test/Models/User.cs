@@ -8,19 +8,23 @@ namespace Taskick.Models
         public string Name { get; set; }
         public int Level { get; set; }
         public double Experience { get; set; }
-        public double LevelPercentage { get; set; }
+        public double LevelPercentage { get { return Experience / RequiredExperience; } } // (exp / required exp) before proceeding to the next level (used for progress bar)
+        public User()
+        {
+
+        }
         public User(string name)
         {
             Name = name;
             Level = 1;
-            Experience = 0;      // (exp / required exp) before proceeding to the next level (used for progress bar)
-            LevelPercentage = Experience / RequiredExperience;
+            Experience = 0;      
         }
         public void UpdateLevel(double experience)
         {
             this.Experience += experience;
-            if (Experience >= RequiredExperience) // Checks if user has enough experience to lvl
-            {                                     // If so, subtract experience value and ++lvl
+            
+            while (Experience >= RequiredExperience) // Checks if user has enough experience to lvl
+            {                                        // If so, subtract experience value and ++lvl
                 this.Experience -= RequiredExperience;
                 this.Level++;
 

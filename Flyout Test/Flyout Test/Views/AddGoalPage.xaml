@@ -20,7 +20,7 @@
 
             <Entry x:Name="goalName"
                 TextColor="#b3b3b3"
-                Text="{Binding SelectedGoal.Name}"/>
+                Text="{Binding Goal.Name}"/>
 
             <Label Text="Date"
                    TextColor="#b3b3b3" 
@@ -28,7 +28,7 @@
                    FontSize="24"
                    Padding="0,0,0,-15"/>
 
-            <DatePicker x:Name="dueDatePicker" Date="{Binding SelectedGoal.DueDate}" TextColor="#b3b3b3"/>
+            <DatePicker x:Name="dueDatePicker" Date="{Binding Goal.DueDate}" TextColor="#b3b3b3"/>
 
             <Label Text="Difficulty"
                    TextColor="#b3b3b3" 
@@ -36,7 +36,7 @@
                    FontSize="24"
                    Padding="0,0,0,-15"/>
 
-            <Picker x:Name="difficultySelector" Title="Select difficulty" SelectedItem="{Binding SelectedGoal.Difficulty}" TitleColor="#b3b3b3" TextColor="#b3b3b3">
+            <Picker x:Name="difficultySelector" Title="" SelectedItem="{Binding Goal.Difficulty}" TitleColor="#b3b3b3" TextColor="#b3b3b3">
                 <Picker.Items>
                     <x:String>Easy</x:String>
                     <x:String>Medium</x:String>
@@ -46,7 +46,7 @@
             </Picker>
 
             <Button x:Name="AddTask" Text="{Binding AddGoalButtonText}" Padding="0,0,0,0" Clicked="AddGoalButton_Clicked"/>
-            <Button x:Name="EditTask" Text="Delete" BackgroundColor="#f05454" IsVisible="{Binding IsDeleteButtonVisible}" Padding="0,0,0,0" Clicked="OnDeleteButton_CLicked"/>
+            <Button x:Name="EditTask" Text="Delete" Command="{Binding DeleteCommand}" BackgroundColor="#f05454" IsVisible="{Binding IsDeleteButtonVisible}" Padding="0,0,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -9,6 +9,8 @@ namespace Taskick.Models
         public DateTime DueDate { get; set; }
         public string Difficulty { get; set; }
         public int ExpValue { get { return GetExpValue(Difficulty); } }
+        public bool IsCompleted { get; set; }
+        public bool IsEnabled { get { return !IsCompleted; } } // Determines checkbox can be clicked or not
         public Goal()
         {
             
@@ -16,6 +18,7 @@ namespace Taskick.Models
         public Goal(string name, DateTime dueDate, string difficulty)
         {
             AssignValues(name, dueDate, difficulty);
+            Id = Guid.NewGuid().ToString();
         }
         public Goal(string name, DateTime dueDate, string difficulty, string id)
         {
@@ -26,7 +29,8 @@ namespace Taskick.Models
         {
             Name = name;
             DueDate = dueDate;
-            Difficulty = difficulty;           
+            Difficulty = difficulty;
+            IsCompleted = false;
         }
         public int GetExpValue(string difficulty)
         {

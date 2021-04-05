@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Taskick.Models;
 using System.Collections.ObjectModel;
+using Taskick.Services;
 
 namespace Taskick.ViewModels
 {
@@ -35,23 +36,21 @@ namespace Taskick.ViewModels
                 OnPropertyChanged(nameof(Experience));
             }
         }
-        public string LevelPercentage
+        public double LevelPercentage
         {
-            get => Preferences.Get(nameof(LevelPercentage), null);
+            get => Preferences.Get(nameof(LevelPercentage), 0.0);
             set
             {
                 Preferences.Set(nameof(LevelPercentage), value);
                 OnPropertyChanged(nameof(LevelPercentage));
             }
         }
-        public AppShellViewModel(string username)
-        {                                       
-            User user = new User(username);    // Using input (firstName + lastName) from user and creating User object
-
-            Name = user.Name;
-            Level = "Level " + user.Level.ToString();
-            Experience = user.Experience.ToString() + @"/" + user.RequiredExperience.ToString();
-            LevelPercentage = user.LevelPercentage.ToString();
+        public AppShellViewModel()
+        {
+            Name =              $"{DataStore.CurrentUser.Name}";
+            Level =             $"Level {DataStore.CurrentUser.Level}";
+            Experience =        $"{DataStore.CurrentUser.Experience} / {DataStore.CurrentUser.RequiredExperience}";
+            LevelPercentage =   DataStore.CurrentUser.LevelPercentage;
         }    
     }
 }

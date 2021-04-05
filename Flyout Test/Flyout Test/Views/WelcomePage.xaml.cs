@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Taskick.Models;
+using Taskick.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,13 +17,21 @@ namespace Flyout_Test.Views
         {
             InitializeComponent();
         }
-        private void DoneButton_Clicked(object sender, EventArgs e)
-        {           
-                // If user enters first and last name, open AppShell
-            if (firstName.Text.Length > 0 && lastName.Text.Length > 0)
-                Application.Current.MainPage = new AppShell(firstName.Text + " " + lastName.Text);
-            else
-                return; // Create warning "Please enter your name."           
+        private async void DoneButton_Clicked(object sender, EventArgs e)
+        {
+            // If user enters first and last name, open AppShell
+            if ((!string.IsNullOrWhiteSpace(firstName.Text) && !string.IsNullOrWhiteSpace(lastName.Text)) && firstName.Text != "Enter your first name" && lastName.Text != "Enter your last name")
+            {
+                if (firstName.Text.Length + lastName.Text.Length <= 17) // 18
+                {
+                    new DataStore(new User($"{firstName.Text} {lastName.Text}"));
+                    Application.Current.MainPage = new AppShell();
+                }
+                else await DisplayAlert("", "Sorry, the name you entered is too long", "OK");               
+            }
+            else await DisplayAlert("", "Please enter your full name", "OK");
+
+
         }
     }
 }
