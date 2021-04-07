@@ -5,27 +5,29 @@ using Taskick.Services;
 using Xamarin.Forms;
 using Taskick.Models;
 using System.Linq;
+using Xamarin.Essentials;
 
 namespace Flyout_Test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ToDoPage
     {
-        public ToDoPage()
-        {
-            InitializeComponent();
+        public ToDoPage()          
+        { 
+            InitializeComponent(); 
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.CurrentSelection.Count == 0)
-                return;
-            if ((e.CurrentSelection[0] as Goal).IsCompleted) // If goal already completed, do not execute
-                return;
-
-            new DataStore((e.CurrentSelection[0] as Goal).Id);
             
-            await Navigation.PushModalAsync(new AddGoalPage("Edit"));
+            if (e.CurrentSelection.Count == 0) return;              // If selection null or already completed, do not execute
 
+            new DataStore((e.CurrentSelection[0] as Goal).Id); // Selecting goal
+
+            if (!DataStore.GoalList[DataStore.GetGoalIndex()].IsCompleted)
+            {
+                await Navigation.PushModalAsync(new AddGoalPage("Edit"));
+            }               
+            
             ((CollectionView)sender).SelectedItem = null; // Deselecting goal
         }
         void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)

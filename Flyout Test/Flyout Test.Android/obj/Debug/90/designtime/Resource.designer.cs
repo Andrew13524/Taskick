@@ -8542,6 +8542,9 @@ namespace Flyout_Test.Droid
 			// aapt resource value: 0x7F07009C
 			public const int tooltip_frame_light = 2131165340;
 			
+			// aapt resource value: 0x7F07009D
+			public const int Walking_Icon = 2131165341;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

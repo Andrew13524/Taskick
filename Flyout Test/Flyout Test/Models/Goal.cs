@@ -11,12 +11,17 @@ namespace Taskick.Models
         public DateTime DueDate { get; set; }
         public string Difficulty { get; set; }
         public int ExpValue { get { return GetExpValue(); } }
+
         public bool IsCompleted
         {
-            get => Preferences.Get(nameof(IsCompleted), true);
-            set
+            get
             {
-                Preferences.Set(nameof(IsCompleted), value);
+                return Preferences.Get(nameof(IsCompleted) + Id, false);
+            }
+            set
+            {                                   // If completed, cannot be uncompleted
+                if (this.IsCompleted == true) Preferences.Set(nameof(IsCompleted) + Id, true); 
+                else                          Preferences.Set(nameof(IsCompleted) + Id, value);
                 OnPropertyChanged(nameof(IsCompleted));
             }
         }

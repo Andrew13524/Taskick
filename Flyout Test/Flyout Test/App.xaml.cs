@@ -19,7 +19,8 @@ namespace Flyout_Test
         public App()
         {
             InitializeComponent();
-
+            // Clearing Preferences for testing purposes
+            Preferences.Clear();
             // On Startup, go to Welcome Page
             MainPage = new NavigationPage(new WelcomePage());          
         }

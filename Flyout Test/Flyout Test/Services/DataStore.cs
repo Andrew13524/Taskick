@@ -32,20 +32,34 @@ namespace Taskick.Services
             if (mode == "Add") goalList.Add(goal);
             else if (mode == "Complete")
             {
-                foreach (Goal completedGoal in CompletedGoals) // Check if exp for completed goal has already been added
+                //SetToComplete();
+
+                foreach (Goal completedGoal in CompletedGoals)
                 {
                     if (completedGoal.Id == goal.Id)
                     {
                         return;
                     }
                 }
+
                 User.UpdateLevel(goal.ExpValue);
-                new User();
                 completedGoals.Add(goal);
             }
         }
 
         public void ChangeGoal(Goal changedGoal) => goalList[SelectedGoalIndex] = changedGoal;
+        public void SetToComplete()
+        {
+            foreach(Goal uncompletedGoal in GoalList)
+            {
+                foreach (Goal completedGoal in CompletedGoals) // Check if any goals have already been completed
+                {
+                    if (completedGoal.Id == uncompletedGoal.Id) uncompletedGoal.IsCompleted = true;
+                    
+                    else uncompletedGoal.IsCompleted = false;
+                }
+            }           
+        }
         public static int GetGoalIndex()
         {
             foreach (Goal goal in goalList)
