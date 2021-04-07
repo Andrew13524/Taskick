@@ -1,26 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Taskick.ViewModels"
-             Title="To-Do"
-             BackgroundColor="#121212"             
-             x:Name="MyPage"             
+             xmlns:vm="clr-namespace:Taskick.ViewModels"
+             xmlns:controls="clr-namespace:Taskick.Controls;assembly=Taskick"
+             Title="To-Do"          
+             x:Name="MyPage"                        
+             BackgroundColor="{StaticResource AppBackgroundColor}"   
              x:Class="Flyout_Test.Views.ToDoPage">
+    
     <ContentPage.BindingContext>
-        <local:ToDoPageViewModel/>
+        <vm:ToDoPageViewModel/>
     </ContentPage.BindingContext>
 
     <StackLayout>
+
         <CollectionView x:Name="GoalCollectionView" ItemsSource="{Binding GoalList}" SelectionMode="Single" SelectionChanged="OnCollectionViewSelectionChanged">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid VerticalOptions="Center" RowSpacing="0" HorizontalOptions="Center" Background="#121212">
+
+                    <Grid VerticalOptions="Center" RowSpacing="0" HorizontalOptions="Center" IsEnabled="{Binding IsCompleted, Converter={StaticResource Inverter}, Mode=TwoWay}">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="10"/>
-                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="12"/>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="12"/>
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
@@ -32,16 +36,17 @@
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
 
-                        <Frame CornerRadius="5"   
-                               Padding="0"           
-                               Background="#282828"
-                               Grid.Row="1"
-                               Grid.Column="1"
-                               Grid.RowSpan="3"
-                               Grid.ColumnSpan="3"
-                               IsEnabled="{Binding IsEnabled}">
+                        <controls:CustomFrame CornerRadius="0,15,0,15"
+                                              InputTransparent="True"
+                                              Padding="0"
+                                              Grid.Row="1"
+                                              Grid.Column="1"
+                                              Grid.RowSpan="3"
+                                              Grid.ColumnSpan="3"
+                                              HasShadow="True"
+                                              BackgroundColor="{StaticResource SecondaryTextColor}">
                             <Grid>
-                                
+
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25"/>
                                     <ColumnDefinition Width="50"/>
@@ -50,45 +55,43 @@
                                     <ColumnDefinition Width="10"/>
                                     <ColumnDefinition Width="25"/>
                                 </Grid.ColumnDefinitions>
-
-                                <Label Grid.Column="3" BackgroundColor="#b3b3b3" ScaleX="1.7"/>
+                                
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource BottomGradient}" />
+                                <Label Grid.Column="0" Grid.ColumnSpan="3" ScaleX="0.825" BackgroundColor="{StaticResource BottomGradient}" />
                                 
                             </Grid>
-                        </Frame>
+                        </controls:CustomFrame>
 
                         <Label Text="{Binding Name}"
+                               FontFamily="{StaticResource BoldFont}"
+                               FontSize="{StaticResource SubHeaderFontSize}"
                                Grid.Column="2"
                                Grid.ColumnSpan="2"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               TextColor="#b3b3b3"
                                Grid.Row="2"
                                Grid.RowSpan="1"
-                               VerticalOptions="CenterAndExpand">
-
-                        </Label>
+                               VerticalOptions="CenterAndExpand" />
 
                         <Label Text="{Binding ExpValue, StringFormat='{0} EXP', Mode=TwoWay}"
+                               FontFamily="{StaticResource BoldFont}"
+                               FontSize="{StaticResource SubHeaderFontSize}"
+                               TextColor="{StaticResource BottomGradient}"
                                Grid.Column="3"
                                Grid.Row="2"
                                Grid.RowSpan="1"
-                               FontSize="20"
                                FontAttributes="Bold"
                                HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               TextColor="#282828"/>
+                               VerticalOptions="Center" />
 
                         <CheckBox ClassId="{Binding Id}"
                                   IsChecked="{Binding IsCompleted, Mode=TwoWay}"
-                                  IsEnabled="{Binding IsEnabled}"
+                                  IsEnabled="{Binding IsCompleted, Converter={StaticResource Inverter}, Mode=TwoWay}"
                                   CheckedChanged="OnCheckBoxCheckedChanged"
                                   Grid.Column="1"
                                   Grid.Row="2"
                                   Grid.ColumnSpan="1"
                                   VerticalOptions="Center"
-                                  HorizontalOptions="Center"
-                                  ScaleY="1.5"
-                                  ScaleX="1.5"/>
+                                  HorizontalOptions="Center"/>
+                        
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

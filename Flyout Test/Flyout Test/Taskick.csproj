@@ -10,6 +10,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fonts\Asap-Bold.ttf" />
+    <None Remove="Assets\Fonts\Asap-BoldItalic.ttf" />
+    <None Remove="Assets\Fonts\Asap-Italic.ttf" />
+    <None Remove="Assets\Fonts\Asap-Medium.ttf" />
+    <None Remove="Assets\Fonts\Asap-MediumItalic.ttf" />
+    <None Remove="Assets\Fonts\Asap-Regular.ttf" />
+    <None Remove="Assets\Fonts\Asap-SemiBold.ttf" />
+    <None Remove="Assets\Fonts\Asap-SemiBoldItalic.ttf" />
+    <None Remove="Assets\Images\BlueLines.png" />
+    <None Remove="Assets\Images\ToDoList_Icon.png" />
+    <None Remove="Assets\Images\Walking_Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Fonts\Asap-Bold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-BoldItalic.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-Italic.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-Medium.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-MediumItalic.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-Regular.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-SemiBold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Asap-SemiBoldItalic.ttf" />
+    <EmbeddedResource Include="Assets\Images\BlueLines.png" />
+    <EmbeddedResource Include="Assets\Images\ToDoList_Icon.png" />
+    <EmbeddedResource Include="Assets\Images\Walking_Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Include="Views\AddTaskPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

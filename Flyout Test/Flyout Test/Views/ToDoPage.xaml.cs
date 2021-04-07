@@ -11,19 +11,6 @@ namespace Flyout_Test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ToDoPage
     {
-        //static int goalChecked = 0;
-        //public static int GoalChecked 
-        //{ 
-        //    get 
-        //    {
-        //        return goalChecked;
-        //    }
-        //    set
-        //    {
-        //        if (goalChecked < 3) goalChecked = value; // This is terrible
-        //        else goalChecked = 1;                      // FIX AT SOME POINT !!!!!
-        //    }
-        //}
         public ToDoPage()
         {
             InitializeComponent();
@@ -32,9 +19,11 @@ namespace Flyout_Test.Views
         {
             if (e.CurrentSelection.Count == 0)
                 return;
+            if ((e.CurrentSelection[0] as Goal).IsCompleted) // If goal already completed, do not execute
+                return;
 
             new DataStore((e.CurrentSelection[0] as Goal).Id);
-
+            
             await Navigation.PushModalAsync(new AddGoalPage("Edit"));
 
             ((CollectionView)sender).SelectedItem = null; // Deselecting goal
@@ -47,11 +36,7 @@ namespace Flyout_Test.Views
             {
                 if (checkedGoal.ClassId == goal.Id)
                 {
-                    if (goal.IsCompleted)
-                    {
-                        new DataStore(goal, "Complete");
-                        //new AppShellViewModel();
-                    }
+                    new DataStore(goal, "Complete");    // Completing the selected goal
                     return;
                 }
             }

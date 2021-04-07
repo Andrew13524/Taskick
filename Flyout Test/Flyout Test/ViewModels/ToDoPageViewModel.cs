@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Taskick.ViewModels
 {
-    class ToDoPageViewModel : BaseViewModel
+    class ToDoPageViewModel
     {
         ObservableCollection<Goal> goalList = DataStore.GoalList;
         public ObservableCollection<Goal> GoalList { get { return goalList; } }

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Add Task"
-             BackgroundColor="#121212"
+             Title="Add Task"             
              xmlns:local="clr-namespace:Taskick.ViewModels"
+             BackgroundColor="{StaticResource AppBackgroundColor}"
              x:Class="Flyout_Test.Views.AddGoalPage">
+    
     <ContentPage.BindingContext>
         <local:AddGoalPageViewModel/>
     </ContentPage.BindingContext>
@@ -13,30 +14,30 @@
         <StackLayout Padding="20,20,20,0">
 
             <Label Text="Title"
-                   TextColor="#b3b3b3" 
-                   FontAttributes="Bold"
-                   FontSize="24"
-                   Padding="0,0,0,-15"/>
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="{StaticResource HeaderFontSize}"/>
 
             <Entry x:Name="goalName"
-                TextColor="#b3b3b3"
-                Text="{Binding Goal.Name}"/>
+                   Text="{Binding Goal.Name}"
+                   FontSize="{StaticResource SubHeaderFontSize}"/>
 
             <Label Text="Date"
-                   TextColor="#b3b3b3" 
-                   FontAttributes="Bold"
-                   FontSize="24"
-                   Padding="0,0,0,-15"/>
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="{StaticResource HeaderFontSize}"/>
 
-            <DatePicker x:Name="dueDatePicker" Date="{Binding Goal.DueDate}" TextColor="#b3b3b3"/>
+            <DatePicker x:Name="dueDatePicker" 
+                        Date="{Binding Goal.DueDate}"
+                        FontSize="{StaticResource SubHeaderFontSize}"/>
 
             <Label Text="Difficulty"
-                   TextColor="#b3b3b3" 
-                   FontAttributes="Bold"
-                   FontSize="24"
-                   Padding="0,0,0,-15"/>
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="{StaticResource HeaderFontSize}"/>
 
-            <Picker x:Name="difficultySelector" Title="" SelectedItem="{Binding Goal.Difficulty}" TitleColor="#b3b3b3" TextColor="#b3b3b3">
+            <Picker x:Name="difficultySelector" 
+                    SelectedItem="{Binding Goal.Difficulty}"
+                    FontFamily="{StaticResource RegularFont}"
+                    FontSize="{StaticResource SubHeaderFontSize}">
+                
                 <Picker.Items>
                     <x:String>Easy</x:String>
                     <x:String>Medium</x:String>
@@ -45,8 +46,16 @@
                 </Picker.Items>
             </Picker>
 
-            <Button x:Name="AddTask" Text="{Binding AddGoalButtonText}" Padding="0,0,0,0" Clicked="AddGoalButton_Clicked"/>
-            <Button x:Name="EditTask" Text="Delete" Command="{Binding DeleteCommand}" BackgroundColor="#f05454" IsVisible="{Binding IsDeleteButtonVisible}" Padding="0,0,0,0"/>
+            <Button x:Name="AddTask" 
+                    Text="{Binding AddGoalButtonText}" 
+                    Clicked="AddGoalButton_Clicked"/>
+            
+            <Button x:Name="EditTask" 
+                    Text="Delete" 
+                    Command="{Binding DeleteCommand}"                    
+                    IsVisible="{Binding IsDeleteButtonVisible}"
+                    BackgroundColor="{StaticResource Red}" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

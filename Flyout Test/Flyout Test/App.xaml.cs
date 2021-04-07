@@ -4,16 +4,22 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 
+[assembly: ExportFont("Asap-Bold.ttf",              Alias = "Asap-Bold")]
+[assembly: ExportFont("Asap-BoldItalic.ttf",        Alias = "Asap-BoldItalic")]
+[assembly: ExportFont("Asap-Italic.ttf",            Alias = "Asap-Italic")]
+[assembly: ExportFont("Asap-Medium.ttf",            Alias = "Asap-Medium")]
+[assembly: ExportFont("Asap-MediumItalic.ttf",      Alias = "Asap-MediumItalic")]
+[assembly: ExportFont("Asap-Regular.ttf",           Alias = "Asap-Regular")]
+[assembly: ExportFont("Asap-SemiBold.ttf",          Alias = "Asap-SemiBold")]
+[assembly: ExportFont("Asap-SemiBoldItalic.ttf",    Alias = "Asap-SemiBoldItalic")]
 namespace Flyout_Test
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
-            // For testing purposes, clearing preferences on each startup            
-            Preferences.Clear();
+
             // On Startup, go to Welcome Page
             MainPage = new NavigationPage(new WelcomePage());          
         }

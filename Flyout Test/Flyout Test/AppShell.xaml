@@ -4,93 +4,58 @@
        xmlns:local="clr-namespace:Flyout_Test.Views"
        xmlns:vm="clr-namespace:Taskick.ViewModels"
        Title="Flyout_Test"
-       FlyoutBackgroundColor="#282828"
+       FlyoutBackgroundColor="{StaticResource BottomGradient}"
        x:Class="Flyout_Test.AppShell">
 
     <Shell.BindingContext>
         <vm:AppShellViewModel/>
     </Shell.BindingContext>
-    <!--
-        The overall app visual hierarchy is defined here, along with navigation.
-    
-        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
-    -->
 
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="#1e1e1e" />
-                <Setter Property="Shell.ForegroundColor" Value="#B3B3B3" />
-                <Setter Property="Shell.TitleColor" Value="White" />
-                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource MenuBarColor}" />
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <!--Default Styles for all Flyout Items-->
             
-            <!--
-            Default Styles for all Flyout Items
-            https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes
-            -->
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}" />
+                <Setter Property="TextColor" Value="{StaticResource AppBackgroundColor}" />
             </Style>
+            
             <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="LightBlue"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#282828" />
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#b3b3b3" />
+                                    
+                                    <Setter Property="BackgroundColor" Value="{StaticResource BottomGradient}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource SecondaryTextColor}" />
+                                    
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#404040"/>
+                                    
+                                    <Setter Property="BackgroundColor" Value="{StaticResource TopGradient}"/>
+                                    
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </Setter>
             </Style>
-
-            <!--
-            Custom Style you can apply to any Flyout Item
-            -->
-            
-            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-            
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- 
-        When the Flyout is visible this defines the content to display in the flyout.
-        FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
-        https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
-    -->
-    
-    
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <Grid Padding="25,20,45,30" RowSpacing="-20" ColumnSpacing="0" BackgroundColor="#1e1e1e">
+            <Grid Padding="25,20,45,30" RowSpacing="-20" ColumnSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15" />
                     <RowDefinition Height="*" />
@@ -100,99 +65,52 @@
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
                 
-                <Label Text="{Binding Name, Mode=TwoWay}" 
-                       Grid.Row="1" FontAttributes="Bold" FontSize="25" Padding="-5,0,0,0" Margin="5" TextColor="White"/>
+                <Label Text="{Binding Name, Mode=TwoWay}"  
+                       FontFamily="{StaticResource BoldFont}"
+                       FontSize="{StaticResource HeaderFontSize}"
+                       TextColor="{StaticResource PrimaryTextColor}" 
+                       Grid.Row="1" 
+                       Padding="-5,0,0,0" 
+                       Margin="5"/>
                 
                 <Label Text="{Binding Level, Mode=TwoWay}" 
-                       Grid.Row="2" FontAttributes="Bold" Padding="-5,5" Margin="5" FontSize="16" TextColor="#2196f3"/>
+                       FontFamily="{StaticResource BoldFont}"
+                       FontSize="{StaticResource SubHeaderFontSize}"
+                       TextColor="{StaticResource Blue}" 
+                       Grid.Row="2" 
+                       Padding="-5,5" 
+                       Margin="5"/>
                 
-                <Label Text="Experience Points" 
-                       Grid.Row="3" FontAttributes="Bold" Padding="-5,1" Margin="5" FontSize="16" TextColor="#b3b3b3"/>
-                
+                <Label Text="Experience Points" x:Name="testLabel"
+                       FontFamily="{StaticResource SemiBoldFont}"
+                       FontSize="{StaticResource SubHeaderFontSize}"
+                       Grid.Row="3" 
+                       Padding="-5,1" 
+                       Margin="5"/>
+
                 <Label Text="{Binding Experience, Mode=TwoWay}"
-                       Grid.Row="4" Padding="-5,-4" Margin="5" FontSize="14" TextColor="#b3b3b3"/>
+                       FontFamily="{StaticResource RegularFont}"
+                       FontSize="{StaticResource SmallFontSize}"
+                       FontAttributes="None"
+                       Grid.Row="4" 
+                       Padding="-5,-3" 
+                       Margin="5"/>
 
-
-                <ProgressBar x:Name="experienceProgressBar" Grid.Row="5" Progress="{Binding LevelPercentage, Mode=TwoWay}" ScaleY="3" BackgroundColor="#90caf9" ProgressColor="#2196f3" />
-
-
+                <ProgressBar x:Name="progressBar"
+                             Progress="{Binding LevelPercentage}" 
+                             Grid.Row="5" />
+                
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
 
-    <FlyoutItem Title="To-Do">
+    <FlyoutItem Icon="ToDoList_Icon" Title="To-Do">
         <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Walking">
+    
+    <FlyoutItem Icon="Walking_Icon" Title="Walking">
         <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
     </FlyoutItem>
     
-    <!--                      Trying to get custom flyout items working
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*" />
-                    <ColumnDefinition Width="0.8*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <Label Grid.Row="1" Grid.Column="1"
-                   Text="{Binding Title}"
-                   
-                   VerticalTextAlignment="Center" />
-            </Grid>
-        </DataTemplate>
-    </Shell.ItemTemplate>
-    -->
-    
-
-    <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-
-    <!--
-        TabBar lets you define content that won't show up in a flyout menu. When this content is active
-        the flyout menu won't be available. This is useful for creating areas of the application where 
-        you don't want users to be able to navigate away from. If you would like to navigate to this 
-        content you can do so by calling 
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-
-    <!-- Optional Templates 
-    // These may be provided inline as below or as separate classes.
-
-    // This header appears at the top of the Flyout.
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyout-header
-    <Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <Grid>ContentHere</Grid>
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
-
-    // ItemTemplate is for ShellItems as displayed in a Flyout
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-flyoutitem-appearance
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Title, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.ItemTemplate>
-
-    // MenuItemTemplate is for MenuItems as displayed in a Flyout
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-menuitem-appearance
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Text, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
-
-    -->
-
 </Shell>

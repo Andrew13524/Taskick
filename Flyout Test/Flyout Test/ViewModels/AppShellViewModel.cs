@@ -8,49 +8,48 @@ using Taskick.Services;
 namespace Taskick.ViewModels
 {
     class AppShellViewModel : BaseViewModel
-    {
-        public string Name                              // Username, level exp and so on set as preferences
-        {                                               // so that this information is stored and saved after even if the 
-            get => Preferences.Get(nameof(Name), null); // user closes the application
+    {       
+        public string Name
+        {
+            get => Preferences.Get(nameof(User.Name), null);
             set
-            {                                           // OnPropertyChanged() called to always update any changed values
-                Preferences.Set(nameof(Name), value);
-                OnPropertyChanged(nameof(Name));
+            {
+                Preferences.Set(nameof(User.Name), value);
+                OnPropertyChanged(nameof(User.Name));
             }
         }
         public string Level
         {
-            get => Preferences.Get(nameof(Level), null);
+            get => Preferences.Get(nameof(User.Level), null);
             set
             {
-                Preferences.Set(nameof(Level), value);
-                OnPropertyChanged(nameof(Level));
+                Preferences.Set(nameof(User.Level), value);
+                OnPropertyChanged(nameof(User.Level));
             }
         }
         public string Experience
         {
-            get => Preferences.Get(nameof(Experience), null);
+            get => Preferences.Get(nameof(User.Experience), null);
             set
             {
-                Preferences.Set(nameof(Experience), value);
-                OnPropertyChanged(nameof(Experience));
+                Preferences.Set(nameof(User.Experience), value);
+                OnPropertyChanged(nameof(User.Experience));
             }
         }
         public double LevelPercentage
         {
-            get => Preferences.Get(nameof(LevelPercentage), 0.0);
+            get => Preferences.Get(nameof(User.LevelPercentage), 0.0);
             set
             {
-                Preferences.Set(nameof(LevelPercentage), value);
-                OnPropertyChanged(nameof(LevelPercentage));
+                Preferences.Set(nameof(User.LevelPercentage), value);
+                OnPropertyChanged(nameof(User.LevelPercentage));
             }
         }
         public AppShellViewModel()
         {
-            Name =              $"{DataStore.CurrentUser.Name}";
-            Level =             $"Level {DataStore.CurrentUser.Level}";
-            Experience =        $"{DataStore.CurrentUser.Experience} / {DataStore.CurrentUser.RequiredExperience}";
-            LevelPercentage =   DataStore.CurrentUser.LevelPercentage;
+            Level = User.Level;
+            Experience = User.Experience;
+            LevelPercentage = User.LevelPercentage;
         }    
     }
 }

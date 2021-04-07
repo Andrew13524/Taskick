@@ -548,9 +548,7 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\mipmap-xxhdpi\launcher_foreground.png
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\mipmap-xxxhdpi\icon.png
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\xamarin_logo.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\icon_about.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\icon_feed.png
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\bluelines.png
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\uploadflags.txt
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\Flyout Test.Android.dll
@@ -936,6 +934,7 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\WebAuthenticatorCallbackActivity.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64a98abb514ffad9f1\CustomTabsServiceConnectionImpl.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64a98abb514ffad9f1\KeepAliveService.java
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64cca29834ac7159a9\CustomFrameRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ButtonRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\FrameRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ImageRenderer.java
@@ -1027,3 +1026,5 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\todolist_icon.png
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\walking_icon.png

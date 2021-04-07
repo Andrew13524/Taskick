@@ -1,16 +1,25 @@
 ﻿using System;
+using Taskick.ViewModels;
+using Xamarin.Essentials;
 
 namespace Taskick.Models
 {
-    public class Goal
+    public class Goal : BaseViewModel
     {
         public string Id { get; set; }
         public string Name { get; set; }
         public DateTime DueDate { get; set; }
         public string Difficulty { get; set; }
-        public int ExpValue { get { return GetExpValue(Difficulty); } }
-        public bool IsCompleted { get; set; }
-        public bool IsEnabled { get { return !IsCompleted; } } // Determines checkbox can be clicked or not
+        public int ExpValue { get { return GetExpValue(); } }
+        public bool IsCompleted
+        {
+            get => Preferences.Get(nameof(IsCompleted), true);
+            set
+            {
+                Preferences.Set(nameof(IsCompleted), value);
+                OnPropertyChanged(nameof(IsCompleted));
+            }
+        }
         public Goal()
         {
             
@@ -32,7 +41,7 @@ namespace Taskick.Models
             Difficulty = difficulty;
             IsCompleted = false;
         }
-        public int GetExpValue(string difficulty)
+        public int GetExpValue()
         {
             if (!string.IsNullOrEmpty(Difficulty))
             {
