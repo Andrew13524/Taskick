@@ -13,19 +13,17 @@ namespace Flyout_Test
         public AppShell()
         {
             InitializeComponent();
-            
+
             Routing.RegisterRoute(nameof(AddGoalPage), typeof(AddGoalPage));
             
             PropertyChanged += Shell_PropertyChanged;
         }
-
         private void Shell_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName.Equals("FlyoutIsPresented"))
                 if (FlyoutIsPresented) OnFlyoutOpened();
                 else OnFlyoutClosed();
         }
-
         public void OnFlyoutOpened()
         {
             BindingContext = new AppShellViewModel(); // each time the flyout menu is opened, refresh user values

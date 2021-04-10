@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Add Task"             
-             xmlns:local="clr-namespace:Taskick.ViewModels"
+             xmlns:local="clr-namespace:Taskick.ViewModels" 
+             x:DataType="local:AddGoalPageViewModel"
              BackgroundColor="{StaticResource AppBackgroundColor}"
              x:Class="Flyout_Test.Views.AddGoalPage">
     
@@ -17,27 +18,24 @@
                    FontFamily="{StaticResource BoldFont}"
                    FontSize="{StaticResource HeaderFontSize}"/>
 
-            <Entry x:Name="goalName"
-                   Text="{Binding Goal.Name}"
+            <Entry Text="{Binding Title}"
                    FontSize="{StaticResource SubHeaderFontSize}"/>
 
             <Label Text="Date"
                    FontFamily="{StaticResource BoldFont}"
                    FontSize="{StaticResource HeaderFontSize}"/>
 
-            <DatePicker x:Name="dueDatePicker" 
-                        Date="{Binding Goal.DueDate}"
+            <DatePicker Date="{Binding DueDate}"
                         FontSize="{StaticResource SubHeaderFontSize}"/>
 
             <Label Text="Difficulty"
                    FontFamily="{StaticResource BoldFont}"
                    FontSize="{StaticResource HeaderFontSize}"/>
 
-            <Picker x:Name="difficultySelector" 
-                    SelectedItem="{Binding Goal.Difficulty}"
+            <Picker SelectedItem="{Binding Difficulty}"
                     FontFamily="{StaticResource RegularFont}"
                     FontSize="{StaticResource SubHeaderFontSize}">
-                
+
                 <Picker.Items>
                     <x:String>Easy</x:String>
                     <x:String>Medium</x:String>
@@ -46,12 +44,10 @@
                 </Picker.Items>
             </Picker>
 
-            <Button x:Name="AddTask" 
-                    Text="{Binding AddGoalButtonText}" 
-                    Clicked="AddGoalButton_Clicked"/>
+            <Button Text="{Binding SaveButtonText}" 
+                    Command="{Binding SaveCommand}"/>
             
-            <Button x:Name="EditTask" 
-                    Text="Delete" 
+            <Button Text="Delete" 
                     Command="{Binding DeleteCommand}"                    
                     IsVisible="{Binding IsDeleteButtonVisible}"
                     BackgroundColor="{StaticResource Red}" />

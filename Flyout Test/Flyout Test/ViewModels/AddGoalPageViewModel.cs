@@ -4,76 +4,128 @@ using Taskick.Models;
 using Xamarin.Forms;
 using Flyout_Test.Views;
 using System.Windows.Input;
-
-enum Mode { Add, Edit }
+using Xamarin.Essentials;
+using Java.Sql;
 
 namespace Taskick.ViewModels
 {
     class AddGoalPageViewModel : BaseViewModel
     {
-        Goal goal = new Goal();
-        public Goal Goal { get { return goal; } }
+        public static SaveState SaveState;
+        public string SaveButtonText { get; set; }
+        public bool IsDeleteButtonVisible { get; set; }
 
-        string addGoalButtonText;
-        public string AddGoalButtonText { get { return addGoalButtonText; } }
+        private string _title;
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                OnPropertyChanged(nameof(Title));
+            }
+        }
 
-        bool isDeleteButtonVisible;
-        public bool IsDeleteButtonVisible { get { return isDeleteButtonVisible; } }
+        private DateTime _dueDate;
+        public DateTime DueDate
+        {
+            get => _dueDate;
+            set
+            {
+                _dueDate = value;
+                OnPropertyChanged(nameof(DueDate));
+            }
+        }
 
-        public static Mode State;
+        private string _difficulty;
+        public string Difficulty
+        {
+            get => _difficulty;
+            set
+            {
+                _difficulty = value;
+                OnPropertyChanged(nameof(Difficulty));
+            }
+        }
 
         public AddGoalPageViewModel()
         {
+            switch (SaveState)
+            {
+                case SaveState.ADD: // Setting labels, dates, and difficulties upon page opening
+                    {
+                        Title = "Enter text here";
+                        DueDate = DateTime.Today;
+                        Difficulty = "Easy";
+                        SaveButtonText = "Add Task";
+                        IsDeleteButtonVisible = false;
+                        break;
+                    }
+                case SaveState.EDIT:
+                    {
+                        Title = DataStore.GoalList[DataStore.GetGoalIndex()].Title; 
+                        DueDate = DataStore.GoalList[DataStore.GetGoalIndex()].DueDate;
+                        Difficulty = DataStore.GoalList[DataStore.GetGoalIndex()].Difficulty;
+                        SaveButtonText = "Save";
+                        IsDeleteButtonVisible = true;
+                        break;
+                    }
+            }
 
+            SaveCommand = new Command(SaveButtonCommandExecute);
+            DeleteCommand = new Command(DeleteCommandExecute);
         }
-        public AddGoalPageViewModel(string mode)
+
+        public ICommand SaveCommand { get; }
+        public void SaveButtonCommandExecute()
         {
-            if (mode == "Add")
+            if (!string.IsNullOrWhiteSpace(Title))
             {
-                State = Mode.Add;
-
-                addGoalButtonText = "Add Task";
-
-                goal.Name = "Enter text here";
-                goal.DueDate = DateTime.Now;
-                goal.Difficulty = "Easy";
-                isDeleteButtonVisible = false;
+                switch (SaveState)
+                {
+                    case SaveState.ADD:       // If adding a goal, execute AddGoal command with new instance of a goal object
+                        {
+                            AddGoal(new Goal(Title, DueDate, Difficulty));
+                            break;
+                        }
+                    case SaveState.EDIT:      // If editing a goal, execute EditGoal command with the currently selected goal object ID
+                        {
+                            EditGoal(new Goal()
+                            {
+                                Id = DataStore.SelectedGoalId,
+                                Title = Title,
+                                DueDate = DueDate,
+                                Difficulty = Difficulty
+                            });
+                            break;
+                        }
+                }
             }
-            else if (mode == "Edit")
+            else
             {
-                State = Mode.Edit;
-
-                addGoalButtonText = "Save";
-                var index = DataStore.SelectedGoalIndex;
-                goal = DataStore.GoalList[index];
-                isDeleteButtonVisible = true;
+                Application.Current.MainPage.DisplayAlert("", "Please Enter a Title", "Ok");
             }
-
-            DeleteCommand = new Command(DeleteGoal);
-            SaveCommand = new Command<Goal>(SaveGoal);
         }
-        public Command<Goal> SaveCommand { get; }
-        public async void SaveGoal(Goal selectedGoal)
+
+        public async void AddGoal(Goal newGoal)
         {
-            if (State == Mode.Add)
-            {
-                new DataStore(selectedGoal, "Add");
-                await Application.Current.MainPage.Navigation.PopAsync();
-            }
-            else if (State == Mode.Edit)
-            {
-                DataStore ds = new DataStore();
-                ds.ChangeGoal(selectedGoal);
-                await Application.Current.MainPage.Navigation.PopModalAsync();
-            }
+            DataStore.SaveState = SaveState.ADD;
+            new DataStore(newGoal);
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
+        public async void EditGoal(Goal editedGoal)
+        {
+            DataStore.SaveState = SaveState.EDIT;
+            new DataStore(editedGoal);
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
+
         public ICommand DeleteCommand { get; }
-
-        public async void DeleteGoal()
+        public async void DeleteCommandExecute()
         {
             foreach (Goal goal in DataStore.GoalList)
             {
-                if (DataStore.SelectedGoalID == goal.Id)
+                if (DataStore.SelectedGoalId == goal.Id)
                 {
                     DataStore.GoalList.Remove(goal);
                     await Application.Current.MainPage.Navigation.PopModalAsync();

@@ -1,75 +1,82 @@
 ﻿using System.Collections.ObjectModel;
 using Taskick.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Taskick.Services
 {
     public class DataStore
     {
+        public static SaveState SaveState;
+
 
         private static ObservableCollection<Goal> goalList = new ObservableCollection<Goal>();
-        public static ObservableCollection<Goal> GoalList { get { return goalList; } }
+        public static ObservableCollection<Goal> GoalList => goalList;
 
 
-        private static string selectedGoalID;
-        public static string SelectedGoalID => selectedGoalID;
+        private static List<DateTime> goalDates = new List<DateTime>();
+        public static List<DateTime> GoalDates => SortAscending(goalDates); // Displaying goal dates in order
 
 
-        private static List<Goal> completedGoals = new List<Goal>();
-        public static List<Goal> CompletedGoals { get { return completedGoals; } }
+        public static string SelectedGoalId;
+        public static int SelectedGoalIndex => GetGoalIndex(); 
 
-
-        private static int selectedGoalIndex => GetGoalIndex();
-        public static int SelectedGoalIndex { get { return selectedGoalIndex; } }
-
-        public DataStore()
+        public DataStore(Goal goal)
         {
-
-        }  
-        public DataStore (string selectedGoalId) => selectedGoalID = selectedGoalId;
-        public DataStore(Goal goal, string mode)
-        {
-            if (mode == "Add") goalList.Add(goal);
-            else if (mode == "Complete")
+            switch (SaveState)
             {
-                //SetToComplete();
-
-                foreach (Goal completedGoal in CompletedGoals)
-                {
-                    if (completedGoal.Id == goal.Id)
+                case SaveState.ADD:
                     {
-                        return;
+                        AddGoal(goal);
+                        break;
                     }
-                }
-
-                User.UpdateLevel(goal.ExpValue);
-                completedGoals.Add(goal);
+                case SaveState.EDIT:
+                    {
+                        EditGoal(goal);
+                        break;
+                    }
+                case SaveState.COMPLETE:
+                    {
+                        CompleteGoal(goal);
+                        break;
+                    }
             }
         }
 
-        public void ChangeGoal(Goal changedGoal) => goalList[SelectedGoalIndex] = changedGoal;
-        public void SetToComplete()
+        public void AddGoal(Goal newGoal)
         {
-            foreach(Goal uncompletedGoal in GoalList)
+            goalList.Add(newGoal);
+        }
+        public void EditGoal(Goal editedGoal) => goalList[SelectedGoalIndex] = editedGoal;
+        public void CompleteGoal(Goal completedGoal)
+        {
+            User.UpdateLevel(completedGoal.ExpValue);
+        }
+        public static void UpdateGoalList()
+        {
+            for (int i = 0; i < GoalList.Count; i++)
             {
-                foreach (Goal completedGoal in CompletedGoals) // Check if any goals have already been completed
+                if (GoalList[i].IsCompleted)        // If completed, remove from list
                 {
-                    if (completedGoal.Id == uncompletedGoal.Id) uncompletedGoal.IsCompleted = true;
-                    
-                    else uncompletedGoal.IsCompleted = false;
+                    GoalList.RemoveAt(i--);
                 }
-            }           
+            }
         }
         public static int GetGoalIndex()
         {
             foreach (Goal goal in goalList)
             {
-                if (selectedGoalID == goal.Id)
+                if (SelectedGoalId == goal.Id)
                 {
                     return goalList.IndexOf(goal); 
                 }
             }
             return 0;
+        }
+        static List<DateTime> SortAscending(List<DateTime> list)
+        {
+            list.Sort((a, b) => a.CompareTo(b));
+            return list;
         }
     }
 }

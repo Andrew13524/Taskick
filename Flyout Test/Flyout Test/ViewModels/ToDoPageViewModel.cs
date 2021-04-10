@@ -6,23 +6,54 @@ using Xamarin.Forms;
 using Android.Content.Res;
 using Flyout_Test.Views;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace Taskick.ViewModels
 {
-    class ToDoPageViewModel
+    class ToDoPageViewModel : BaseViewModel
     {
-        ObservableCollection<Goal> goalList = DataStore.GoalList;
-        public ObservableCollection<Goal> GoalList { get { return goalList; } }
+        ObservableCollection<Goal> goals = DataStore.GoalList;
+        public ObservableCollection<Goal> Goals => goals;
 
-        public ICommand GoToAddGoalPageCommand { get; }
+        private bool _isBusy = false;
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
+            }
+        }
 
         public ToDoPageViewModel()
         {
-            this.GoToAddGoalPageCommand = new Command(async () => {
-                await Application.Current.MainPage.Navigation.PushAsync(new AddGoalPage("Add"));
-            });
+            LoadGoalsCommand = new Command(LoadGoals);
+            GoToAddGoalPageCommand = new Command(GoToAddGoalPage);
+        }
 
-            goalList = DataStore.GoalList; // To refresh the list
+        public ICommand LoadGoalsCommand { get; }
+        private void LoadGoals()
+        {
+            IsBusy = true;
+
+            DataStore.UpdateGoalList();
+
+            goals = DataStore.GoalList;
+
+            IsBusy = false;
+        }
+
+        public ICommand GoToAddGoalPageCommand { get; }
+        public async void GoToAddGoalPage()
+        {
+            AddGoalPageViewModel.SaveState = SaveState.ADD;
+            await Application.Current.MainPage.Navigation.PushAsync(new AddGoalPage());
+        }
+
+        public void OnAppearing()
+        {
+            IsBusy = true;
         }
     }
 }

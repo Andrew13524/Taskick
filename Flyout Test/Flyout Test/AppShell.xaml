@@ -65,7 +65,7 @@
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
                 
-                <Label Text="{Binding Name, Mode=TwoWay}"  
+                <Label Text="{Binding Username, Mode=TwoWay}"  
                        FontFamily="{StaticResource BoldFont}"
                        FontSize="{StaticResource HeaderFontSize}"
                        TextColor="{StaticResource PrimaryTextColor}" 

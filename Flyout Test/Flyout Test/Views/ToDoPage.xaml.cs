@@ -12,23 +12,30 @@ namespace Flyout_Test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ToDoPage
     {
+        private readonly ToDoPageViewModel _viewModel;
         public ToDoPage()          
         { 
-            InitializeComponent(); 
+            InitializeComponent();
+            BindingContext = _viewModel = new ToDoPageViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             if (e.CurrentSelection.Count == 0) return;              // If selection null or already completed, do not execute
 
-            new DataStore((e.CurrentSelection[0] as Goal).Id); // Selecting goal
+            DataStore.SelectedGoalId = (e.CurrentSelection[0] as Goal).Id; // Selecting goal
 
             if (!DataStore.GoalList[DataStore.GetGoalIndex()].IsCompleted)
             {
-                await Navigation.PushModalAsync(new AddGoalPage("Edit"));
-            }               
+                AddGoalPageViewModel.SaveState = SaveState.EDIT;        // Opening edit state of AddGoalPage
+                await Navigation.PushModalAsync(new AddGoalPage());
+            }
             
-            ((CollectionView)sender).SelectedItem = null; // Deselecting goal
+            ((CollectionView)sender).SelectedItem = null;  // Deselecting goal
         }
         void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
         {
@@ -38,7 +45,8 @@ namespace Flyout_Test.Views
             {
                 if (checkedGoal.ClassId == goal.Id)
                 {
-                    new DataStore(goal, "Complete");    // Completing the selected goal
+                    DataStore.SaveState = SaveState.COMPLETE;
+                    new DataStore(goal);                // Completing the selected goal
                     return;
                 }
             }

@@ -834,7 +834,7 @@
       },
       "Taskick/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
           "Xamarin.Essentials": "1.5.0",

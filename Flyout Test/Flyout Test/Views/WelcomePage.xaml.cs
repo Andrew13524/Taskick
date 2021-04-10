@@ -24,7 +24,7 @@ namespace Flyout_Test.Views
             {
                 if (firstName.Text.Length + lastName.Text.Length <= 17) // 18
                 {
-                    new User($"{firstName.Text} {lastName.Text}");
+                    User.Name = $"{firstName.Text} {lastName.Text}";
                     Application.Current.MainPage = new AppShell();
                 }
                 else await DisplayAlert("", "Sorry, the name you entered is too long", "OK");               

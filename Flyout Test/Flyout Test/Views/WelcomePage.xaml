@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Taskick.ViewModels" 
+             xmlns:vm="clr-namespace:Taskick.ViewModels"
+             x:DataType="viewmodels:WelcomePageViewModel"
              Padding="10"
              BackgroundColor="{StaticResource AppBackgroundColor}"             
              x:Class="Flyout_Test.Views.WelcomePage">
-
+    <ContentPage.BindingContext>
+        <vm:WelcomePageViewModel/>
+    </ContentPage.BindingContext>
+    
     <StackLayout Padding="10,0,10,0">
 
         <Label Text="Taskick"
@@ -59,7 +64,7 @@
                        VerticalOptions="Center" />
 
                 <Entry x:Name="firstName"
-                       Text="Enter your first name"
+                       Text="{Binding FirstName}"
                        VerticalOptions="Start"/>
 
                 <Label Text="Last Name" 
@@ -69,7 +74,7 @@
                        VerticalOptions="Center" />
 
                 <Entry x:Name="lastName"
-                       Text="Enter your last name"
+                       Text="{Binding LastName}"
                        VerticalOptions="Start"/>
 
                 <Label Text="Positive attitudes and efficiency awaits!"

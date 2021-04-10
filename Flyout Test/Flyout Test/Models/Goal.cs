@@ -1,61 +1,85 @@
 ﻿using System;
-using Taskick.ViewModels;
 using Xamarin.Essentials;
+using Taskick.ViewModels;
 
 namespace Taskick.Models
 {
-    public class Goal : BaseViewModel
+    public class Goal : BaseModel
     {
         public string Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public DateTime DueDate { get; set; }
         public string Difficulty { get; set; }
-        public int ExpValue { get { return GetExpValue(); } }
 
+        private bool _isCompleted = false;
         public bool IsCompleted
         {
-            get
-            {
-                return Preferences.Get(nameof(IsCompleted) + Id, false);
-            }
+            get => _isCompleted;
             set
             {                                   // If completed, cannot be uncompleted
-                if (this.IsCompleted == true) Preferences.Set(nameof(IsCompleted) + Id, true); 
-                else                          Preferences.Set(nameof(IsCompleted) + Id, value);
+                if (!_isCompleted) _isCompleted = value;
                 OnPropertyChanged(nameof(IsCompleted));
             }
         }
+        public int ExpValue => GetExpValue();
+
+        public string DisplayedDate => GetDateName(DueDate);
+        public bool IsDisplayedDateVisible = true; // setting true for testing purposes
+        
         public Goal()
         {
             
         }
-        public Goal(string name, DateTime dueDate, string difficulty)
+        public Goal(string title, DateTime dueDate, string difficulty)
         {
-            AssignValues(name, dueDate, difficulty);
+            AssignValues(title, dueDate, difficulty);
             Id = Guid.NewGuid().ToString();
         }
-        public Goal(string name, DateTime dueDate, string difficulty, string id)
+        public Goal(string title, DateTime dueDate, string difficulty, string id)
         {
-            AssignValues(name, dueDate, difficulty);
+            AssignValues(title, dueDate, difficulty);
             Id = id;
         }
-        public void AssignValues(string name, DateTime dueDate, string difficulty)
+
+        public void AssignValues(string title, DateTime dueDate, string difficulty)
         {
-            Name = name;
+            Title = title;
             DueDate = dueDate;
             Difficulty = difficulty;
             IsCompleted = false;
         }
         public int GetExpValue()
         {
-            if (!string.IsNullOrEmpty(Difficulty))
+            return Difficulty switch
             {
-                if (Difficulty == "Easy") return 100;
-                else if (Difficulty == "Medium") return 200;
-                else if (Difficulty == "Hard") return 350;
-                else if (Difficulty == "Extreme") return 500;
-            }
-            return 0;
+                "Easy" => 100,
+                "Medium" => 200,
+                "Hard" => 350,
+                "Extreme" => 500,
+                _ => 0,
+            };
         }
+        public static string GetDateName(DateTime date)
+        {
+            if (Convert.ToInt32(date.ToString("yyyy")) == Convert.ToInt32(DateTime.Today.ToString("yyyy")))
+            {
+                return date.ToString("MMMM d");
+            }
+            else
+            {
+                return date.ToString("MMMM d, yyyy");
+            }
+        }
+        //public bool GetIsDueDateVisible(DateTime dateTime)
+        //{
+        //    for (int i = 0; i < DataStore.GoalList.Count - 1; i++)
+        //    {
+        //        if (dateTime == DataStore.GoalList[i].DueDate)
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    return true;
+        //}
     }
 }

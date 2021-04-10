@@ -8,8 +8,8 @@ using Taskick.Services;
 namespace Taskick.ViewModels
 {
     class AppShellViewModel : BaseViewModel
-    {       
-        public string Name
+    {
+        public string Username
         {
             get => Preferences.Get(nameof(User.Name), null);
             set
@@ -47,10 +47,14 @@ namespace Taskick.ViewModels
         }
         public AppShellViewModel()
         {
-            Name = User.Name;
+            Username = User.Name;
             Level = User.Level;
             Experience = User.Experience;
             LevelPercentage = User.LevelPercentage;
-        }    
+        }
+        public void OnAppearing()
+        {
+            Username = "OnAppearing";
+        }
     }
 }
