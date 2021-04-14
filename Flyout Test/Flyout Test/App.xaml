@@ -18,14 +18,15 @@
 
 
             <!-- Colors --> <!-- App -->
-            <Color x:Key="AppBackgroundColor">#121212</Color>
+            <Color x:Key="AppBackgroundColor">#121212</Color> <!-- 121212 -->
             <Color x:Key="MenuBarColor">#1e1e1e</Color>
             <Color x:Key="TopGradient">#404040</Color>
-            <Color x:Key="BottomGradient">#242323</Color>
+            <Color x:Key="BottomGradient">#262626</Color>
             
                            <!-- Text -->
             <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
             <Color x:Key="SecondaryTextColor">#b3b3b3</Color>
+            <Color x:Key="TertiaryTextColor">#7f7f7f</Color>
             
                           <!-- General -->
             <Color x:Key="Blue">#2196f3</Color>
@@ -48,6 +49,7 @@
                           <!-- Sizes -->
             <x:Double x:Key="HeaderFontSize">26</x:Double>
             <x:Double x:Key="SubHeaderFontSize">20</x:Double>
+            <x:Double x:Key="LargeFontSize">22</x:Double>
             <x:Double x:Key="RegularFontSize">16</x:Double>
             <x:Double x:Key="SmallFontSize">14</x:Double>
 

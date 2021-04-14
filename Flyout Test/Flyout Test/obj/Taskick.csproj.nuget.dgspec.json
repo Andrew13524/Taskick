@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Sharpnado.Shadows": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.0, )"

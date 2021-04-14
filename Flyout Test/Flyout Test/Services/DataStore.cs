@@ -14,10 +14,6 @@ namespace Taskick.Services
         public static ObservableCollection<Goal> GoalList => goalList;
 
 
-        private static List<DateTime> goalDates = new List<DateTime>();
-        public static List<DateTime> GoalDates => SortAscending(goalDates); // Displaying goal dates in order
-
-
         public static string SelectedGoalId;
         public static int SelectedGoalIndex => GetGoalIndex(); 
 
@@ -43,16 +39,17 @@ namespace Taskick.Services
             }
         }
 
-        public void AddGoal(Goal newGoal)
-        {
-            goalList.Add(newGoal);
-        }
-        public void EditGoal(Goal editedGoal) => goalList[SelectedGoalIndex] = editedGoal;
-        public void CompleteGoal(Goal completedGoal)
-        {
-            User.UpdateLevel(completedGoal.ExpValue);
-        }
+        public void AddGoal(Goal newGoal) => GoalList.Add(newGoal);
+        public void EditGoal(Goal editedGoal) => GoalList[SelectedGoalIndex] = editedGoal;
+        public void CompleteGoal(Goal completedGoal) => User.UpdateLevel(completedGoal.ExpValue);
+        
         public static void UpdateGoalList()
+        {
+            RemoveCompletedGoals();
+            SortDatesAscending();
+            GetIsDueDateVisible();
+        }
+        public static void RemoveCompletedGoals()
         {
             for (int i = 0; i < GoalList.Count; i++)
             {
@@ -62,21 +59,55 @@ namespace Taskick.Services
                 }
             }
         }
+        public static void SortDatesAscending()
+        {
+            var sortedList = new List<Goal>();
+
+            foreach (Goal goal in GoalList)
+            {
+                sortedList.Add(goal);
+            }
+
+            sortedList.Sort((x, y) => DateTime.Compare(x.DueDate, y.DueDate));
+
+            GoalList.Clear();
+
+            foreach (Goal goal in sortedList)
+            {
+                GoalList.Add(goal);
+            }
+        }
+        public static void GetIsDueDateVisible()
+        {
+            foreach(Goal goal in GoalList)
+            {
+                goal.IsDisplayedDueDateVisible = true; // Reseting IsDisplayedDueDateVisible each time
+            }
+            for (int i = 0; i <= GoalList.Count - 1; i++)
+            {
+                if (GoalList[i].IsDisplayedDueDateVisible)
+                {
+                    for (int j = i+1; j <= GoalList.Count - 1; j++)
+                    {
+                        if (GoalList[i].DueDate == GoalList[j].DueDate)
+                        {
+                            GoalList[j].IsDisplayedDueDateVisible = false;
+                        }
+                    }
+                }
+            }
+        }
+
         public static int GetGoalIndex()
         {
-            foreach (Goal goal in goalList)
+            foreach (Goal goal in GoalList)
             {
                 if (SelectedGoalId == goal.Id)
                 {
-                    return goalList.IndexOf(goal); 
+                    return GoalList.IndexOf(goal); 
                 }
             }
             return 0;
-        }
-        static List<DateTime> SortAscending(List<DateTime> list)
-        {
-            list.Sort((a, b) => a.CompareTo(b));
-            return list;
-        }
+        }       
     }
 }

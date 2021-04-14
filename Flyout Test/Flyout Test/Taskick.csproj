@@ -20,6 +20,8 @@
     <None Remove="Assets\Fonts\Asap-SemiBoldItalic.ttf" />
     <None Remove="Assets\Images\BlueLines.png" />
     <None Remove="Assets\Images\ToDoList_Icon.png" />
+    <None Remove="Assets\Images\ToDoList_Icon2.png" />
+    <None Remove="Assets\Images\ToDoList_Icon_Blue.png" />
     <None Remove="Assets\Images\Walking_Icon.png" />
   </ItemGroup>
 
@@ -33,7 +35,9 @@
     <EmbeddedResource Include="Assets\Fonts\Asap-SemiBold.ttf" />
     <EmbeddedResource Include="Assets\Fonts\Asap-SemiBoldItalic.ttf" />
     <EmbeddedResource Include="Assets\Images\BlueLines.png" />
+    <EmbeddedResource Include="Assets\Images\ToDoList_Icon2.png" />
     <EmbeddedResource Include="Assets\Images\ToDoList_Icon.png" />
+    <EmbeddedResource Include="Assets\Images\ToDoList_Icon_Blue.png" />
     <EmbeddedResource Include="Assets\Images\Walking_Icon.png" />
   </ItemGroup>
 
@@ -45,6 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Sharpnado.Shadows" Version="1.2.0" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
   </ItemGroup>

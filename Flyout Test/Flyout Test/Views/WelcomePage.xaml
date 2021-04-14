@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Taskick.ViewModels"
              x:DataType="viewmodels:WelcomePageViewModel"
              Padding="10"
-             BackgroundColor="{StaticResource AppBackgroundColor}"             
+             BackgroundColor="{StaticResource AppBackgroundColor}"
              x:Class="Flyout_Test.Views.WelcomePage">
     <ContentPage.BindingContext>
         <vm:WelcomePageViewModel/>

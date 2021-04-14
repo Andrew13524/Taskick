@@ -20,7 +20,8 @@ namespace Flyout_Test
         {
             InitializeComponent();
             // Clearing Preferences for testing purposes
-            Preferences.Clear();
+            // Preferences.Clear();
+            Sharpnado.Shades.Initializer.Initialize(loggerEnable: false);
             // On Startup, go to Welcome Page
             MainPage = new NavigationPage(new WelcomePage());          
         }

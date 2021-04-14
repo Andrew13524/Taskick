@@ -25,7 +25,7 @@ namespace Taskick.Models
                 _level++;
 
                 // Multiplying required experience to lvl up by 1.5, and rounding to the nearest 50
-                _requiredExperience = Convert.ToInt32(Math.Floor((_requiredExperience * 1.5) / 50) * 50);
+                _requiredExperience = Math.Floor((_requiredExperience * 1.5) / 50) * 50;
             }
         }
     }

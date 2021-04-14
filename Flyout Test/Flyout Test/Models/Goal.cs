@@ -10,6 +10,20 @@ namespace Taskick.Models
         public string Title { get; set; }
         public DateTime DueDate { get; set; }
         public string Difficulty { get; set; }
+        public int ExpValue => GetExpValue();
+        public string DisplayedDueDate => GetDateName(DueDate);
+
+
+        private bool _isDisplayedDueDateVisible = true;
+        public bool IsDisplayedDueDateVisible
+        {
+            get { return _isDisplayedDueDateVisible; }
+            set 
+            { 
+                _isDisplayedDueDateVisible = value;
+                OnPropertyChanged(nameof(IsDisplayedDueDateVisible));
+            }
+        }
 
         private bool _isCompleted = false;
         public bool IsCompleted
@@ -21,32 +35,18 @@ namespace Taskick.Models
                 OnPropertyChanged(nameof(IsCompleted));
             }
         }
-        public int ExpValue => GetExpValue();
 
-        public string DisplayedDate => GetDateName(DueDate);
-        public bool IsDisplayedDateVisible = true; // setting true for testing purposes
-        
         public Goal()
         {
             
         }
         public Goal(string title, DateTime dueDate, string difficulty)
         {
-            AssignValues(title, dueDate, difficulty);
-            Id = Guid.NewGuid().ToString();
-        }
-        public Goal(string title, DateTime dueDate, string difficulty, string id)
-        {
-            AssignValues(title, dueDate, difficulty);
-            Id = id;
-        }
-
-        public void AssignValues(string title, DateTime dueDate, string difficulty)
-        {
             Title = title;
             DueDate = dueDate;
             Difficulty = difficulty;
             IsCompleted = false;
+            Id = Guid.NewGuid().ToString();
         }
         public int GetExpValue()
         {
@@ -69,17 +69,6 @@ namespace Taskick.Models
             {
                 return date.ToString("MMMM d, yyyy");
             }
-        }
-        //public bool GetIsDueDateVisible(DateTime dateTime)
-        //{
-        //    for (int i = 0; i < DataStore.GoalList.Count - 1; i++)
-        //    {
-        //        if (dateTime == DataStore.GoalList[i].DueDate)
-        //        {
-        //            return false;
-        //        }
-        //    }
-        //    return true;
-        //}
+        }       
     }
 }

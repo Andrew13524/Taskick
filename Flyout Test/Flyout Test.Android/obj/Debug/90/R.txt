@@ -1017,9 +1017,10 @@ int drawable sfprogressbar_determinate_linear 0x7f070097
 int drawable sfprogressbar_indeterminate_circular 0x7f070098
 int drawable sfprogressbar_indeterminate_linear 0x7f070099
 int drawable todolist_icon 0x7f07009a
-int drawable tooltip_frame_dark 0x7f07009b
-int drawable tooltip_frame_light 0x7f07009c
-int drawable walking_icon 0x7f07009d
+int drawable todolist_icon2 0x7f07009b
+int drawable tooltip_frame_dark 0x7f07009c
+int drawable tooltip_frame_light 0x7f07009d
+int drawable walking_icon 0x7f07009e
 int id ALT 0x7f080000
 int id CTRL 0x7f080001
 int id FUNCTION 0x7f080002
