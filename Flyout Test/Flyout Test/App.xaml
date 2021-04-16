@@ -2,11 +2,8 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:services="clr-namespace:Taskick.Services;assembly=Taskick"
+             xmlns:tools="clr-namespace:Taskick.Services"
              x:Class="Flyout_Test.App">
-    <!--
-        Define global resources and styles here, that apply to all pages in your app.
-    -->
-
     <Application.Resources>
 
         <ResourceDictionary>
@@ -18,17 +15,22 @@
 
 
             <!-- Colors --> <!-- App -->
-            <Color x:Key="AppBackgroundColor">#121212</Color> <!-- 121212 -->
+            <Color x:Key="AppBackgroundColor">#121212</Color>
             <Color x:Key="MenuBarColor">#1e1e1e</Color>
             <Color x:Key="TopGradient">#404040</Color>
             <Color x:Key="BottomGradient">#262626</Color>
             
-                           <!-- Text -->
+                            <!-- Text -->
             <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
             <Color x:Key="SecondaryTextColor">#b3b3b3</Color>
             <Color x:Key="TertiaryTextColor">#7f7f7f</Color>
-            
-                          <!-- General -->
+
+                            <!-- Goal Items -->
+            <Color x:Key="DarkPressedColor">#1d1d1d</Color>
+            <Color x:Key="GreyPressedColor">#6c6c6c</Color>
+            <Color x:Key="BluePressedColor">#1a5889</Color>
+
+                            <!-- General -->
             <Color x:Key="Blue">#2196f3</Color>
             <Color x:Key="LightBlue">#90caf9</Color>
             <Color x:Key="Red">#f05454</Color>
@@ -66,6 +68,11 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource AppBackgroundColor}" />
             </Style>
 
+            <!-- Checkbox -->
+            <Style TargetType="CheckBox">
+                <Setter Property="Color" Value="{StaticResource Blue}" />
+            </Style>
+
             <!-- Label Defaults-->
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
@@ -79,7 +86,7 @@
                 <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
                 <Setter Property="FontSize" Value="{StaticResource RegularFontSize}" />
             </Style>
-
+            
             <!-- Progress Bar Defaults -->
             <Style TargetType="ProgressBar">
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBlue}" />

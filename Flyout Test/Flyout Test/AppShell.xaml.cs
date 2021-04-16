@@ -6,7 +6,7 @@ using Taskick.ViewModels;
 using Flyout_Test.Views;
 using System.ComponentModel;
 
-namespace Flyout_Test 
+namespace Flyout_Test
 {
     public partial class AppShell : Xamarin.Forms.Shell
     {
@@ -26,6 +26,7 @@ namespace Flyout_Test
         }
         public void OnFlyoutOpened()
         {
+            
             BindingContext = new AppShellViewModel(); // each time the flyout menu is opened, refresh user values
         }
         public void OnFlyoutClosed()

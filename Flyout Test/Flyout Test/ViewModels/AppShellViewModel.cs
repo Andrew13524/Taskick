@@ -47,14 +47,10 @@ namespace Taskick.ViewModels
         }
         public AppShellViewModel()
         {
-            Username = User.Name;
-            Level = User.Level;
-            Experience = User.Experience;
+            Username =        User.Name;
+            Level =           $"Level {User.Level}";
+            Experience =      $"{User.Experience}/{User.RequiredExperience}";
             LevelPercentage = User.LevelPercentage;
-        }
-        public void OnAppearing()
-        {
-            Username = "OnAppearing";
         }
     }
 }

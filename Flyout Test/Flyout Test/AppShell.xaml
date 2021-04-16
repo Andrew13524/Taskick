@@ -2,6 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:Flyout_Test.Views"
+       xmlns:tools="clr-namespace:Taskick.Services"
        xmlns:vm="clr-namespace:Taskick.ViewModels"
        Title="Flyout_Test"
        FlyoutBackgroundColor="{StaticResource BottomGradient}"
@@ -96,8 +97,7 @@
                        Padding="-5,-3" 
                        Margin="5"/>
 
-                <ProgressBar x:Name="progressBar"
-                             Progress="{Binding LevelPercentage}" 
+                <ProgressBar tools:AttachedProperties.AnimatedProgress="{Binding LevelPercentage}"
                              Grid.Row="5" />
                 
             </Grid>

@@ -15,7 +15,9 @@ namespace Taskick.Services
 
 
         public static string SelectedGoalId;
-        public static int SelectedGoalIndex => GetGoalIndex(); 
+        public static int SelectedGoalIndex => GetGoalIndex();
+
+        private static List<Goal> _completedGoals = new List<Goal>();
 
         public DataStore(Goal goal)
         {
@@ -41,7 +43,15 @@ namespace Taskick.Services
 
         public void AddGoal(Goal newGoal) => GoalList.Add(newGoal);
         public void EditGoal(Goal editedGoal) => GoalList[SelectedGoalIndex] = editedGoal;
-        public void CompleteGoal(Goal completedGoal) => User.UpdateLevel(completedGoal.ExpValue);
+        public void CompleteGoal(Goal completedGoal)
+        {
+            foreach(Goal goal in _completedGoals)
+            {
+                if (completedGoal.Id == goal.Id) return; // If exp already added, return
+            }
+            User.UpdateLevel(completedGoal.ExpValue);
+            _completedGoals.Add(completedGoal);
+        }
         
         public static void UpdateGoalList()
         {

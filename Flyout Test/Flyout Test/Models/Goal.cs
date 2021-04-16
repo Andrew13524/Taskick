@@ -13,6 +13,19 @@ namespace Taskick.Models
         public int ExpValue => GetExpValue();
         public string DisplayedDueDate => GetDateName(DueDate);
 
+        private bool _isCompleted = false;
+        public bool IsCompleted
+        {
+            get => _isCompleted;
+            set
+            {                                   // If completed, cannot be uncompleted
+                if (!_isCompleted)
+                {
+                    _isCompleted = value;
+                    OnPropertyChanged(nameof(IsCompleted));
+                }
+            }
+        }
 
         private bool _isDisplayedDueDateVisible = true;
         public bool IsDisplayedDueDateVisible
@@ -25,17 +38,6 @@ namespace Taskick.Models
             }
         }
 
-        private bool _isCompleted = false;
-        public bool IsCompleted
-        {
-            get => _isCompleted;
-            set
-            {                                   // If completed, cannot be uncompleted
-                if (!_isCompleted) _isCompleted = value;
-                OnPropertyChanged(nameof(IsCompleted));
-            }
-        }
-
         public Goal()
         {
             
@@ -45,7 +47,6 @@ namespace Taskick.Models
             Title = title;
             DueDate = dueDate;
             Difficulty = difficulty;
-            IsCompleted = false;
             Id = Guid.NewGuid().ToString();
         }
         public int GetExpValue()

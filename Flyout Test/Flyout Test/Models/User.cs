@@ -7,9 +7,10 @@ namespace Taskick.Models
     public static class User
     {
         public static string Name { get; set; }
-        public static string Level { get { return $"Level {_level}"; } }
-        public static string Experience { get { return $"{_experience}/{_requiredExperience}"; } }
-        public static double LevelPercentage { get { return _experience / _requiredExperience; } } // Used for progress bar
+        public static int Level => _level;
+        public static int Experience => (int)_experience;
+        public static int RequiredExperience => (int)_requiredExperience;
+        public static double LevelPercentage => _experience / _requiredExperience; // Used for progress bar
 
         private static int _level = 1;
         private static double _experience = 0;
