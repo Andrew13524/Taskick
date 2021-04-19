@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Taskick.Models;
 using System.Linq;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 namespace Flyout_Test.Views
 {
@@ -18,7 +19,7 @@ namespace Flyout_Test.Views
             InitializeComponent();
             BindingContext = _viewModel = new ToDoPageViewModel();
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             _viewModel.OnAppearing();
@@ -46,7 +47,13 @@ namespace Flyout_Test.Views
                 if (checkedGoal.ClassId == goal.Id)
                 {
                     DataStore.SaveState = SaveState.COMPLETE;
-                    new DataStore(goal);                // Completing the selected goal
+
+                    new DataStore(goal);                // Completing the selected goal & updating values
+
+                    _viewModel.Level = $"Level {User.Level}";
+                    _viewModel.Experience = $"{User.Experience}/{User.RequiredExperience}";
+                    _viewModel.LevelPercentage = User.LevelPercentage;
+
                     return;
                 }
             }

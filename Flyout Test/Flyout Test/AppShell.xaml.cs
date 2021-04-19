@@ -26,7 +26,6 @@ namespace Flyout_Test
         }
         public void OnFlyoutOpened()
         {
-            
             BindingContext = new AppShellViewModel(); // each time the flyout menu is opened, refresh user values
         }
         public void OnFlyoutClosed()

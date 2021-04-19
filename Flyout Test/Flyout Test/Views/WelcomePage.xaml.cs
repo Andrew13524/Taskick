@@ -17,21 +17,5 @@ namespace Flyout_Test.Views
         {
             InitializeComponent();
         }
-        private async void DoneButton_Clicked(object sender, EventArgs e)
-        {
-            // If user enters first and last name, open AppShell
-            if ((!string.IsNullOrWhiteSpace(firstName.Text) && !string.IsNullOrWhiteSpace(lastName.Text)) && firstName.Text != "Enter your first name" && lastName.Text != "Enter your last name")
-            {
-                if (firstName.Text.Length + lastName.Text.Length <= 17) // 18
-                {
-                    User.Name = $"{firstName.Text} {lastName.Text}";
-                    Application.Current.MainPage = new AppShell();
-                }
-                else await DisplayAlert("", "Sorry, the name you entered is too long", "OK");               
-            }
-            else await DisplayAlert("", "Please enter your full name", "OK");
-
-
-        }
     }
 }

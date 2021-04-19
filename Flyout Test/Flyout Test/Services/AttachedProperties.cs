@@ -23,12 +23,12 @@ namespace Taskick.Services
 
             while (User.Level > _currentLevel)
             {
-                await progressBar.ProgressTo(1, 1000, Easing.SinOut);
+                await progressBar.ProgressTo(1, 500, Easing.SinOut);
                 await progressBar.ProgressTo(0, 500, Easing.Linear);
                 _currentLevel++;
             }
                 
-            await progressBar .ProgressTo((double)progress, 1000, Easing.SinOut);
+            await progressBar.ProgressTo((double)progress, 1000, Easing.SinOut);
         }
     }
 }

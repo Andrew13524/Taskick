@@ -2,8 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Taskick.ViewModels;assembly=Taskick"
-             xmlns:models="clr-namespace:Taskick.Models;assembly=Taskick"
-             xmlns:tools="clr-namespace:Taskick.Services"
              xmlns:controls="clr-namespace:Taskick.Controls;assembly=Taskick" 
              xmlns:sh="http://sharpnado.com"
              BackgroundColor="{StaticResource AppBackgroundColor}"
@@ -16,8 +14,6 @@
     
     <ContentPage.Content>
         <StackLayout>
-            
-            
             <RefreshView Command="{Binding LoadGoalsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                 <CollectionView ItemsSource="{Binding Goals}" SelectionMode="Single" SelectionChanged="OnCollectionViewSelectionChanged">
                     <CollectionView.ItemTemplate>
@@ -35,7 +31,7 @@
                                 <Grid VerticalOptions="Center" RowSpacing="0" HorizontalOptions="Center">
 
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="7.5"/>
+                                        <RowDefinition Height="4"/>
                                         <RowDefinition Height="1"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="1"/>
@@ -54,8 +50,7 @@
                                     <!-- 
                                         Creating doubles for all frames, labels, checkbox's, etc. 
                                         this is done to check if goal is completed or not, then assign
-                                        properties like color and shadows accordingly so I dont have to do 
-                                        any crazy gymnastics in the code behind :)                        
+                                        properties like color and shadows accordingly                     
                                     -->
 
                                     <!-- Display if completed -->
@@ -126,7 +121,7 @@
                                     <sh:Shadows IsVisible="{Binding IsCompleted, Converter={StaticResource Inverter}}"
                                                 Padding="0"
                                                 Grid.Row="1"
-                                                Grid.Column="1"
+                                                Grid.Column="1" 
                                                 Grid.RowSpan="3"
                                                 Grid.ColumnSpan="3">
                                         <sh:Shadows.Shades>

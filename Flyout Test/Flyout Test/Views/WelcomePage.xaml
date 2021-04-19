@@ -24,8 +24,8 @@
                    Padding="5"
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"/>
-        
-        <StackLayout BackgroundColor="{StaticResource MenuBarColor}">
+
+        <StackLayout BackgroundColor="{StaticResource MenuBarColor}" IsVisible="{Binding IsLoggedIn, Converter={StaticResource Inverter}}">
             <Grid>
 
                 <Image Source="BlueLines" Aspect="AspectFill" />
@@ -63,8 +63,7 @@
                        Padding="1,1" 
                        VerticalOptions="Center" />
 
-                <Entry x:Name="firstName"
-                       Text="{Binding FirstName}"
+                <Entry Text="{Binding FirstName}"
                        VerticalOptions="Start"/>
 
                 <Label Text="Last Name" 
@@ -73,8 +72,7 @@
                        Padding="1,1"
                        VerticalOptions="Center" />
 
-                <Entry x:Name="lastName"
-                       Text="{Binding LastName}"
+                <Entry Text="{Binding LastName}"
                        VerticalOptions="Start"/>
 
                 <Label Text="Positive attitudes and efficiency awaits!"
@@ -84,11 +82,55 @@
                        Padding="0,10,0,-2"                   
                        VerticalTextAlignment="Center"
                        HorizontalTextAlignment="Center"/>
+
+                <StackLayout Padding="0,30,0,0" VerticalOptions="EndAndExpand">
+
+                    <Button Text="Next" VerticalOptions="EndAndExpand" Command="{Binding GoToMainPageCommand}" />
+
+                </StackLayout>
                 
             </StackLayout>
         </StackLayout>
 
-        <Button x:Name="Done" Text="Next" VerticalOptions="EndAndExpand" Clicked="DoneButton_Clicked" />
+        <StackLayout BackgroundColor="{StaticResource MenuBarColor}" IsVisible="{Binding IsLoggedIn}">
+            <Grid>
+
+                <Image Source="BlueLines" Aspect="AspectFill" />
+
+                <StackLayout Padding="30">
+
+                    <Label Text="{Binding Username, StringFormat='Welcome back {0}!'}"
+                           FontFamily="{StaticResource BoldFont}"
+                           FontSize="{StaticResource SubHeaderFontSize}"
+                           TextColor="{StaticResource PrimaryTextColor}"
+                           Padding="0,0,0,0"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    
+                    <Label Text="Glad to see you back."
+                           FontFamily="{StaticResource SemiBoldFont}"
+                           Padding="-10,0,0,0"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    
+                    <Label Text="Are you ready to start the day?"
+                           FontFamily="{StaticResource SemiBoldFont}"
+                           Padding="-10,0,0,0"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+            </Grid>
+            
+            <StackLayout Padding="30,120,30,30" VerticalOptions="EndAndExpand">
+
+                <Button Text="Next" VerticalOptions="EndAndExpand" Command="{Binding GoToMainPageCommand}" />
+                
+            </StackLayout>
+
+        </StackLayout>
+
+        
 
     </StackLayout>
     

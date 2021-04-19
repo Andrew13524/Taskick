@@ -62,7 +62,11 @@ namespace Taskick.Models
         }
         public static string GetDateName(DateTime date)
         {
-            if (Convert.ToInt32(date.ToString("yyyy")) == Convert.ToInt32(DateTime.Today.ToString("yyyy")))
+            if(date == DateTime.Today)
+            {
+                return "Today";
+            }
+            else if (Convert.ToInt32(date.ToString("yyyy")) == Convert.ToInt32(DateTime.Today.ToString("yyyy")))
             {
                 return date.ToString("MMMM d");
             }

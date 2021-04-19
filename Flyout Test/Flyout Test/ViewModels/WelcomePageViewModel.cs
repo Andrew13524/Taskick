@@ -10,21 +10,23 @@ namespace Taskick.ViewModels
 {
     class WelcomePageViewModel : BaseViewModel
     {
+        private string _firstName = "Enter your first name";
         public string FirstName
         {
-            get => Preferences.Get(nameof(FirstName), "Enter your first name");
+            get => _firstName;
             set
             {
-                Preferences.Set(nameof(FirstName), value);
+                _firstName = value;
                 OnPropertyChanged(nameof(FirstName));
             }
         }
+        private string _lastName = "Enter your last name";
         public string LastName
         {
-            get => Preferences.Get(nameof(LastName), "Enter your last name");
+            get => _lastName;
             set
             {
-                Preferences.Set(nameof(LastName), value);
+                _lastName = value;
                 OnPropertyChanged(nameof(LastName));
             }
         }
@@ -34,9 +36,17 @@ namespace Taskick.ViewModels
             GoToMainPageCommand = new Command(GoToMainPage);
         }
         public ICommand GoToMainPageCommand { get; }
-        public void GoToMainPage()
+        public async void GoToMainPage()
         {
-            User.Name = $"{FirstName + LastName}";
+            if (!IsLoggedIn)
+            {
+                if ($"{FirstName} {LastName}".Length > 17)
+                {
+                    await App.Current.MainPage.DisplayAlert("Name is too long", null, "Ok");
+                    return;
+                }
+                User.Name = $"{FirstName} {LastName}";
+            }
             Application.Current.MainPage = new AppShell();
         }    
     }
