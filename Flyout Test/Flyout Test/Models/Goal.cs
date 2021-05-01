@@ -13,6 +13,17 @@ namespace Taskick.Models
         public int ExpValue => GetExpValue();
         public string DisplayedDueDate => GetDateName(DueDate);
 
+        private bool _isDisplayedDueDateVisible = true;
+        public bool IsDisplayedDueDateVisible
+        {
+            get { return _isDisplayedDueDateVisible; }
+            set
+            {
+                _isDisplayedDueDateVisible = value;
+                OnPropertyChanged(nameof(IsDisplayedDueDateVisible));
+            }
+        }
+
         private bool _isCompleted = false;
         public bool IsCompleted
         {
@@ -22,19 +33,25 @@ namespace Taskick.Models
                 if (!_isCompleted)
                 {
                     _isCompleted = value;
+
+                    ShadowOpacity = 0.0;
+                    ExpBackgroundColor = "#1a5889"; // BluePressedColor
+                    BlueColor = "#1a5889"; // BluePressedColor
+                    GreyColor = "#6c6c6c"; // GreyPressedColor
+                    DarkColor = "#1d1d1d"; // DarkPressedColor
+
                     OnPropertyChanged(nameof(IsCompleted));
                 }
             }
         }
-
-        private bool _isDisplayedDueDateVisible = true;
-        public bool IsDisplayedDueDateVisible
+        private double _shadowOpacity = 1.0;
+        public double ShadowOpacity
         {
-            get { return _isDisplayedDueDateVisible; }
-            set 
-            { 
-                _isDisplayedDueDateVisible = value;
-                OnPropertyChanged(nameof(IsDisplayedDueDateVisible));
+            get { return _shadowOpacity; }
+            set
+            {
+                _shadowOpacity = value;
+                OnPropertyChanged(nameof(ShadowOpacity));
             }
         }
 

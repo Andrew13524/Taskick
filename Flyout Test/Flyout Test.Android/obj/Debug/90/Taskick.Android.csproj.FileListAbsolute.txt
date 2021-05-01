@@ -1037,3 +1037,5 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\WeakEvent.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64994682affb61faca\AndroidShadowsRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64994682affb61faca\ShadowView.java
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\todolist_icon_blue.png
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\walking_icon_blue.png

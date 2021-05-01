@@ -19,7 +19,7 @@ namespace Flyout_Test.Views
             InitializeComponent();
             BindingContext = _viewModel = new ToDoPageViewModel();
         }
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             _viewModel.OnAppearing();

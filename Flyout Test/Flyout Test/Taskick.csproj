@@ -23,6 +23,7 @@
     <None Remove="Assets\Images\ToDoList_Icon2.png" />
     <None Remove="Assets\Images\ToDoList_Icon_Blue.png" />
     <None Remove="Assets\Images\Walking_Icon.png" />
+    <None Remove="Assets\Images\Walking_Icon_Blue.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +40,7 @@
     <EmbeddedResource Include="Assets\Images\ToDoList_Icon.png" />
     <EmbeddedResource Include="Assets\Images\ToDoList_Icon_Blue.png" />
     <EmbeddedResource Include="Assets\Images\Walking_Icon.png" />
+    <EmbeddedResource Include="Assets\Images\Walking_Icon_Blue.png" />
   </ItemGroup>
 
   <ItemGroup>

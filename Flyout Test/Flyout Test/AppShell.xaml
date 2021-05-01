@@ -11,7 +11,7 @@
     <Shell.BindingContext>
         <vm:AppShellViewModel/>
     </Shell.BindingContext>
-
+    <Shell.NavBarHasShadow>False</Shell.NavBarHasShadow>
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -105,11 +105,11 @@
     </Shell.FlyoutHeaderTemplate>
 
 
-    <FlyoutItem Icon="ToDoList_Icon2" Title="To-Do">
+    <FlyoutItem Icon="ToDoList_Icon_Blue" Title="To-Do">
         <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
     </FlyoutItem>
     
-    <FlyoutItem Icon="Walking_Icon" Title="Walking">
+    <FlyoutItem Icon="Walking_Icon_Blue" Title="Walking">
         <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
     </FlyoutItem>
     
