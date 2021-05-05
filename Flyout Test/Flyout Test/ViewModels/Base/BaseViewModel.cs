@@ -7,7 +7,7 @@ using Taskick.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-public enum SaveState { ADD, EDIT, COMPLETE }
+public enum SaveState { ADD, EDIT, DELETE, COMPLETE }
 
 namespace Taskick.ViewModels
 {

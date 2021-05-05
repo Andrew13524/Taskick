@@ -123,15 +123,17 @@ namespace Taskick.ViewModels
         public ICommand DeleteCommand { get; }
         public async void DeleteCommandExecute()
         {
-            foreach (Goal goal in DataStore.GoalList)
+            DataStore.SaveState = SaveState.DELETE;
+
+            new DataStore(new Goal()        // Deleting selected goal from Datastore
             {
-                if (DataStore.SelectedGoalId == goal.Id)
-                {
-                    DataStore.GoalList.Remove(goal);
-                    await Application.Current.MainPage.Navigation.PopModalAsync();
-                    return;
-                }
-            }
+                Id = DataStore.SelectedGoalId,
+                Title = Title,
+                DueDate = DueDate,
+                Difficulty = Difficulty
+            });
+
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

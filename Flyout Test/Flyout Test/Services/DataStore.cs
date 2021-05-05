@@ -2,6 +2,9 @@
 using Taskick.Models;
 using System.Collections.Generic;
 using System;
+using System.IO;
+using System.Reflection;
+using Xamarin.Forms.Internals;
 
 namespace Taskick.Services
 {
@@ -9,15 +12,16 @@ namespace Taskick.Services
     {
         public static SaveState SaveState;
 
-
-        private static ObservableCollection<Goal> goalList = new ObservableCollection<Goal>();
-        public static ObservableCollection<Goal> GoalList => goalList;
-
+        private readonly static ObservableCollection<Goal> _goalList = new ObservableCollection<Goal>();
+        public static ObservableCollection<Goal> GoalList => _goalList;
 
         public static string SelectedGoalId;
         public static int SelectedGoalIndex => GetGoalIndex();
 
-        private static List<Goal> _completedGoals = new List<Goal>();
+        readonly static List<Goal> _completedGoals = new List<Goal>();
+
+        private static string _path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Goals.txt");
+        private static Assembly _assembly = IntrospectionExtensions.GetTypeInfo(typeof(DataStore)).Assembly;
 
         public DataStore(Goal goal)
         {
@@ -33,16 +37,33 @@ namespace Taskick.Services
                         EditGoal(goal);
                         break;
                     }
+                case SaveState.DELETE:
+                    {
+                        DeleteGoal(goal);
+                        break;
+                    }
                 case SaveState.COMPLETE:
                     {
                         CompleteGoal(goal);
                         break;
                     }
             }
+            SaveToFile();
         }
 
         public void AddGoal(Goal newGoal) => GoalList.Add(newGoal);
         public void EditGoal(Goal editedGoal) => GoalList[SelectedGoalIndex] = editedGoal;
+        public void DeleteGoal(Goal deletedGoal)
+        {
+            foreach (Goal goal in GoalList)
+            {
+                if (deletedGoal.Id == goal.Id)
+                {
+                    GoalList.Remove(goal);
+                    return;
+                }
+            }
+        }
         public void CompleteGoal(Goal completedGoal)
         {
             foreach(Goal goal in _completedGoals)
@@ -108,6 +129,32 @@ namespace Taskick.Services
             }
         }
 
+        public static void LoadFromFile()
+        {
+            GoalList.Clear();
+
+            string[] lines = File.ReadAllLines(_path);
+
+            for (int i = 0; i < lines.Length; i+=3)
+            {
+                string Title = lines[i];
+                DateTime DueDate = Convert.ToDateTime(lines[i + 1]);
+                string Difficulty = lines[i + 2];
+
+                GoalList.Add(new Goal(Title, DueDate, Difficulty));
+            }
+        }
+        public static void SaveToFile()
+        {
+            string content = null;
+
+            foreach (Goal goal in GoalList)
+            {
+                if(!goal.IsCompleted) content += ($"{goal.Title}\n{goal.DueDate}\n{goal.Difficulty}\n");
+            }
+
+            File.WriteAllText(_path, content);
+        }
         public static int GetGoalIndex()
         {
             foreach (Goal goal in GoalList)
