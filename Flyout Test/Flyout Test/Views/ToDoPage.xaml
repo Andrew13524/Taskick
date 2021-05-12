@@ -18,13 +18,13 @@
                 <CollectionView ItemsSource="{Binding Goals}" SelectionMode="Single" SelectionChanged="OnCollectionViewSelectionChanged">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="0,5,0,0">
-                                <StackLayout IsVisible="{Binding IsDisplayedDueDateVisible}" Padding="35,0,0,-5">
+                            <StackLayout Padding="0">
+                                <StackLayout IsVisible="{Binding IsDisplayedDueDateVisible}" Padding="35,5,0,-5">
 
                                     <Label Text="{Binding DisplayedDueDate}"
                                            FontFamily="{StaticResource BoldFont}"
                                            FontSize="{StaticResource LargeFontSize}"
-                                           TextColor="{StaticResource Blue}"/>
+                                           TextColor="{Binding DateColor}"/>
 
                                 </StackLayout>
 

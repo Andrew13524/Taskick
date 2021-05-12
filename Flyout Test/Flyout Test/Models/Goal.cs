@@ -23,6 +23,25 @@ namespace Taskick.Models
                 OnPropertyChanged(nameof(IsDisplayedDueDateVisible));
             }
         }
+        private bool _isLate = false;
+        public bool IsLate 
+        { 
+            get => _isLate; 
+            set
+            {
+                _isLate = value;
+                if (IsLate)
+                {
+                    DateColor = "#f05454"; // Red
+                    BlueColor = "#f05454"; // Red
+                }
+                else
+                {
+                    DateColor = "#2196f3"; // Blue
+                    BlueColor = "#2196f3"; // Blue
+                }
+            }
+        }
 
         private bool _isCompleted = false;
         public bool IsCompleted
@@ -34,24 +53,22 @@ namespace Taskick.Models
                 {
                     _isCompleted = value;
 
-                    ShadowOpacity = 0.0;
-                    ExpBackgroundColor = "#1a5889"; // BluePressedColor
-                    BlueColor = "#1a5889"; // BluePressedColor
+                    if (IsLate)
+                    {
+                        ExpBackgroundColor = "#883535"; // RedPressedColor
+                        BlueColor = "#883535"; // RedPressedColor
+                    }
+                    else
+                    {
+                        ExpBackgroundColor = "#1a5889"; // BluePressedColor
+                        BlueColor = "#1a5889"; // BluePressedColor
+                    }
+                    
                     GreyColor = "#6c6c6c"; // GreyPressedColor
                     DarkColor = "#1d1d1d"; // DarkPressedColor
 
                     OnPropertyChanged(nameof(IsCompleted));
                 }
-            }
-        }
-        private double _shadowOpacity = 1.0;
-        public double ShadowOpacity
-        {
-            get { return _shadowOpacity; }
-            set
-            {
-                _shadowOpacity = value;
-                OnPropertyChanged(nameof(ShadowOpacity));
             }
         }
 
@@ -82,6 +99,10 @@ namespace Taskick.Models
             if(date == DateTime.Today)
             {
                 return "Today";
+            }
+            else if (date < DateTime.Today)
+            {
+                return "Late";
             }
             else if (Convert.ToInt32(date.ToString("yyyy")) == Convert.ToInt32(DateTime.Today.ToString("yyyy")))
             {

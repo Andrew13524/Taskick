@@ -79,6 +79,7 @@ namespace Taskick.Services
             RemoveCompletedGoals();
             SortDatesAscending();
             GetIsDueDateVisible();
+            IsGoalLate();
         }
         public static void RemoveCompletedGoals()
         {
@@ -120,12 +121,20 @@ namespace Taskick.Services
                 {
                     for (int j = i+1; j <= GoalList.Count - 1; j++)
                     {
-                        if (GoalList[i].DueDate == GoalList[j].DueDate)
+                        if (GoalList[i].DisplayedDueDate == GoalList[j].DisplayedDueDate)
                         {
                             GoalList[j].IsDisplayedDueDateVisible = false;
                         }
                     }
                 }
+            }
+        }
+        public static void IsGoalLate()
+        {
+            foreach(Goal goal in GoalList)
+            {
+                if (goal.DueDate < DateTime.Today) goal.IsLate = true;
+                else goal.IsLate = false;
             }
         }
 

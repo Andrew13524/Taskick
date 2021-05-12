@@ -8,16 +8,16 @@ namespace Taskick.Models
 {
     public class BaseModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        private string _dateColor = "#2196f3"; // Blue
+        public string DateColor
         {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get => _dateColor;
+            set
+            {
+                _dateColor = value;
+                OnPropertyChanged(nameof(DateColor));
+            }
         }
-        
         private string _expBackgroundColor = "#7f7f7f"; // TertiaryTextColor
         public string ExpBackgroundColor
         {
@@ -60,6 +60,15 @@ namespace Taskick.Models
                 _darkColor = value;
                 OnPropertyChanged(nameof(DarkColor));
             }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            var changed = PropertyChanged;
+            if (changed == null)
+                return;
+
+            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
