@@ -20,3 +20,4 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Taskick.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\ref\Taskick.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Taskick.pdb
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\StatsPage.xaml.g.cs

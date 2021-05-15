@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Taskick.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Flyout_Test.Views
+namespace Taskick.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WalkingPage : ContentPage
     {
+        private readonly WalkingPageViewModel _viewModel;
         public WalkingPage()
         {
             InitializeComponent();
+            BindingContext = _viewModel = new WalkingPageViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _viewModel.OnDisappearing();
         }
     }
 }

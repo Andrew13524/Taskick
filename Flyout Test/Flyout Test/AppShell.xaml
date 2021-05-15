@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:Flyout_Test.Views"
+       xmlns:local="clr-namespace:Taskick.Views"
        xmlns:tools="clr-namespace:Taskick.Services"
        xmlns:vm="clr-namespace:Taskick.ViewModels"
        Title="Flyout_Test"
@@ -66,7 +66,7 @@
                     <RowDefinition Height="4"/>
                 </Grid.RowDefinitions>
                 
-                <Label Text="{Binding Username, Mode=TwoWay}"  
+                <Label Text="{Binding DisplayedUsername, Mode=TwoWay}"  
                        FontFamily="{StaticResource BoldFont}"
                        FontSize="{StaticResource HeaderFontSize}"
                        TextColor="{StaticResource PrimaryTextColor}" 
@@ -74,7 +74,7 @@
                        Padding="-5,0,0,0" 
                        Margin="5"/>
                 
-                <Label Text="{Binding Level, Mode=TwoWay}" 
+                <Label Text="{Binding DisplayedLevel, Mode=TwoWay}" 
                        FontFamily="{StaticResource BoldFont}"
                        FontSize="{StaticResource SubHeaderFontSize}"
                        TextColor="{StaticResource Blue}" 
@@ -89,7 +89,7 @@
                        Padding="-5,1" 
                        Margin="5"/>
 
-                <Label Text="{Binding Experience, Mode=TwoWay}"
+                <Label Text="{Binding DisplayedExperience, Mode=TwoWay}"
                        FontFamily="{StaticResource RegularFont}"
                        FontSize="{StaticResource SmallFontSize}"
                        FontAttributes="None"
@@ -105,12 +105,25 @@
     </Shell.FlyoutHeaderTemplate>
 
 
-    <FlyoutItem Icon="ToDoList_Icon_Blue" Title="To-Do">
+    <FlyoutItem IsVisible="{Binding IsToDoPageOpen, Mode=TwoWay}" Icon="List_Black" Title="To-Do">
         <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
     </FlyoutItem>
-    
-    <FlyoutItem Icon="Walking_Icon_Blue" Title="Walking">
+    <FlyoutItem IsVisible="{Binding IsToDoPageOpen, Converter={StaticResource Inverter}, Mode=TwoWay}" Icon="List_Grey" Title="To-Do">
+        <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem IsVisible="{Binding IsWalkingPageOpen, Mode=TwoWay}" Icon="Walking_Black" Title="Walking">
         <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
+    </FlyoutItem>
+    <FlyoutItem IsVisible="{Binding IsWalkingPageOpen, Converter={StaticResource Inverter}, Mode=TwoWay}" Icon="Walking_Grey" Title="Walking">
+        <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem IsVisible="{Binding IsStatsPageOpen, Mode=TwoWay}" Icon="Chart_Black" Title="Stats">
+        <ShellContent Route="StatsPage" ContentTemplate="{DataTemplate local:StatsPage}" />
+    </FlyoutItem>
+    <FlyoutItem IsVisible="{Binding IsStatsPageOpen, Converter={StaticResource Inverter}, Mode=TwoWay}" Icon="Chart_Grey" Title="Stats">
+        <ShellContent Route="StatsPage" ContentTemplate="{DataTemplate local:StatsPage}" />
     </FlyoutItem>
     
 </Shell>

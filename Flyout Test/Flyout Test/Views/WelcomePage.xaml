@@ -5,7 +5,7 @@
              x:DataType="viewmodels:WelcomePageViewModel"
              Padding="10"
              BackgroundColor="{StaticResource AppBackgroundColor}"
-             x:Class="Flyout_Test.Views.WelcomePage">
+             x:Class="Taskick.Views.WelcomePage">
     <ContentPage.BindingContext>
         <vm:WelcomePageViewModel/>
     </ContentPage.BindingContext>

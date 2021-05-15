@@ -8,48 +8,90 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 
 public enum SaveState { ADD, EDIT, DELETE, COMPLETE }
+public enum OpenedPage { ToDoPage, WalkingPage, StatsPage }
 
 namespace Taskick.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public static OpenedPage OpenedFlyoutPage;
+
+        private string _displayedUsername;
+        public string DisplayedUsername 
+        {
+            get => _displayedUsername;
+            set
+            {
+                _displayedUsername = value;
+                OnPropertyChanged(nameof(DisplayedUsername));
+            }
+        }
+        private string _displayedLevel;
+        public string DisplayedLevel
+        {
+            get => _displayedLevel;
+            set
+            {
+                _displayedLevel = value;
+                OnPropertyChanged(nameof(DisplayedLevel));
+            }
+        }
+        private string _displayedExperience;
+        public string DisplayedExperience
+        {
+            get => _displayedExperience;
+            set
+            {
+                _displayedExperience = value;
+                OnPropertyChanged(nameof(DisplayedExperience));
+            }
+        }
+
         public string Username
         {
-            get => Preferences.Get(nameof(User.Name), null);
+            get => Preferences.Get(nameof(Username), null);
             set
             {
-                Preferences.Set(nameof(User.Name), value);
-                OnPropertyChanged(nameof(User.Name));
+                Preferences.Set(nameof(Username), value);
+                OnPropertyChanged(nameof(Username));
             }
         }
-        public string Level
+        public int Level
         {
-            get => Preferences.Get(nameof(User.Level), null);
+            get => Preferences.Get(nameof(Level), 0);
             set
             {
-                Preferences.Set(nameof(User.Level), value);
-                OnPropertyChanged(nameof(User.Level));
+                Preferences.Set(nameof(Level), value);
+                OnPropertyChanged(nameof(Level));
             }
         }
-        public string Experience
+        public int Experience
         {
-            get => Preferences.Get(nameof(User.Experience), null);
+            get => Preferences.Get(nameof(Experience), 0);
             set
             {
-                Preferences.Set(nameof(User.Experience), value);
-                OnPropertyChanged(nameof(User.Experience));
+                Preferences.Set(nameof(Experience), value);
+                OnPropertyChanged(nameof(Experience));
+            }
+        }
+        public int RequiredExperience
+        {
+            get => Preferences.Get(nameof(RequiredExperience), 0);
+            set
+            {
+                Preferences.Set(nameof(RequiredExperience), value);
+                OnPropertyChanged(nameof(RequiredExperience));
             }
         }
         public double LevelPercentage
         {
-            get => Preferences.Get(nameof(User.LevelPercentage), 0.0);
+            get => Preferences.Get(nameof(LevelPercentage), 0.0);
             set
             {
-                Preferences.Set(nameof(User.LevelPercentage), value);
-                OnPropertyChanged(nameof(User.LevelPercentage));
+                Preferences.Set(nameof(LevelPercentage), value);
+                OnPropertyChanged(nameof(LevelPercentage));
             }
         }
-
         private bool _isLogggedIn = false;
         public bool IsLoggedIn
         {
@@ -59,6 +101,27 @@ namespace Taskick.ViewModels
                 Preferences.Set(nameof(_isLogggedIn), value);
             }
         }
+
+        public BaseViewModel()
+        {
+            DisplayedUsername = Username;
+            DisplayedLevel = $"Level {Level}";
+            DisplayedExperience = $"{Experience}/{RequiredExperience}";
+        }
+
+        public void UpdateUserInfo(string username, int level, int experience, int requiredExperience, double levelPercentage)
+        {
+            Username = username;
+            Level = level;
+            Experience = experience;
+            RequiredExperience = requiredExperience;
+            LevelPercentage = levelPercentage;
+
+            DisplayedUsername = Username;
+            DisplayedLevel = $"Level {Level}";
+            DisplayedExperience = $"{Experience}/{RequiredExperience}";
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {

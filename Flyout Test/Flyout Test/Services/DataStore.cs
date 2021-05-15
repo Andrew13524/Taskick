@@ -10,7 +10,6 @@ namespace Taskick.Services
 {
     public class DataStore
     {
-        public static SaveState SaveState;
 
         private readonly static ObservableCollection<Goal> _goalList = new ObservableCollection<Goal>();
         public static ObservableCollection<Goal> GoalList => _goalList;
@@ -23,9 +22,9 @@ namespace Taskick.Services
         private static string _path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Goals.txt");
         private static Assembly _assembly = IntrospectionExtensions.GetTypeInfo(typeof(DataStore)).Assembly;
 
-        public DataStore(Goal goal)
+        public DataStore(Goal goal, SaveState saveState)
         {
-            switch (SaveState)
+            switch (saveState)
             {
                 case SaveState.ADD:
                     {
@@ -71,6 +70,7 @@ namespace Taskick.Services
                 if (completedGoal.Id == goal.Id) return; // If exp already added, return
             }
             User.UpdateLevel(completedGoal.ExpValue);
+
             _completedGoals.Add(completedGoal);
         }
         

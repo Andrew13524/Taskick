@@ -2,7 +2,7 @@
 using Taskick.Services;
 using Taskick.Models;
 using Xamarin.Forms;
-using Flyout_Test.Views;
+using Taskick.Views;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Java.Sql;
@@ -14,7 +14,7 @@ namespace Taskick.ViewModels
         public static SaveState SaveState;
         public string SaveButtonText { get; set; }
         public bool IsDeleteButtonVisible { get; set; }
-
+        
         private string _title;
         public string Title
         {
@@ -25,7 +25,6 @@ namespace Taskick.ViewModels
                 OnPropertyChanged(nameof(Title));
             }
         }
-
         private DateTime _dueDate;
         public DateTime DueDate
         {
@@ -36,7 +35,6 @@ namespace Taskick.ViewModels
                 OnPropertyChanged(nameof(DueDate));
             }
         }
-
         private string _difficulty;
         public string Difficulty
         {
@@ -48,6 +46,8 @@ namespace Taskick.ViewModels
             }
         }
 
+
+
         public AddGoalPageViewModel()
         {
             switch (SaveState)
@@ -57,7 +57,7 @@ namespace Taskick.ViewModels
                         Title = "Enter text here";
                         DueDate = DateTime.Today;
                         Difficulty = "Easy";
-                        SaveButtonText = "Add Task";
+                        SaveButtonText = "Add Goal";
                         IsDeleteButtonVisible = false;
                         break;
                     }
@@ -109,31 +109,36 @@ namespace Taskick.ViewModels
 
         public async void AddGoal(Goal newGoal)
         {
-            DataStore.SaveState = SaveState.ADD;
-            new DataStore(newGoal);
+            new DataStore(newGoal, SaveState.ADD);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
         public async void EditGoal(Goal editedGoal)
         {
-            DataStore.SaveState = SaveState.EDIT;
-            new DataStore(editedGoal);
+            new DataStore(editedGoal, SaveState.EDIT);
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
         public ICommand DeleteCommand { get; }
         public async void DeleteCommandExecute()
         {
-            DataStore.SaveState = SaveState.DELETE;
-
             new DataStore(new Goal()        // Deleting selected goal from Datastore
             {
                 Id = DataStore.SelectedGoalId,
                 Title = Title,
                 DueDate = DueDate,
                 Difficulty = Difficulty
-            });
+            },
+            SaveState.DELETE);
 
             await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
+        public void OnAppearing()
+        {
+            //IsAddGoalPageOpen = true;
+        }
+        public void OnDisappearing()
+        {
+            //IsAddGoalPageOpen = false;
         }
     }
 }

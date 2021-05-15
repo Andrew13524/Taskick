@@ -96,22 +96,21 @@ namespace Taskick.Models
         }
         public static string GetDateName(DateTime date)
         {
-            if(date == DateTime.Today)
+            if (date < DateTime.Today)
+                return "Due";
+            else if (date.ToString("yyyy") == DateTime.Today.ToString("yyyy")) // if current year
             {
-                return "Today";
-            }
-            else if (date < DateTime.Today)
-            {
-                return "Late";
-            }
-            else if (Convert.ToInt32(date.ToString("yyyy")) == Convert.ToInt32(DateTime.Today.ToString("yyyy")))
-            {
+                if (date == DateTime.Today) // if today
+                    return "Today";
+                else if (Convert.ToInt32(date.ToString("dd")) == Convert.ToInt32(DateTime.Today.ToString("dd")) + 1) // if tommorow
+                    return "Tomorrow";
+                else if (Convert.ToInt32(date.ToString("dd")) < Convert.ToInt32(DateTime.Today.ToString("dd")) + 7) // if this week
+                    return date.ToString("dddd");
+
                 return date.ToString("MMMM d");
             }
             else
-            {
                 return date.ToString("MMMM d, yyyy");
-            }
         }       
     }
 }

@@ -8,21 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.Views.ToDoPage.xaml", "Views/ToDoPage.xaml", typeof(global::Flyout_Test.Views.ToDoPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.Views.ToDoPage.xaml", "Views/ToDoPage.xaml", typeof(global::Taskick.Views.ToDoPage))]
 
-namespace Flyout_Test.Views {
+namespace Taskick.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ToDoPage.xaml")]
     public partial class ToDoPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ContentPage MyPage;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ToDoPage));
-            MyPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "MyPage");
         }
     }
 }

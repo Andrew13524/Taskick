@@ -4,7 +4,7 @@ using Taskick.Models;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Android.Content.Res;
-using Flyout_Test.Views;
+using Taskick.Views;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using System.Collections.Generic;
@@ -15,7 +15,15 @@ namespace Taskick.ViewModels
     class ToDoPageViewModel : BaseViewModel
     {
         ObservableCollection<Goal> goals = DataStore.GoalList;
-        public ObservableCollection<Goal> Goals => goals;
+        public ObservableCollection<Goal> Goals
+        {
+            get => goals;
+            set
+            {
+                goals = value;
+                OnPropertyChanged(nameof(Goals));
+            }
+        }
 
         private bool _isBusy = false;
         public bool IsBusy
@@ -25,6 +33,16 @@ namespace Taskick.ViewModels
             {
                 _isBusy = value;
                 OnPropertyChanged(nameof(IsBusy));
+            }
+        }
+        private bool _isGoalListNull = true;
+        public bool IsGoalListNull
+        {
+            get => _isGoalListNull;
+            set
+            {
+                _isGoalListNull = value;
+                OnPropertyChanged(nameof(IsGoalListNull));
             }
         }
 
@@ -41,7 +59,10 @@ namespace Taskick.ViewModels
 
             DataStore.UpdateGoalList();
 
-            goals = DataStore.GoalList;
+            Goals = DataStore.GoalList;
+
+            if (Goals.Count > 0) IsGoalListNull = false;
+            else                 IsGoalListNull = true;
 
             IsBusy = false;
         }
@@ -55,7 +76,13 @@ namespace Taskick.ViewModels
 
         public void OnAppearing()
         {
+            //IsToDoPageOpen = true;
+            OpenedFlyoutPage = OpenedPage.ToDoPage;
             IsBusy = true;
+        }
+        public void OnDisappearing()
+        {
+            //IsToDoPageOpen = true;
         }
     }
 }

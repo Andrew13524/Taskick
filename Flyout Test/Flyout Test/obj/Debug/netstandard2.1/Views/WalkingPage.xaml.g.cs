@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.Views.WalkingPage.xaml", "Views/WalkingPage.xaml", typeof(global::Flyout_Test.Views.WalkingPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Taskick.Views.WalkingPage.xaml", "Views/WalkingPage.xaml", typeof(global::Taskick.Views.WalkingPage))]
 
-namespace Flyout_Test.Views {
+namespace Taskick.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\WalkingPage.xaml")]

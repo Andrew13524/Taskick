@@ -3,7 +3,7 @@ using Taskick.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Taskick.ViewModels;
-using Flyout_Test.Views;
+using Taskick.Views;
 using System.ComponentModel;
 
 namespace Flyout_Test

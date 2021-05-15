@@ -1,4 +1,4 @@
-﻿using Flyout_Test.Views;
+﻿using Taskick.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

@@ -19,11 +19,12 @@
     <None Remove="Assets\Fonts\Asap-SemiBold.ttf" />
     <None Remove="Assets\Fonts\Asap-SemiBoldItalic.ttf" />
     <None Remove="Assets\Images\BlueLines.png" />
-    <None Remove="Assets\Images\ToDoList_Icon.png" />
-    <None Remove="Assets\Images\ToDoList_Icon2.png" />
-    <None Remove="Assets\Images\ToDoList_Icon_Blue.png" />
-    <None Remove="Assets\Images\Walking_Icon.png" />
-    <None Remove="Assets\Images\Walking_Icon_Blue.png" />
+    <None Remove="Assets\Images\Flyout Icons\Chart_Black.png" />
+    <None Remove="Assets\Images\Flyout Icons\Chart_Grey.png" />
+    <None Remove="Assets\Images\Flyout Icons\List_Black.png" />
+    <None Remove="Assets\Images\Flyout Icons\List_Grey.png" />
+    <None Remove="Assets\Images\Flyout Icons\Walking_Black.png" />
+    <None Remove="Assets\Images\Flyout Icons\Walking_Grey.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,11 +37,12 @@
     <EmbeddedResource Include="Assets\Fonts\Asap-SemiBold.ttf" />
     <EmbeddedResource Include="Assets\Fonts\Asap-SemiBoldItalic.ttf" />
     <EmbeddedResource Include="Assets\Images\BlueLines.png" />
-    <EmbeddedResource Include="Assets\Images\ToDoList_Icon2.png" />
-    <EmbeddedResource Include="Assets\Images\ToDoList_Icon.png" />
-    <EmbeddedResource Include="Assets\Images\ToDoList_Icon_Blue.png" />
-    <EmbeddedResource Include="Assets\Images\Walking_Icon.png" />
-    <EmbeddedResource Include="Assets\Images\Walking_Icon_Blue.png" />
+    <EmbeddedResource Include="Assets\Images\Flyout Icons\Chart_Black.png" />
+    <EmbeddedResource Include="Assets\Images\Flyout Icons\Chart_Grey.png" />
+    <EmbeddedResource Include="Assets\Images\Flyout Icons\List_Black.png" />
+    <EmbeddedResource Include="Assets\Images\Flyout Icons\List_Grey.png" />
+    <EmbeddedResource Include="Assets\Images\Flyout Icons\Walking_Black.png" />
+    <EmbeddedResource Include="Assets\Images\Flyout Icons\Walking_Grey.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,6 +75,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\AddGoalPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StatsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

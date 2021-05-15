@@ -30,7 +30,6 @@ namespace Taskick.Models
             set => _requiredExperience = value;
         }
 
-
         public static void UpdateLevel(double experience)
         {
             Experience += (int)experience;

@@ -8,7 +8,7 @@ using System.Linq;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
 
-namespace Flyout_Test.Views
+namespace Taskick.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ToDoPage
@@ -23,6 +23,11 @@ namespace Flyout_Test.Views
         {
             base.OnAppearing();
             _viewModel.OnAppearing();
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _viewModel.OnDisappearing();
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -46,13 +51,10 @@ namespace Flyout_Test.Views
             {
                 if (checkedGoal.ClassId == goal.Id)
                 {
-                    DataStore.SaveState = SaveState.COMPLETE;
 
-                    new DataStore(goal);                // Completing the selected goal & updating values
+                    new DataStore(goal, SaveState.COMPLETE);        // Completing the selected goal & updating values
 
-                    _viewModel.Level = $"Level {User.Level}";
-                    _viewModel.Experience = $"{User.Experience}/{User.RequiredExperience}";
-                    _viewModel.LevelPercentage = User.LevelPercentage;
+                    _viewModel.UpdateUserInfo(User.Name, User.Level, User.Experience, User.RequiredExperience, User.LevelPercentage);
 
                     return;
                 }
