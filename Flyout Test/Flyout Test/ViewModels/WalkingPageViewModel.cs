@@ -12,12 +12,7 @@ namespace Taskick.ViewModels
         }
         public void OnAppearing()
         {
-            OpenedFlyoutPage = OpenedPage.WalkingPage;
-            //IsWalkingPageOpen = true;
-        }
-        public void OnDisappearing()
-        {
-            //IsWalkingPageOpen = false;
+            OpenedPage = Page.WalkingPage;
         }
     }
 }

@@ -48,6 +48,10 @@ namespace Taskick.ViewModels
                 User.Name = $"{FirstName} {LastName}";
             }
             Application.Current.MainPage = new AppShell();
-        }    
+        }   
+        public void OnAppearing()
+        {
+            OpenedPage = Page.WelcomePage;
+        }
     }
 }

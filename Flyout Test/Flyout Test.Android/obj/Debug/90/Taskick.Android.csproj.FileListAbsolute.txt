@@ -1034,9 +1034,3 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\assets\WeakEvent.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64994682affb61faca\AndroidShadowsRenderer.java
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\android\src\crc64994682affb61faca\ShadowView.java
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\chart_black.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\chart_grey.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\list_black.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\list_grey.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\walking_black.png
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\90\res\drawable\walking_grey.png

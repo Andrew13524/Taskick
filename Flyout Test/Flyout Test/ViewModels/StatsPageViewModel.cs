@@ -12,12 +12,7 @@ namespace Taskick.ViewModels
         }
         public void OnAppearing()
         {
-            OpenedFlyoutPage = OpenedPage.StatsPage;
-            //IsToDoPageOpen = true;
-        }
-        public void OnDisappearing()
-        {
-            //IsStatsPageOpen = false;
+            OpenedPage = Page.StatsPage;
         }
     }
 }

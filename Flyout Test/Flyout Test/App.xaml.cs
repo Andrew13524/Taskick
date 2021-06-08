@@ -13,6 +13,7 @@ using Taskick.Services;
 [assembly: ExportFont("Asap-Regular.ttf",           Alias = "Asap-Regular")]
 [assembly: ExportFont("Asap-SemiBold.ttf",          Alias = "Asap-SemiBold")]
 [assembly: ExportFont("Asap-SemiBoldItalic.ttf",    Alias = "Asap-SemiBoldItalic")]
+[assembly: ExportFont("fa-Free-Solid-900.otf",      Alias = "FAS")]
 namespace Flyout_Test
 {
     public partial class App : Application

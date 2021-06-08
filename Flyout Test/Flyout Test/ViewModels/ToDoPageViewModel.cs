@@ -70,19 +70,17 @@ namespace Taskick.ViewModels
         public ICommand GoToAddGoalPageCommand { get; }
         public async void GoToAddGoalPage()
         {
+            if (OpenedPage != Page.ToDoPage)
+                return;
+
             AddGoalPageViewModel.SaveState = SaveState.ADD;
             await Application.Current.MainPage.Navigation.PushAsync(new AddGoalPage());
         }
 
         public void OnAppearing()
         {
-            //IsToDoPageOpen = true;
-            OpenedFlyoutPage = OpenedPage.ToDoPage;
+            OpenedPage = Page.ToDoPage;
             IsBusy = true;
-        }
-        public void OnDisappearing()
-        {
-            //IsToDoPageOpen = true;
         }
     }
 }

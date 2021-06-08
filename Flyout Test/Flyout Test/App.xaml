@@ -2,6 +2,7 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:services="clr-namespace:Taskick.Services;assembly=Taskick"
+             xmlns:controls="clr-namespace:Taskick.Controls"
              xmlns:tools="clr-namespace:Taskick.Services"
              x:Class="Flyout_Test.App">
     <Application.Resources>
@@ -11,9 +12,9 @@
             <!-- Tools -->
             <services:NegateBooleanConverter x:Key="Inverter"/>
             
+
+
             
-
-
             <!-- Colors --> <!-- App -->
             <Color x:Key="AppBackgroundColor">#121212</Color>
             <Color x:Key="MenuBarColor">#1e1e1e</Color>
@@ -39,6 +40,7 @@
 
 
             <!-- Fonts --> <!-- Attributes -->
+            <x:String x:Key="FAS">FAS</x:String>
             <x:String x:Key="BoldFont">Asap-Bold</x:String>
             <x:String x:Key="BoldItalicFont">Asap-BoldItalic</x:String>
             <x:String x:Key="ItalicFont">Asap-BoldItalic</x:String>
@@ -54,6 +56,14 @@
             <x:Double x:Key="LargeFontSize">22</x:Double>
             <x:Double x:Key="RegularFontSize">16</x:Double>
             <x:Double x:Key="SmallFontSize">14</x:Double>
+            
+            
+            
+            <!-- Glyphs -->
+            <x:String x:Key="ListIcon">&#xf0ca;</x:String>
+            <x:String x:Key="WalkingIcon">&#xf554;</x:String>
+            <x:String x:Key="ChartIcon">&#xf080;</x:String>
+
 
 
 
@@ -116,6 +126,8 @@
                 <Setter Property="FontSize" Value="{StaticResource RegularFontSize}" />
                 <Setter Property="TextColor" Value="White"/>
             </Style>
+
+            <!-- <Style TargetType="controls:FlyoutItemIconFont" BasedOn="{StaticResource BaseStyle}"/> -->
             
         </ResourceDictionary>
     </Application.Resources>

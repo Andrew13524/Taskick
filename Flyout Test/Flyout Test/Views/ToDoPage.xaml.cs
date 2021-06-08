@@ -24,11 +24,7 @@ namespace Taskick.Views
             base.OnAppearing();
             _viewModel.OnAppearing();
         }
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            _viewModel.OnDisappearing();
-        }
+
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection.Count == 0) return;              // If selection null or already completed, do not execute

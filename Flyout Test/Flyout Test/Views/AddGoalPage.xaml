@@ -45,6 +45,7 @@
             </Picker>
 
             <Button Text="{Binding SaveButtonText}" 
+                    IsEnabled="{Binding IsAddGoalPageOpen}"
                     Command="{Binding SaveCommand}"/>
             
             <Button Text="Delete" 

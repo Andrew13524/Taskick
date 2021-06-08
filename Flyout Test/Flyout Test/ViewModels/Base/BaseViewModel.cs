@@ -8,13 +8,13 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 
 public enum SaveState { ADD, EDIT, DELETE, COMPLETE }
-public enum OpenedPage { ToDoPage, WalkingPage, StatsPage }
+public enum Page { ToDoPage, WalkingPage, StatsPage, WelcomePage, AddGoalPage }
 
 namespace Taskick.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public static OpenedPage OpenedFlyoutPage;
+        public static Page OpenedPage;
 
         private string _displayedUsername;
         public string DisplayedUsername 

@@ -4,6 +4,7 @@
        xmlns:local="clr-namespace:Taskick.Views"
        xmlns:tools="clr-namespace:Taskick.Services"
        xmlns:vm="clr-namespace:Taskick.ViewModels"
+       xmlns:controls="clr-namespace:Taskick.Controls"
        Title="Flyout_Test"
        FlyoutBackgroundColor="{StaticResource BottomGradient}"
        x:Class="Flyout_Test.AppShell">
@@ -11,46 +12,19 @@
     <Shell.BindingContext>
         <vm:AppShellViewModel/>
     </Shell.BindingContext>
-    <Shell.NavBarHasShadow>False</Shell.NavBarHasShadow>
+    
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.Title" Value="App" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource MenuBarColor}" />
             </Style>
+            
+            <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}"/>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
-
-            <!--Default Styles for all Flyout Items-->
-            
-            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
-                <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
-                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}" />
-                <Setter Property="TextColor" Value="{StaticResource AppBackgroundColor}" />
-            </Style>
-            
-            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    
-                                    <Setter Property="BackgroundColor" Value="{StaticResource BottomGradient}" />
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource SecondaryTextColor}" />
-                                    
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Selected">
-                                <VisualState.Setters>
-                                    
-                                    <Setter Property="BackgroundColor" Value="{StaticResource TopGradient}"/>
-                                    
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
         </ResourceDictionary>
     </Shell.Resources>
 
@@ -104,26 +78,65 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
 
-    <FlyoutItem IsVisible="{Binding IsToDoPageOpen, Mode=TwoWay}" Icon="List_Black" Title="To-Do">
-        <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
-    </FlyoutItem>
-    <FlyoutItem IsVisible="{Binding IsToDoPageOpen, Converter={StaticResource Inverter}, Mode=TwoWay}" Icon="List_Grey" Title="To-Do">
-        <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
-    </FlyoutItem>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource BottomGradient}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource SecondaryTextColor}" />
 
-    <FlyoutItem IsVisible="{Binding IsWalkingPageOpen, Mode=TwoWay}" Icon="Walking_Black" Title="Walking">
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+
+                                    <Setter Property="BackgroundColor" Value="{StaticResource TopGradient}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource AppBackgroundColor}" />
+
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="FlyoutItemIcon" Padding="10"
+                       Text="{Binding IconGlyph}"
+                       FontFamily="{StaticResource FAS}"
+                       TextColor="{Binding Source={x:Reference FlyoutItemLabel}, Path=TextColor}"
+                       FontSize="{StaticResource HeaderFontSize}"
+                       Margin="5" />
+                <Label x:Name="FlyoutItemLabel" Padding="10"
+                       FontFamily="{StaticResource BoldFont}"
+                       FontSize="{StaticResource SubHeaderFontSize}"
+                       Grid.Column="1"
+                       Text="{Binding Title}"
+                       VerticalTextAlignment="Center" />
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <controls:FlyoutItemIconFont Title="To-Do" IconGlyph="{StaticResource ListIcon}">
+        <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
+    </controls:FlyoutItemIconFont>
+
+    <controls:FlyoutItemIconFont Title="Walking" IconGlyph="{StaticResource WalkingIcon}">
         <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
-    </FlyoutItem>
-    <FlyoutItem IsVisible="{Binding IsWalkingPageOpen, Converter={StaticResource Inverter}, Mode=TwoWay}" Icon="Walking_Grey" Title="Walking">
-        <ShellContent Route="WalkingPage" ContentTemplate="{DataTemplate local:WalkingPage}" />
-    </FlyoutItem>
-    
-    <FlyoutItem IsVisible="{Binding IsStatsPageOpen, Mode=TwoWay}" Icon="Chart_Black" Title="Stats">
+    </controls:FlyoutItemIconFont>
+
+    <controls:FlyoutItemIconFont Title="Stats" IconGlyph="{StaticResource ChartIcon}">
         <ShellContent Route="StatsPage" ContentTemplate="{DataTemplate local:StatsPage}" />
-    </FlyoutItem>
-    <FlyoutItem IsVisible="{Binding IsStatsPageOpen, Converter={StaticResource Inverter}, Mode=TwoWay}" Icon="Chart_Grey" Title="Stats">
-        <ShellContent Route="StatsPage" ContentTemplate="{DataTemplate local:StatsPage}" />
-    </FlyoutItem>
-    
+    </controls:FlyoutItemIconFont>
+
 </Shell>

@@ -14,7 +14,17 @@ namespace Taskick.ViewModels
         public static SaveState SaveState;
         public string SaveButtonText { get; set; }
         public bool IsDeleteButtonVisible { get; set; }
-        
+
+        private bool _isAddGoalPageOpen;
+        public bool IsAddGoalPageOpen 
+        {
+            get => _isAddGoalPageOpen;
+            set
+            {
+                _isAddGoalPageOpen = value;
+                OnPropertyChanged(nameof(IsAddGoalPageOpen));
+            }
+        }
         private string _title;
         public string Title
         {
@@ -45,8 +55,6 @@ namespace Taskick.ViewModels
                 OnPropertyChanged(nameof(Difficulty));
             }
         }
-
-
 
         public AddGoalPageViewModel()
         {
@@ -79,32 +87,36 @@ namespace Taskick.ViewModels
         public ICommand SaveCommand { get; }
         public void SaveButtonCommandExecute()
         {
+            if (OpenedPage != Page.AddGoalPage)
+                return;
+
             if (!string.IsNullOrWhiteSpace(Title))
-            {
-                switch (SaveState)
                 {
-                    case SaveState.ADD:       // If adding a goal, execute AddGoal command with new instance of a goal object
-                        {
-                            AddGoal(new Goal(Title, DueDate, Difficulty));
-                            break;
-                        }
-                    case SaveState.EDIT:      // If editing a goal, execute EditGoal command with the currently selected goal object ID
-                        {
-                            EditGoal(new Goal()
+                    switch (SaveState)
+                    {
+                        case SaveState.ADD:       // If adding a goal, execute AddGoal command with new instance of a goal object
                             {
-                                Id = DataStore.SelectedGoalId,
-                                Title = Title,
-                                DueDate = DueDate,
-                                Difficulty = Difficulty
-                            });
-                            break;
-                        }
+                                AddGoal(new Goal(Title, DueDate, Difficulty));
+                                break;
+                            }
+                        case SaveState.EDIT:      // If editing a goal, execute EditGoal command with the currently selected goal object ID
+                            {
+                                EditGoal(new Goal()
+                                {
+                                    Id = DataStore.SelectedGoalId,
+                                    Title = Title,
+                                    DueDate = DueDate,
+                                    Difficulty = Difficulty
+                                });
+                                break;
+                            }
+                    }
                 }
-            }
-            else
-            {
-                Application.Current.MainPage.DisplayAlert("", "Please Enter a Title", "Ok");
-            }
+                else
+                {
+                    Application.Current.MainPage.DisplayAlert("Warning", "Please Enter a Title", "Ok");
+                }
+            
         }
 
         public async void AddGoal(Goal newGoal)
@@ -115,12 +127,16 @@ namespace Taskick.ViewModels
         public async void EditGoal(Goal editedGoal)
         {
             new DataStore(editedGoal, SaveState.EDIT);
+            OpenedPage = Page.ToDoPage;
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
         public ICommand DeleteCommand { get; }
         public async void DeleteCommandExecute()
         {
+            if (OpenedPage != Page.AddGoalPage)
+                return;
+
             new DataStore(new Goal()        // Deleting selected goal from Datastore
             {
                 Id = DataStore.SelectedGoalId,
@@ -130,15 +146,12 @@ namespace Taskick.ViewModels
             },
             SaveState.DELETE);
 
+            OpenedPage = Page.ToDoPage;
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
         public void OnAppearing()
         {
-            //IsAddGoalPageOpen = true;
-        }
-        public void OnDisappearing()
-        {
-            //IsAddGoalPageOpen = false;
+            OpenedPage = Page.AddGoalPage;
         }
     }
 }
