@@ -15,16 +15,6 @@ namespace Taskick.ViewModels
         public string SaveButtonText { get; set; }
         public bool IsDeleteButtonVisible { get; set; }
 
-        private bool _isAddGoalPageOpen;
-        public bool IsAddGoalPageOpen 
-        {
-            get => _isAddGoalPageOpen;
-            set
-            {
-                _isAddGoalPageOpen = value;
-                OnPropertyChanged(nameof(IsAddGoalPageOpen));
-            }
-        }
         private string _title;
         public string Title
         {

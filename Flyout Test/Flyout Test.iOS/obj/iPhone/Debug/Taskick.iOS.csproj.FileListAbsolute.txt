@@ -1,10 +1,12 @@
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Flyout Test.iOS.exe
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Flyout Test.iOS.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Prism.dll
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Prism.pdb
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Prism.Forms.dll
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Prism.Forms.pdb
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Sharpnado.Shadows.dll
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Sharpnado.Shadows.pdb
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Sharpnado.Shadows.iOS.dll
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Sharpnado.Shadows.iOS.pdb
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\WeakEvent.dll
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\WeakEvent.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Xamarin.Essentials.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Xamarin.Essentials.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll

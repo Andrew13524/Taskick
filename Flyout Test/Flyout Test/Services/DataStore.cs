@@ -140,6 +140,9 @@ namespace Taskick.Services
 
         public static void LoadFromFile()
         {
+            if (!File.Exists(_path))
+                return;
+
             GoalList.Clear();
 
             string[] lines = File.ReadAllLines(_path);

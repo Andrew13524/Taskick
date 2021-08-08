@@ -5,10 +5,10 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\bin\Debug\netstandard2.1\Mono.Android.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\bin\Debug\netstandard2.1\Mono.Android.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\bin\Debug\netstandard2.1\Mono.Android.xml
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Taskick.csprojAssemblyReference.cache
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\App.xaml.g.cs
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\AppShell.xaml.g.cs
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\AddGoalPage.xaml.g.cs
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\StatsPage.xaml.g.cs
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\ToDoPage.xaml.g.cs
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\WalkingPage.xaml.g.cs
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\WelcomePage.xaml.g.cs
@@ -20,4 +20,4 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Taskick.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\ref\Taskick.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Taskick.pdb
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Views\StatsPage.xaml.g.cs
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test\obj\Debug\netstandard2.1\Taskick.csprojAssemblyReference.cache
