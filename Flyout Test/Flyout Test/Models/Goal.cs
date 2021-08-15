@@ -6,12 +6,54 @@ namespace Taskick.Models
 {
     public class Goal : BaseModel
     {
-        public string Id { get; set; }
-        public string Title { get; set; }
-        public DateTime DueDate { get; set; }
-        public string Difficulty { get; set; }
+        private string _id;
+        public string Id 
+        { 
+            get => _id; 
+            set => _id = value; 
+        }
+        private string _title;
+        public string Title 
+        {
+            get => _title;
+            set => _title = value;
+        }
+        private string _description = null;
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                if (value == String.Empty)
+                    IsDescriptionEmpty = true;
+                else
+                    IsDescriptionEmpty = false;
+
+                _description = value;
+                return;
+            }
+        }
+        private DateTime _dueDate;
+        public DateTime DueDate 
+        {
+            get => _dueDate;
+            set => _dueDate = value;
+        }
+        private string _difficulty;
+        public string Difficulty 
+        {
+            get => _difficulty;
+            set => _difficulty = value;
+        }
         public int ExpValue => GetExpValue();
         public string DisplayedDueDate => GetDateName(DueDate);
+
+        private bool _isDescriptionEmpty;
+        public bool IsDescriptionEmpty
+        {
+            get => _isDescriptionEmpty;
+            set => _isDescriptionEmpty = value;
+        }
 
         private bool _isDisplayedDueDateVisible = true;
         public bool IsDisplayedDueDateVisible
@@ -76,9 +118,10 @@ namespace Taskick.Models
         {
             
         }
-        public Goal(string title, DateTime dueDate, string difficulty)
+        public Goal(string title, string description, DateTime dueDate, string difficulty)
         {
             Title = title;
+            Description = description;
             DueDate = dueDate;
             Difficulty = difficulty;
             Id = Guid.NewGuid().ToString();

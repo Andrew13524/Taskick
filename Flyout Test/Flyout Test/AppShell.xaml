@@ -127,7 +127,7 @@
         </DataTemplate>
     </Shell.ItemTemplate>
 
-    <controls:FlyoutItemIconFont Title="To-Do" IconGlyph="{StaticResource ListIcon}">
+    <controls:FlyoutItemIconFont Title="Quests" IconGlyph="{StaticResource ListIcon}">
         <ShellContent Route="ToDoPage" ContentTemplate="{DataTemplate local:ToDoPage}" />
     </controls:FlyoutItemIconFont>
 

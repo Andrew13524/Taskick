@@ -25,6 +25,16 @@ namespace Taskick.ViewModels
                 OnPropertyChanged(nameof(Title));
             }
         }
+        private string _description;
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                _description = value;
+                OnPropertyChanged(nameof(Description));
+            }
+        }
         private DateTime _dueDate;
         public DateTime DueDate
         {
@@ -52,16 +62,18 @@ namespace Taskick.ViewModels
             {
                 case SaveState.ADD: // Setting labels, dates, and difficulties upon page opening
                     {
-                        Title = "Enter text here";
+                        Title = "Enter title here";
+                        Description = "Enter description here";
                         DueDate = DateTime.Today;
                         Difficulty = "Easy";
-                        SaveButtonText = "Add Goal";
+                        SaveButtonText = "Add Quest";
                         IsDeleteButtonVisible = false;
                         break;
                     }
                 case SaveState.EDIT:
                     {
-                        Title = DataStore.GoalList[DataStore.GetGoalIndex()].Title; 
+                        Title = DataStore.GoalList[DataStore.GetGoalIndex()].Title;
+                        Description = DataStore.GoalList[DataStore.GetGoalIndex()].Description;
                         DueDate = DataStore.GoalList[DataStore.GetGoalIndex()].DueDate;
                         Difficulty = DataStore.GoalList[DataStore.GetGoalIndex()].Difficulty;
                         SaveButtonText = "Save";
@@ -86,7 +98,7 @@ namespace Taskick.ViewModels
                     {
                         case SaveState.ADD:       // If adding a goal, execute AddGoal command with new instance of a goal object
                             {
-                                AddGoal(new Goal(Title, DueDate, Difficulty));
+                                AddGoal(new Goal(Title, Description, DueDate, Difficulty));
                                 break;
                             }
                         case SaveState.EDIT:      // If editing a goal, execute EditGoal command with the currently selected goal object ID
@@ -95,6 +107,7 @@ namespace Taskick.ViewModels
                                 {
                                     Id = DataStore.SelectedGoalId,
                                     Title = Title,
+                                    Description = Description,
                                     DueDate = DueDate,
                                     Difficulty = Difficulty
                                 });

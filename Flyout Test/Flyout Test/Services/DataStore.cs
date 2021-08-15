@@ -147,13 +147,14 @@ namespace Taskick.Services
 
             string[] lines = File.ReadAllLines(_path);
 
-            for (int i = 0; i < lines.Length; i+=3)
+            for (int i = 0; i < lines.Length; i+=4)
             {
                 string Title = lines[i];
-                DateTime DueDate = Convert.ToDateTime(lines[i + 1]);
-                string Difficulty = lines[i + 2];
+                string Description = lines[i + 1];
+                DateTime DueDate = Convert.ToDateTime(lines[i + 2]);
+                string Difficulty = lines[i + 3];
 
-                GoalList.Add(new Goal(Title, DueDate, Difficulty));
+                GoalList.Add(new Goal(Title, Description, DueDate, Difficulty));
             }
         }
         public static void SaveToFile()
@@ -162,7 +163,7 @@ namespace Taskick.Services
 
             foreach (Goal goal in GoalList)
             {
-                if(!goal.IsCompleted) content += ($"{goal.Title}\n{goal.DueDate}\n{goal.Difficulty}\n");
+                if(!goal.IsCompleted) content += ($"{goal.Title}\n{goal.Description}\n{goal.DueDate}\n{goal.Difficulty}\n");
             }
 
             File.WriteAllText(_path, content);

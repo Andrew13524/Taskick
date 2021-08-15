@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Add Goal"             
+             Title="Add Quest"             
              xmlns:local="clr-namespace:Taskick.ViewModels" 
              x:DataType="local:AddGoalPageViewModel"
              BackgroundColor="{StaticResource AppBackgroundColor}"
@@ -16,25 +16,40 @@
 
             <Label Text="Title"
                    FontFamily="{StaticResource BoldFont}"
-                   FontSize="{StaticResource HeaderFontSize}"/>
+                   FontSize="{StaticResource HeaderFontSize}"
+                   VerticalOptions="End"/>
 
             <Entry Text="{Binding Title}"
-                   FontSize="{StaticResource SubHeaderFontSize}"/>
+                   FontSize="{StaticResource RegularFontSize}"
+                   VerticalOptions="Start"/>
 
+            <Label Text="Description"
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="{StaticResource HeaderFontSize}"
+                   VerticalOptions="End"/>
+            
+            <Entry Text="{Binding Description}"
+                   FontSize="{StaticResource RegularFontSize}"
+                   VerticalOptions="Start"/>
+            
             <Label Text="Date"
                    FontFamily="{StaticResource BoldFont}"
-                   FontSize="{StaticResource HeaderFontSize}"/>
+                   FontSize="{StaticResource HeaderFontSize}"
+                   VerticalOptions="End"/>
 
             <DatePicker Date="{Binding DueDate}"
-                        FontSize="{StaticResource SubHeaderFontSize}"/>
+                        FontSize="{StaticResource RegularFontSize}"
+                        VerticalOptions="Start"/>
 
             <Label Text="Difficulty"
                    FontFamily="{StaticResource BoldFont}"
-                   FontSize="{StaticResource HeaderFontSize}"/>
+                   FontSize="{StaticResource HeaderFontSize}"
+                   VerticalOptions="End"/>
 
             <Picker SelectedItem="{Binding Difficulty}"
                     FontFamily="{StaticResource RegularFont}"
-                    FontSize="{StaticResource SubHeaderFontSize}">
+                    FontSize="{StaticResource RegularFontSize}"
+                    VerticalOptions="Start">
 
                 <Picker.Items>
                     <x:String>Easy</x:String>

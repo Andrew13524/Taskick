@@ -8,5 +8,7 @@
     <item name="colorControlNormal">#b3b3b3</item>
     <item name="colorPrimary">#1e1e1e</item>
     <item name="android:colorActivatedHighlight">#121212</item>
+
+    <item name="android:textAllCaps">false</item>
   </style>
 </resources>

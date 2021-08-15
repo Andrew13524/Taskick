@@ -45,7 +45,7 @@
             <x:String x:Key="BoldItalicFont">Asap-BoldItalic</x:String>
             <x:String x:Key="ItalicFont">Asap-BoldItalic</x:String>
             <x:String x:Key="MediumFont">Asap-Medium</x:String>
-            <x:String x:Key="MdeiumItalicFont">Asap-MediumItalic</x:String>
+            <x:String x:Key="MediumItalicFont">Asap-MediumItalic</x:String>
             <x:String x:Key="RegularFont">Asap-Regular</x:String>
             <x:String x:Key="SemiBoldFont">Asap-SemiBold</x:String>
             <x:String x:Key="SemiBoldItalicFont">Asap-SemiBoldItalic</x:String>
@@ -122,8 +122,9 @@
             <!-- Button Defaults -->
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource Blue}" />
+                <Setter Property="TextTransform" Value="None" />
                 <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
-                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource LargeFontSize}" />
                 <Setter Property="TextColor" Value="White"/>
             </Style>
 
