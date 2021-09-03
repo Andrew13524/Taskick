@@ -124,7 +124,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource Blue}" />
                 <Setter Property="TextTransform" Value="None" />
                 <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
-                <Setter Property="FontSize" Value="{StaticResource LargeFontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource SubHeaderFontSize}" />
                 <Setter Property="TextColor" Value="White"/>
             </Style>
 

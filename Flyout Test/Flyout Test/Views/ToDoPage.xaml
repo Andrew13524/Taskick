@@ -176,7 +176,8 @@
                        VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
-            <Button Text="Add Quest" VerticalOptions="End" Command="{Binding GoToAddGoalPageCommand}" ></Button>
+
+            <Button Text="Add Quest" VerticalOptions="End" Command="{Binding GoToAddGoalPageCommand}" />
 
         </StackLayout>
     </ContentPage.Content>

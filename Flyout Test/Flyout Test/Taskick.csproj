@@ -55,7 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Services\AttachedProperties.cs">
+    <Compile Update="Services\Tools\AttachedProperties.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Views\ToDoPage.xaml.cs">

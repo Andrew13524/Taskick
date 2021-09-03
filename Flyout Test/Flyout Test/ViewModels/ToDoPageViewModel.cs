@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using System.Collections.Generic;
 using System;
+using Taskick.Services.DataStorage;
 
 namespace Taskick.ViewModels
 {
     class ToDoPageViewModel : BaseViewModel
     {
-        ObservableCollection<Goal> goals = DataStore.GoalList;
+        ObservableCollection<Goal> goals = GoalDataStore.GoalList;
         public ObservableCollection<Goal> Goals
         {
             get => goals;
@@ -24,17 +25,7 @@ namespace Taskick.ViewModels
                 OnPropertyChanged(nameof(Goals));
             }
         }
-
-        private bool _isBusy = false;
-        public bool IsBusy
-        {
-            get => _isBusy;
-            set
-            {
-                _isBusy = value;
-                OnPropertyChanged(nameof(IsBusy));
-            }
-        }
+        
         private bool _isGoalListNull = true;
         public bool IsGoalListNull
         {
@@ -57,9 +48,9 @@ namespace Taskick.ViewModels
         {
             IsBusy = true;
 
-            DataStore.UpdateGoalList();
+            GoalDataStore.UpdateGoalList();
 
-            Goals = DataStore.GoalList;
+            Goals = GoalDataStore.GoalList;
 
             if (Goals.Count > 0) IsGoalListNull = false;
             else                 IsGoalListNull = true;

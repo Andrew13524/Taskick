@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Xamarin.Essentials;
 using Taskick.Models;
 using System.Collections.ObjectModel;
 using Taskick.Services;
+using Taskick.Services.DataStorage;
 
 namespace Taskick.ViewModels
 {
@@ -11,19 +11,12 @@ namespace Taskick.ViewModels
     {
         public AppShellViewModel()
         {
-            if (!IsLoggedIn)
-            {
-                UpdateUserInfo(User.Name, User.Level, User.Experience, User.RequiredExperience, User.LevelPercentage);
-                IsLoggedIn = true;
-            }
-            else
-            {
-                User.Name = Username;
-                User.Level = Level;
-                User.Experience = Experience;
-                User.RequiredExperience = RequiredExperience;
-                User.LevelPercentage = LevelPercentage;
-            }
+            Name = UserDataStore.CurrentUser.Name;
+            Level = UserDataStore.CurrentUser.Level;
+            Experience = UserDataStore.CurrentUser.Experience;
+            RequiredExperience = UserDataStore.CurrentUser.RequiredExperience;
+            LevelPercentage = UserDataStore.CurrentUser.LevelPercentage;
+            Steps = UserDataStore.CurrentUser.Steps;
         }
     }
 }

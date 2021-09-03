@@ -1,20 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Taskick.Controls;assembly=Taskick" 
              xmlns:vm="clr-namespace:Taskick.ViewModels;assembly=Taskick"
              Title="Walking"
              BackgroundColor="{StaticResource AppBackgroundColor}"
              x:Class="Taskick.Views.WalkingPage">
     <ContentPage.BindingContext>
-        <vm:StatsPageViewModel/>
+        <vm:WalkingPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Step tracker and walking goals"
-                   TextColor="#b3b3b3"
-                   FontSize="20"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <ScrollView>
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"   />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="10"   />
+                            <RowDefinition Height="300" />
+                            <RowDefinition Height="10"   />
+                        </Grid.RowDefinitions>
+
+                        <Label Text="Total Steps Taken"
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="36"
+                   TextColor="{StaticResource SecondaryTextColor}"
+                       Grid.Row="1"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
+
+                        <Label Text="{Binding Steps}" 
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="40"
+                   TextColor="{StaticResource Blue}"
+                       Grid.Row="2"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"/>
+
+                        <StackLayout Grid.Row="4">
+                            <controls:CustomFrame  
+                                                              CornerRadius="0,40,0,40"
+                                                              InputTransparent="True"
+                                                              HasShadow="True"
+                                                              Padding="0"
+                                                              VerticalOptions="FillAndExpand"
+                                                              HorizontalOptions="FillAndExpand"
+                                                              BackgroundColor="{StaticResource BottomGradient}">
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame  
+                                                              CornerRadius="0,40,0,40"
+                                                              InputTransparent="True"
+                                                              HasShadow="True"
+                                                              Padding="0"
+                                                              VerticalOptions="FillAndExpand"
+                                                              HorizontalOptions="FillAndExpand"
+                                                              BackgroundColor="{StaticResource BottomGradient}">
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame  
+                                                              CornerRadius="0,40,0,40"
+                                                              InputTransparent="True"
+                                                              HasShadow="True"
+                                                              Padding="0"
+                                                              VerticalOptions="FillAndExpand"
+                                                              HorizontalOptions="FillAndExpand"
+                                                              BackgroundColor="{StaticResource BottomGradient}">
+                            </controls:CustomFrame>
+                        </StackLayout>
+                    </Grid>
+
+
+                    <StackLayout VerticalOptions="EndAndExpand">
+
+                        <Button IsVisible="{Binding IsWalking, Converter={StaticResource Inverter}}" 
+                        Text="Start Walk" VerticalOptions="End" Command="{Binding StartWalkCommand}"/>
+
+                        <Button IsVisible="{Binding IsWalking}" 
+                        Text="Stop Walk" VerticalOptions="End" Command="{Binding StopWalkCommand}" BackgroundColor="{StaticResource Red}"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

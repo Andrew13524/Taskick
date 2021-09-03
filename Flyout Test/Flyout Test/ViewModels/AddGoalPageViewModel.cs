@@ -6,6 +6,7 @@ using Taskick.Views;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Java.Sql;
+using Taskick.Services.DataStorage;
 
 namespace Taskick.ViewModels
 {
@@ -70,12 +71,12 @@ namespace Taskick.ViewModels
                         IsDeleteButtonVisible = false;
                         break;
                     }
-                case SaveState.EDIT:
+                case SaveState.UPDATE:
                     {
-                        Title = DataStore.GoalList[DataStore.GetGoalIndex()].Title;
-                        Description = DataStore.GoalList[DataStore.GetGoalIndex()].Description;
-                        DueDate = DataStore.GoalList[DataStore.GetGoalIndex()].DueDate;
-                        Difficulty = DataStore.GoalList[DataStore.GetGoalIndex()].Difficulty;
+                        Title = GoalDataStore.GoalList[GoalDataStore.GetGoalIndex()].Title;
+                        Description = GoalDataStore.GoalList[GoalDataStore.GetGoalIndex()].Description;
+                        DueDate = GoalDataStore.GoalList[GoalDataStore.GetGoalIndex()].DueDate;
+                        Difficulty = GoalDataStore.GoalList[GoalDataStore.GetGoalIndex()].Difficulty;
                         SaveButtonText = "Save";
                         IsDeleteButtonVisible = true;
                         break;
@@ -101,11 +102,11 @@ namespace Taskick.ViewModels
                                 AddGoal(new Goal(Title, Description, DueDate, Difficulty));
                                 break;
                             }
-                        case SaveState.EDIT:      // If editing a goal, execute EditGoal command with the currently selected goal object ID
+                        case SaveState.UPDATE:      // If updating a goal, execute EditGoal command with the currently selected goal object ID
                             {
                                 EditGoal(new Goal()
                                 {
-                                    Id = DataStore.SelectedGoalId,
+                                    Id = GoalDataStore.SelectedGoalId,
                                     Title = Title,
                                     Description = Description,
                                     DueDate = DueDate,
@@ -115,21 +116,16 @@ namespace Taskick.ViewModels
                             }
                     }
                 }
-                else
-                {
-                    Application.Current.MainPage.DisplayAlert("Warning", "Please Enter a Title", "Ok");
-                }
-            
         }
 
         public async void AddGoal(Goal newGoal)
         {
-            new DataStore(newGoal, SaveState.ADD);
+            new GoalDataStore(newGoal, SaveState.ADD);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
         public async void EditGoal(Goal editedGoal)
         {
-            new DataStore(editedGoal, SaveState.EDIT);
+            new GoalDataStore(editedGoal, SaveState.UPDATE);
             OpenedPage = Page.ToDoPage;
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
@@ -140,9 +136,9 @@ namespace Taskick.ViewModels
             if (OpenedPage != Page.AddGoalPage)
                 return;
 
-            new DataStore(new Goal()        // Deleting selected goal from Datastore
+            new GoalDataStore(new Goal()        // Deleting selected goal from Datastore
             {
-                Id = DataStore.SelectedGoalId,
+                Id = GoalDataStore.SelectedGoalId,
                 Title = Title,
                 DueDate = DueDate,
                 Difficulty = Difficulty

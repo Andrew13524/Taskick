@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Taskick.Models;
 using Taskick.Services;
+using Taskick.Services.DataStorage;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-public enum SaveState { ADD, EDIT, DELETE, COMPLETE }
 public enum Page { ToDoPage, WalkingPage, StatsPage, WelcomePage, AddGoalPage }
 
 namespace Taskick.ViewModels
@@ -16,14 +16,14 @@ namespace Taskick.ViewModels
     {
         public static Page OpenedPage;
 
-        private string _displayedUsername;
-        public string DisplayedUsername 
+        private string _displayedName;
+        public string DisplayedName 
         {
-            get => _displayedUsername;
+            get => _displayedName;
             set
             {
-                _displayedUsername = value;
-                OnPropertyChanged(nameof(DisplayedUsername));
+                _displayedName = value;
+                OnPropertyChanged(nameof(DisplayedName));
             }
         }
         private string _displayedLevel;
@@ -47,79 +47,108 @@ namespace Taskick.ViewModels
             }
         }
 
-        public string Username
+        private string _name;
+        public string Name
         {
-            get => Preferences.Get(nameof(Username), null);
+            get => _name;
             set
             {
-                Preferences.Set(nameof(Username), value);
-                OnPropertyChanged(nameof(Username));
+                _name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
+        private int _level;
         public int Level
         {
-            get => Preferences.Get(nameof(Level), 0);
+            get => _level;
             set
             {
-                Preferences.Set(nameof(Level), value);
+                _level = value;
                 OnPropertyChanged(nameof(Level));
             }
         }
+        private int _experience;
         public int Experience
         {
-            get => Preferences.Get(nameof(Experience), 0);
+            get => _experience;
             set
             {
-                Preferences.Set(nameof(Experience), value);
+                _experience = value;
                 OnPropertyChanged(nameof(Experience));
             }
         }
+        private int _requiredExperience;
         public int RequiredExperience
         {
-            get => Preferences.Get(nameof(RequiredExperience), 0);
+            get => _requiredExperience;
             set
             {
-                Preferences.Set(nameof(RequiredExperience), value);
+                _requiredExperience = value;
                 OnPropertyChanged(nameof(RequiredExperience));
             }
         }
+        private double _levelPercentage;
         public double LevelPercentage
         {
-            get => Preferences.Get(nameof(LevelPercentage), 0.0);
+            get => _levelPercentage;
             set
             {
-                Preferences.Set(nameof(LevelPercentage), value);
+                _levelPercentage = value;
                 OnPropertyChanged(nameof(LevelPercentage));
             }
         }
-        private bool _isLogggedIn = false;
-        public bool IsLoggedIn
+        private int _steps;
+        public int Steps
         {
-            get => Preferences.Get(nameof(_isLogggedIn), false);
+            get => _steps;
             set
             {
-                Preferences.Set(nameof(_isLogggedIn), value);
+                _steps = value;
+                OnPropertyChanged(nameof(Steps));
+            }
+        }
+        private bool _isBusy = false;
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
+            }
+        }
+
+        private bool _hasAccount = false;
+        public bool HasAccount
+        {
+            get => Preferences.Get(nameof(_hasAccount), false);
+            set
+            {
+                Preferences.Set(nameof(_hasAccount), value);
             }
         }
 
         public BaseViewModel()
         {
-            DisplayedUsername = Username;
-            DisplayedLevel = $"Level {Level}";
-            DisplayedExperience = $"{Experience}/{RequiredExperience}";
+            DisplayedName = UserDataStore.CurrentUser.Name;
+            DisplayedLevel = $"Level {UserDataStore.CurrentUser.Level}";
+            DisplayedExperience = $"{UserDataStore.CurrentUser.Experience}/{UserDataStore.CurrentUser.RequiredExperience}";
+
+            Steps = UserDataStore.CurrentUser.Steps;
         }
 
-        public void UpdateUserInfo(string username, int level, int experience, int requiredExperience, double levelPercentage)
+        public void UpdateUserInfo()
         {
-            Username = username;
-            Level = level;
-            Experience = experience;
-            RequiredExperience = requiredExperience;
-            LevelPercentage = levelPercentage;
+            Name = UserDataStore.CurrentUser.Name;
+            Level = UserDataStore.CurrentUser.Level;
+            Experience = UserDataStore.CurrentUser.Experience;
+            RequiredExperience = UserDataStore.CurrentUser.RequiredExperience;
+            LevelPercentage = UserDataStore.CurrentUser.LevelPercentage;
+            Steps = UserDataStore.CurrentUser.Steps;
 
-            DisplayedUsername = Username;
-            DisplayedLevel = $"Level {Level}";
-            DisplayedExperience = $"{Experience}/{RequiredExperience}";
+            DisplayedName = UserDataStore.CurrentUser.Name;
+            DisplayedLevel = $"Level {UserDataStore.CurrentUser.Level}";
+            DisplayedExperience = $"{UserDataStore.CurrentUser.Experience}/{UserDataStore.CurrentUser.RequiredExperience}";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -7,6 +7,7 @@ using Taskick.Models;
 using System.Linq;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using Taskick.Services.DataStorage;
 
 namespace Taskick.Views
 {
@@ -29,11 +30,11 @@ namespace Taskick.Views
         {
             if (e.CurrentSelection.Count == 0) return;              // If selection null or already completed, do not execute
 
-            DataStore.SelectedGoalId = (e.CurrentSelection[0] as Goal).Id; // Selecting goal
+            GoalDataStore.SelectedGoalId = (e.CurrentSelection[0] as Goal).Id; // Selecting goal
 
-            if (!DataStore.GoalList[DataStore.GetGoalIndex()].IsCompleted)
+            if (!GoalDataStore.GoalList[GoalDataStore.GetGoalIndex()].IsCompleted)
             {
-                AddGoalPageViewModel.SaveState = SaveState.EDIT;        // Opening edit state of AddGoalPage
+                AddGoalPageViewModel.SaveState = SaveState.UPDATE;        // Opening edit state of AddGoalPage
                 await Navigation.PushModalAsync(new AddGoalPage());
             }
             
@@ -43,14 +44,14 @@ namespace Taskick.Views
         {
             var checkedGoal = sender as CheckBox;
 
-            foreach (Goal goal in DataStore.GoalList)
+            foreach (Goal goal in GoalDataStore.GoalList)
             {
                 if (checkedGoal.ClassId == goal.Id)
                 {
 
-                    new DataStore(goal, SaveState.COMPLETE);        // Completing the selected goal & updating values
+                    new GoalDataStore(goal, SaveState.COMPLETE);        // Completing the selected goal & updating values
 
-                    _viewModel.UpdateUserInfo(User.Name, User.Level, User.Experience, User.RequiredExperience, User.LevelPercentage);
+                    _viewModel.UpdateUserInfo();
 
                     return;
                 }

@@ -2,16 +2,106 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Taskick.ViewModels;assembly=Taskick"
+             Title="Stats"
              BackgroundColor="{StaticResource AppBackgroundColor}"
              x:Class="Taskick.Views.StatsPage">
     <ContentPage.BindingContext>
         <vm:StatsPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="25,10,0,0" Spacing="0">
+            
+            <Label Text="Quests"
+                   FontFamily="{StaticResource BoldFont}"
+                   FontSize="{StaticResource HeaderFontSize}"
+                   TextColor="{StaticResource SecondaryTextColor}"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"/>
+            
+            <StackLayout Padding="0,5,0,0" Spacing="0">
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Most Quests completed in one day: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Highest daily sign in streak: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Most Exp gained in one day: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Most EXP gained in one week: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Most EXP gained in one month: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="# of easy quests completed: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="# of medium quests completed: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="# of hard quests completed: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label VerticalOptions="Start" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="# of extreme quests completed: " FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource TertiaryTextColor}"/>
+                            <Span Text="0"                                  FontFamily="{StaticResource BoldFont}" FontSize="{StaticResource RegularFontSize}" ForegroundColor="{StaticResource Blue}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

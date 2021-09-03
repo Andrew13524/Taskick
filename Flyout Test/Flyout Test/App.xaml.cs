@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using Taskick.Services;
+using Taskick.Services.DataStorage;
 
 [assembly: ExportFont("Asap-Bold.ttf",              Alias = "Asap-Bold")]
 [assembly: ExportFont("Asap-BoldItalic.ttf",        Alias = "Asap-BoldItalic")]
@@ -30,7 +31,8 @@ namespace Flyout_Test
         
         protected override void OnStart()
         {
-            DataStore.LoadFromFile();
+            UserDataStore.LoadFromFile();
+            GoalDataStore.LoadFromFile();
         }
 
         protected override void OnSleep()

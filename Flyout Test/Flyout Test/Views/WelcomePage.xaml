@@ -25,7 +25,7 @@
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"/>
 
-        <StackLayout BackgroundColor="{StaticResource MenuBarColor}" IsVisible="{Binding IsLoggedIn, Converter={StaticResource Inverter}}">
+        <StackLayout BackgroundColor="{StaticResource MenuBarColor}" IsVisible="{Binding HasAccount, Converter={StaticResource Inverter}}">
             <Grid>
 
                 <Image Source="BlueLines" Aspect="AspectFill" />
@@ -92,14 +92,14 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout BackgroundColor="{StaticResource MenuBarColor}" IsVisible="{Binding IsLoggedIn}">
+        <StackLayout BackgroundColor="{StaticResource MenuBarColor}" IsVisible="{Binding HasAccount}">
             <Grid>
 
                 <Image Source="BlueLines" Aspect="AspectFill" />
 
                 <StackLayout Padding="30">
 
-                    <Label Text="{Binding Username, StringFormat='Welcome back {0}!'}"
+                    <Label Text="{Binding Name, StringFormat='Welcome back {0}!'}"
                            FontFamily="{StaticResource BoldFont}"
                            FontSize="{StaticResource SubHeaderFontSize}"
                            TextColor="{StaticResource PrimaryTextColor}"

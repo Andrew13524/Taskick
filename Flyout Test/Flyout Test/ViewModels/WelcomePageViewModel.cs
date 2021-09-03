@@ -6,6 +6,8 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Taskick.Services.DataStorage;
+
 namespace Taskick.ViewModels
 {
     class WelcomePageViewModel : BaseViewModel
@@ -38,14 +40,17 @@ namespace Taskick.ViewModels
         public ICommand GoToMainPageCommand { get; }
         public async void GoToMainPage()
         {
-            if (!IsLoggedIn)
+            if (!HasAccount)
             {
                 if ($"{FirstName} {LastName}".Length > 17)
                 {
-                    await App.Current.MainPage.DisplayAlert("Name is too long", null, "Ok");
+                    await App.Current.MainPage.DisplayAlert("Warning", "Name is too long", "Ok");
                     return;
                 }
-                User.Name = $"{FirstName} {LastName}";
+
+                new UserDataStore(new User { Name = $"{FirstName} {LastName}" },
+                                  SaveState.ADD);
+                HasAccount = true;
             }
             Application.Current.MainPage = new AppShell();
         }   

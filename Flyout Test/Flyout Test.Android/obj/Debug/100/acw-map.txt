@@ -1,9 +1,12 @@
-Flyout_Test.Droid.MainActivity, Flyout Test.Android;crc648cb60359e5b0f3be.MainActivity
-Flyout_Test.Droid.MainActivity;crc648cb60359e5b0f3be.MainActivity
-flyout_test.droid.MainActivity;crc648cb60359e5b0f3be.MainActivity
 Taskick.Droid.Renderers.CustomFrameRenderer, Flyout Test.Android;crc64cca29834ac7159a9.CustomFrameRenderer
 Taskick.Droid.Renderers.CustomFrameRenderer;crc64cca29834ac7159a9.CustomFrameRenderer
 taskick.droid.renderers.CustomFrameRenderer;crc64cca29834ac7159a9.CustomFrameRenderer
+Flyout_Test.Droid.MainActivity, Flyout Test.Android;crc648cb60359e5b0f3be.MainActivity
+Flyout_Test.Droid.MainActivity;crc648cb60359e5b0f3be.MainActivity
+flyout_test.droid.MainActivity;crc648cb60359e5b0f3be.MainActivity
+Flyout_Test.Droid.Extensions.DataSource, Flyout Test.Android;crc641ba7910d20eae646.DataSource
+Flyout_Test.Droid.Extensions.DataSource;crc641ba7910d20eae646.DataSource
+flyout_test.droid.extensions.DataSource;crc641ba7910d20eae646.DataSource
 Sharpnado.Shades.Droid.AndroidShadowsRenderer, Sharpnado.Shadows.Android;crc64994682affb61faca.AndroidShadowsRenderer
 Sharpnado.Shades.Droid.AndroidShadowsRenderer;crc64994682affb61faca.AndroidShadowsRenderer
 sharpnado.shades.droid.AndroidShadowsRenderer;crc64994682affb61faca.AndroidShadowsRenderer

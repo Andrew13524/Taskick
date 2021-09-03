@@ -1,10 +1,5 @@
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\Flyout Test.Android.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\Flyout Test.Android.pdb
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.flyout_test.apk
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.flyout_test.aab
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.flyout_test-Signed.aab
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.flyout_test-Signed.apk
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.flyout_test-Signed.apk.idsig
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\Taskick.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\Taskick.pdb
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
@@ -33,10 +28,7 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\Taskick.Android.csproj.CopyComplete
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\Flyout Test.Android.dll
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\Flyout Test.Android.pdb
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\com.companyname.flyout_test.apk
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\base.zip
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\com.companyname.flyout_test.aab
-C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\com.companyname.flyout_test.apks
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\res\layout\tabbar.xml
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\res\layout\toolbar.xml
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\res\values\styles.xml
@@ -587,3 +579,14 @@ C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Fl
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\stamp\_GenerateJavaStubs.stamp
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\src\crc645c6c3871169b93b0\DataSource.java
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\src\crc641ba7910d20eae646\DataSource.java
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.Taskick.apk
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.Taskick.aab
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.Taskick-Signed.aab
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.Taskick-Signed.apk
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\bin\Debug\com.companyname.Taskick-Signed.apk.idsig
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\com.companyname.Taskick.apk
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\com.companyname.Taskick.aab
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\bin\com.companyname.Taskick.apks
+C:\Users\Andre\Documents\Xamarin.Forms\Excersises\Taskick\Taskick\Flyout Test\Flyout Test.Android\obj\Debug\100\android\src\com\companyname\taskick\R.java
